@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'dva';
 import { ContainerQuery } from 'react-container-query';
 import classnames from 'classnames';
+import styles from '../layouts/Basiclayouts.less';
 // import { Link } from 'react-router';
 
 const { Header, Footer, Sider, Content } = Layout;
@@ -38,8 +39,19 @@ class BasicLayout extends React.PureComponent {
     const layout = (
       <Layout>
         <Sider
-          style={{ margin: '0 0', width: '100%' }}
+          trigger={null}
+          collapsible
+          // collapsed={collapsed}
+          breakpoint="md"
+          onCollapse={this.onCollapse}
+          width={256}
+          className={styles.sider}
+          style={{ margin: '0 0' }}
         >
+          <div className={styles.logo}>
+            <img src="https://gw.alipayobjects.com/zos/rmsportal/iwWyPinUoseUxIAeElSx.svg" alt="logo" />
+            <h1>卖良心</h1>
+          </div>
           <Menu>
             <SubMenu key="sub1" title={<span><Icon type="mail" /><span>Navigation One</span></span>}>
               <MenuItemGroup title="Item 1">
@@ -74,14 +86,16 @@ class BasicLayout extends React.PureComponent {
             </div>
           </Header>
           <Content>
-            <div style={{ minHeight: 'calc(100vh - 260px)' }}>
+            <div style={{ minHeight: 'calc(100vh)' }}>
               {/* <h3>content</h3> */}
             </div>
           </Content>
-          <Footer>
-            <div style={{ margin: '50px 50px 0px 0px' }}>
-              <h4>他还是女的</h4>
-            </div>
+          <Footer className={styles.Footer}>
+            <h4>
+              <div>
+                Copyright <Icon type="copyright" /> github.com/wanghuajian620.com
+              </div>
+            </h4>
           </Footer>
         </Layout>
       </Layout>
