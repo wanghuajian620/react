@@ -1,4 +1,4 @@
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Menu, Icon, Button } from 'antd';
 import React from 'react';
 import { connect } from 'dva';
 import { ContainerQuery } from 'react-container-query';
@@ -35,7 +35,23 @@ const query = {
 };
 
 class BasicLayout extends React.PureComponent {
+  state = {
+    collapsed: false,
+  }
+  toggleCollapsed = () => {
+    this.setState({
+      collapsed: !this.state.collapsed,
+    });
+  }
   render() {
+    const menu = (
+      <Menu className={styles.menu} selectedKeys={[]} onClick={this.onMenuClick}>
+        <Menu.Item disabled><Icon type="user" />个人中心</Menu.Item>
+        <Menu.Item disabled><Icon type="setting" />设置</Menu.Item>
+        <Menu.Divider />
+        <Menu.Item key="logout"><Icon type="logout" />退出登录</Menu.Item>
+      </Menu>
+    );
     const layout = (
       <Layout>
         <Sider
@@ -50,9 +66,9 @@ class BasicLayout extends React.PureComponent {
         >
           <div className={styles.logo}>
             <img src="https://gw.alipayobjects.com/zos/rmsportal/iwWyPinUoseUxIAeElSx.svg" alt="logo" />
-            <h1>卖良心</h1>
+            <h1>卖香辣猪蹄</h1>
           </div>
-          <Menu>
+          <Menu defaultSelectedKeys={['1']} defaultOpenKeys={['sub1']} theme="dark" mode="inline">
             <SubMenu key="sub1" title={<span><Icon type="mail" /><span>Navigation One</span></span>}>
               <MenuItemGroup title="Item 1">
                 <Menu.Item key="1">Option 1</Menu.Item>
@@ -82,12 +98,15 @@ class BasicLayout extends React.PureComponent {
         <Layout>
           <Header>
             <div>
-              <h3>他是女的</h3>
+              <Button type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
+                <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
+              </Button>
+              <h3>他是女的{menu}</h3>
             </div>
           </Header>
           <Content>
             <div style={{ minHeight: 'calc(100vh)' }}>
-              {/* <h3>content</h3> */}
+              <h3>content</h3>
             </div>
           </Content>
           <Footer className={styles.Footer}>
