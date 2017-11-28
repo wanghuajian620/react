@@ -68,13 +68,13 @@ class BasicLayout extends React.PureComponent {
             <img src="https://gw.alipayobjects.com/zos/rmsportal/iwWyPinUoseUxIAeElSx.svg" alt="logo" />
             <h1>卖香辣猪蹄</h1>
           </div>
-          <Menu defaultSelectedKeys={['1']} defaultOpenKeys={['sub1']} theme="dark" mode="inline">
+          <Menu defaultSelectedKeys={['1']} defaultOpenKeys={['sub1']} theme="light" mode="inline">
             <SubMenu key="sub1" title={<span><Icon type="mail" /><span>Navigation One</span></span>}>
-              <MenuItemGroup title="Item 1">
+              <MenuItemGroup title="Dashboard">
                 <Menu.Item key="1">Option 1</Menu.Item>
                 <Menu.Item key="2">Option 2</Menu.Item>
               </MenuItemGroup>
-              <MenuItemGroup title="Iteom 2">
+              <MenuItemGroup title="首页">
                 <Menu.Item key="3">Option 3</Menu.Item>
                 <Menu.Item key="4">Option 4</Menu.Item>
               </MenuItemGroup>
@@ -96,7 +96,7 @@ class BasicLayout extends React.PureComponent {
           </Menu>
         </Sider>
         <Layout>
-          <Header>
+          <Header className={styles.header}>
             <div>
               <Button type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
                 <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
@@ -105,16 +105,16 @@ class BasicLayout extends React.PureComponent {
             </div>
           </Header>
           <Content>
-            <div style={{ minHeight: 'calc(100vh)' }}>
+            <div style={{ minHeight: 'calc(100vh) - 260px' }}>
               <h3>content</h3>
             </div>
           </Content>
           <Footer className={styles.Footer}>
-            <h4>
-              <div>
+            <div>
+              <h4>
                 Copyright <Icon type="copyright" /> github.com/wanghuajian620.com
-              </div>
-            </h4>
+              </h4>
+            </div>
           </Footer>
         </Layout>
       </Layout>
