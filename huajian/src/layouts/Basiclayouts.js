@@ -112,7 +112,8 @@ class BasicLayout extends React.PureComponent {
           <Footer className={styles.Footer}>
             <div>
               <h4>
-                Copyright <Icon type="copyright" /> github.com/wanghuajian620.com
+                小明是店长
+                <p>Copyright <Icon type="copyright" /> github.com/wanghuajian620.com</p>
               </h4>
             </div>
           </Footer>
