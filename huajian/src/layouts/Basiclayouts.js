@@ -1,17 +1,12 @@
-import { Layout, Menu, Icon, Button } from 'antd';
+import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import React from 'react';
 import { connect } from 'dva';
 import { ContainerQuery } from 'react-container-query';
 import classnames from 'classnames';
 import styles from '../layouts/Basiclayouts.less';
-// import { Link } from 'react-router';
 
 const { Header, Footer, Sider, Content } = Layout;
-const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
-// function handleClick(e) {
-//   console.log('click', e);
-// }
+const { SubMenu } = Menu;
 
 const query = {
   'screen-xs': {
@@ -38,76 +33,65 @@ class BasicLayout extends React.PureComponent {
   state = {
     collapsed: false,
   }
-  toggleCollapsed = () => {
+  toggle = () => {
     this.setState({
       collapsed: !this.state.collapsed,
     });
   }
   render() {
-    const menu = (
-      <Menu className={styles.menu} selectedKeys={[]} onClick={this.onMenuClick}>
-        <Menu.Item disabled><Icon type="user" />个人中心</Menu.Item>
-        <Menu.Item disabled><Icon type="setting" />设置</Menu.Item>
-        <Menu.Divider />
-        <Menu.Item key="logout"><Icon type="logout" />退出登录</Menu.Item>
-      </Menu>
-    );
     const layout = (
       <Layout>
         <Sider
           trigger={null}
           collapsible
-          // collapsed={collapsed}
-          breakpoint="md"
-          onCollapse={this.onCollapse}
-          width={256}
-          className={styles.sider}
-          style={{ margin: '0 0' }}
+          collapsed={this.state.collapsed}
         >
           <div className={styles.logo}>
             <img src="https://gw.alipayobjects.com/zos/rmsportal/iwWyPinUoseUxIAeElSx.svg" alt="logo" />
-            <h1>卖香辣猪蹄</h1>
+            <h1>海贼王</h1>
           </div>
-          <Menu defaultSelectedKeys={['1']} defaultOpenKeys={['sub1']} theme="light" mode="inline">
-            <SubMenu key="sub1" title={<span><Icon type="mail" /><span>Navigation One</span></span>}>
-              <MenuItemGroup title="Dashboard">
-                <Menu.Item key="1">Option 1</Menu.Item>
-                <Menu.Item key="2">Option 2</Menu.Item>
-              </MenuItemGroup>
-              <MenuItemGroup title="首页">
-                <Menu.Item key="3">Option 3</Menu.Item>
-                <Menu.Item key="4">Option 4</Menu.Item>
-              </MenuItemGroup>
+          <Menu
+            mode="inline"
+            defaultSelectedKeys={['1']}
+            defaultOpenKeys={['sub1']}
+            style={{ height: '100%', borderRight: 0 }}
+          >
+            <SubMenu key="sub1" title={<span><Icon type="user" />世界政府</span>}>
+              <Menu.Item key="1">海军</Menu.Item>
+              <Menu.Item key="2">七武海</Menu.Item>
+              <Menu.Item key="3">option3</Menu.Item>
+              <Menu.Item key="4">option4</Menu.Item>
             </SubMenu>
-            <SubMenu key="sub2" title={<span><Icon type="appstore" /><span>Navigation Two</span></span>}>
-              <Menu.Item key="5">Option 5</Menu.Item>
-              <Menu.Item key="6">Option 6</Menu.Item>
-              <SubMenu key="sub3" title="Submenu">
-                <Menu.Item key="7">Option 7</Menu.Item>
-                <Menu.Item key="8">Option 8</Menu.Item>
-              </SubMenu>
+            <SubMenu key="sub2" title={<span><Icon type="laptop" />四皇</span>}>
+              <Menu.Item key="5">黑胡子</Menu.Item>
+              <Menu.Item key="6">红发</Menu.Item>
+              <Menu.Item key="7">百兽凯多</Menu.Item>
+              <Menu.Item key="8">bigmom</Menu.Item>
             </SubMenu>
-            <SubMenu key="sub4" title={<span><Icon type="setting" /><span>Navigation Three</span></span>}>
-              <Menu.Item key="9">Option 9</Menu.Item>
-              <Menu.Item key="10">Option 10</Menu.Item>
-              <Menu.Item key="11">Option 11</Menu.Item>
-              <Menu.Item key="12">Option 12</Menu.Item>
+            <SubMenu key="sub3" title={<span><Icon type="notification" />贵族</span>}>
+              <Menu.Item key="9">天龙人</Menu.Item>
+              <Menu.Item key="10">option10</Menu.Item>
+              <Menu.Item key="11">option11</Menu.Item>
+              <Menu.Item key="12">option12</Menu.Item>
             </SubMenu>
           </Menu>
         </Sider>
         <Layout>
-          <Header className={styles.header}>
-            <div>
-              <Button type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
-                <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
-              </Button>
-              <h3>他是女的{menu}</h3>
-            </div>
+          <Header style={{ background: '#fff', padding: 0 }}>
+            <Icon
+              // style={{ cursor: 'pointer', color: 'blue', fontSize: 25 }}
+              className={styles.trigger}
+              type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+              onClick={this.toggle}
+            />
           </Header>
-          <Content>
-            <div style={{ minHeight: 'calc(100vh) - 260px' }}>
-              <h3>content</h3>
-            </div>
+          <Breadcrumb style={{ margin: '13px 0 0 18px' }}>
+            <Breadcrumb.Item>Home</Breadcrumb.Item>
+            <Breadcrumb.Item>List</Breadcrumb.Item>
+            <Breadcrumb.Item>App</Breadcrumb.Item>
+          </Breadcrumb>
+          <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 600 }}>
+            Content
           </Content>
           <Footer className={styles.Footer}>
             <div>
