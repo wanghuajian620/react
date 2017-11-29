@@ -1,4 +1,4 @@
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import { Layout, Menu, Breadcrumb, Icon, Card } from 'antd';
 import React from 'react';
 import { connect } from 'dva';
 import { ContainerQuery } from 'react-container-query';
@@ -92,14 +92,23 @@ class BasicLayout extends React.PureComponent {
           </Breadcrumb>
           <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 600 }}>
             Content
+            <Card style={{ width: 240 }} bodyStyle={{ padding: 0 }}>
+              <div className="custom-image">
+                <img alt="example" width="100%" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
+              </div>
+              <div className="custom-card">
+                <h3>Europe Street beat</h3>
+                <p>www.instagram.com</p>
+              </div>
+            </Card>
           </Content>
           <Footer
             className={styles.Footer}
           >
             <div>
               <h4>
-                路飞是船长
-                <a href="http://github.com/wanghuajian620" blankTarget="_blank">Github</a>
+                <a href="http://github.com/wanghuajian620" Target="_blank">Github</a>
+                <a href="http://ant.design" Target="_blank">Ant Design</a>
                 <p>Copyright <Icon type="copyright" /> github.com/wanghuajian620.com</p>
               </h4>
             </div>
