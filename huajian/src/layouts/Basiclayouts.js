@@ -93,10 +93,13 @@ class BasicLayout extends React.PureComponent {
           <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 600 }}>
             Content
           </Content>
-          <Footer className={styles.Footer}>
+          <Footer
+            className={styles.Footer}
+          >
             <div>
               <h4>
-                小明是店长
+                路飞是船长
+                <a href="http://github.com/wanghuajian620" blankTarget="_blank">Github</a>
                 <p>Copyright <Icon type="copyright" /> github.com/wanghuajian620.com</p>
               </h4>
             </div>
