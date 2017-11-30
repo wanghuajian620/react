@@ -42,6 +42,9 @@ class BasicLayout extends React.PureComponent {
     const layout = (
       <Layout>
         <Sider
+          width={256}
+          breakpoint="xs"
+          // collapsedWidth="0" 不显示图标，全部折叠进去
           trigger={null}
           collapsible
           collapsed={this.state.collapsed}
@@ -56,19 +59,19 @@ class BasicLayout extends React.PureComponent {
             defaultOpenKeys={['sub1']}
             style={{ height: '100%', borderRight: 0 }}
           >
-            <SubMenu key="sub1" title={<span><Icon type="user" />世界政府</span>}>
+            <SubMenu key="sub1" title={<span><Icon type="user" /><span>世界政府</span></span>}>
               <Menu.Item key="1">海军</Menu.Item>
               <Menu.Item key="2">七武海</Menu.Item>
               <Menu.Item key="3">option3</Menu.Item>
               <Menu.Item key="4">option4</Menu.Item>
             </SubMenu>
-            <SubMenu key="sub2" title={<span><Icon type="laptop" />四皇</span>}>
+            <SubMenu key="sub2" title={<span><Icon type="laptop" /><span>四皇</span></span>}>
               <Menu.Item key="5">黑胡子</Menu.Item>
               <Menu.Item key="6">红发</Menu.Item>
               <Menu.Item key="7">百兽凯多</Menu.Item>
               <Menu.Item key="8">bigmom</Menu.Item>
             </SubMenu>
-            <SubMenu key="sub3" title={<span><Icon type="notification" />贵族</span>}>
+            <SubMenu key="sub3" title={<span><Icon type="notification" /><span>贵族</span></span>}>
               <Menu.Item key="9">天龙人</Menu.Item>
               <Menu.Item key="10">option10</Menu.Item>
               <Menu.Item key="11">option11</Menu.Item>
@@ -79,7 +82,7 @@ class BasicLayout extends React.PureComponent {
         <Layout>
           <Header style={{ background: '#fff', padding: 0 }}>
             <Icon
-              // style={{ cursor: 'pointer', color: 'blue', fontSize: 25 }}
+              style={{ cursor: 'pointer', fontSize: 25 }}
               className={styles.trigger}
               type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
               onClick={this.toggle}
