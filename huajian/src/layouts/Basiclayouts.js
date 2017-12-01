@@ -1,6 +1,7 @@
 import { Layout, Menu, Breadcrumb, Icon, Card } from 'antd';
 import React from 'react';
 import { connect } from 'dva';
+import { Link } from 'dva/router';
 import { ContainerQuery } from 'react-container-query';
 import classnames from 'classnames';
 import styles from '../layouts/Basiclayouts.less';
@@ -60,7 +61,11 @@ class BasicLayout extends React.PureComponent {
             style={{ height: '100%', borderRight: 0 }}
           >
             <SubMenu key="sub1" title={<span><Icon type="user" /><span>世界政府</span></span>}>
-              <Menu.Item key="1">海军</Menu.Item>
+              <Menu.Item key="1">
+                <Link to="/user">
+                  海军
+                </Link>
+              </Menu.Item>
               <Menu.Item key="2">七武海</Menu.Item>
               <Menu.Item key="3">option3</Menu.Item>
               <Menu.Item key="4">option4</Menu.Item>
