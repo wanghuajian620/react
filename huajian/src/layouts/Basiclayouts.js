@@ -60,7 +60,7 @@ class BasicLayout extends React.PureComponent {
             defaultOpenKeys={['sub1']}
             style={{ height: '100%', borderRight: 0 }}
           >
-            <SubMenu key="sub1" title={<span><Icon type="user" /><span>世界政府</span></span>}>
+            <SubMenu key="sub1" title={<span><Icon type="team" /><span>世界政府</span></span>}>
               <Menu.Item key="1">
                 <Link to="/user">
                   海军
@@ -76,11 +76,14 @@ class BasicLayout extends React.PureComponent {
               <Menu.Item key="7">百兽凯多</Menu.Item>
               <Menu.Item key="8">bigmom</Menu.Item>
             </SubMenu>
-            <SubMenu key="sub3" title={<span><Icon type="notification" /><span>贵族</span></span>}>
-              <Menu.Item key="9">天龙人</Menu.Item>
-              <Menu.Item key="10">option10</Menu.Item>
-              <Menu.Item key="11">option11</Menu.Item>
-              <Menu.Item key="12">option12</Menu.Item>
+            <SubMenu key="sub3" title={<span><Icon type="user" /><span>帐户</span></span>}>
+              <Menu.Item key="9">
+                <Link to="/UserLayout">
+                  登录
+                </Link>
+              </Menu.Item>
+              <Menu.Item key="10">注册</Menu.Item>
+              <Menu.Item key="11">注册结果</Menu.Item>
             </SubMenu>
           </Menu>
         </Sider>
