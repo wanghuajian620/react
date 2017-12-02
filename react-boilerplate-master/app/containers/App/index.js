@@ -7,9 +7,9 @@
  */
 
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet';// 这个可重用的响应组件将管理您对文档头部的所有更改
 import styled from 'styled-components';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';// DOM和react-router绑定
 
 import HomePage from 'containers/HomePage/Loadable';
 import FeaturePage from 'containers/FeaturePage/Loadable';

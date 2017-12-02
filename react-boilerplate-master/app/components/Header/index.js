@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';// 这个库提供了响应组件和API来格式化日期、数字和字符串，包括复数和处理翻译。
 
 import A from './A';
 import Img from './Img';
