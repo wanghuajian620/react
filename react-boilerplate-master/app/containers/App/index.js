@@ -14,7 +14,7 @@ import { Switch, Route } from 'react-router-dom';// DOM和react-router绑定
 import HomePage from 'containers/HomePage/Loadable';
 import FeaturePage from 'containers/FeaturePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
-import Header from 'components/Header';
+import BasicLayout from 'components/BasicLayout';
 import Footer from 'components/Footer';
 
 const AppWrapper = styled.div`
@@ -35,13 +35,14 @@ export default function App() {
       >
         <meta name="description" content="A React.js Boilerplate application" />
       </Helmet>
-      <Header />
-      <Switch>
+      <BasicLayout />
+      <Route exact path="/" component={FeaturePage} />
+      {/* <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/features" component={FeaturePage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
-      <Footer />
+      <Footer /> */}
     </AppWrapper>
   );
 }
