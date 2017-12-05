@@ -11,6 +11,7 @@ import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
+import { Switch, Route } from 'react-router';
 
 import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
@@ -81,6 +82,10 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
                 />
               </label>
             </Form>
+            <Switch>
+              <Route path="/a" render={() => <div>A</div>} />
+              <Route path="/b" render={() => <div>B</div>} />
+            </Switch>
             <ReposList {...reposListProps} />
           </Section>
         </div>
