@@ -6,12 +6,12 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
-  home: {
-    id: 'boilerplate.components.Header.home',
-    defaultMessage: 'Home',
+  你好: {
+    id: 'boilerplate.components.Header.你好',
+    defaultMessage: '你好',
   },
-  features: {
-    id: 'boilerplate.components.Header.features',
-    defaultMessage: 'Features',
+  dva: {
+    id: 'boilerplate.components.Header.dva',
+    defaultMessage: 'dva',
   },
 });

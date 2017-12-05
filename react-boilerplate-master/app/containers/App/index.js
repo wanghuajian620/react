@@ -37,8 +37,8 @@ export default function App() {
       </Helmet>
       <Header />
       <Switch>
-        <Route path="/" component={HomePage} />
-        <Route path="/features" component={FeaturePage} />
+        <Route exact path="/" component={HomePage} />
+        <Route path="/dva" component={FeaturePage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Footer />
