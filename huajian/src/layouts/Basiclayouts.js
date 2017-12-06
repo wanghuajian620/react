@@ -62,7 +62,7 @@ class BasicLayout extends React.PureComponent {
           >
             <SubMenu key="sub1" title={<span><Icon type="team" /><span>世界政府</span></span>}>
               <Menu.Item key="1">
-                <Link to="/user">
+                <Link to="/picture">
                   海军
                 </Link>
               </Menu.Item>
