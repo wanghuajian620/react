@@ -61,12 +61,12 @@ class BasicLayout extends React.PureComponent {
             style={{ height: '100%', borderRight: 0 }}
           >
             <SubMenu key="sub1" title={<span><Icon type="team" /><span>世界政府</span></span>}>
-              <Menu.Item key="1">
+              <Menu.Item key="1">海军</Menu.Item>
+              <Menu.Item key="2">
                 <Link to="/picture">
-                  海军
+                  七武海
                 </Link>
               </Menu.Item>
-              <Menu.Item key="2">七武海</Menu.Item>
               <Menu.Item key="3">option3</Menu.Item>
               <Menu.Item key="4">option4</Menu.Item>
             </SubMenu>
@@ -78,7 +78,7 @@ class BasicLayout extends React.PureComponent {
             </SubMenu>
             <SubMenu key="sub3" title={<span><Icon type="user" /><span>帐户</span></span>}>
               <Menu.Item key="9">
-                <Link to="/UserLayout">
+                <Link to="/user/login">
                   登录
                 </Link>
               </Menu.Item>

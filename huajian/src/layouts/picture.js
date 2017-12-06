@@ -1,8 +1,10 @@
 import React from 'react';
+import { Icon } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import PropTypes from 'prop-types';
 import TweenOne, { TweenOneGroup } from 'rc-tween-one';
-import Icon from 'antd/lib/icon';
+// import styles from '../layouts/picture.less';
+
 
 const textData = {
   content: 'Taiwan called motorcycle, motor bike [1] or a motorcycle,' +

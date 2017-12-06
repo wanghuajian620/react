@@ -2,8 +2,6 @@ import React from 'react';
 import { connect } from 'dva';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 
-const FormItem = Form.Item;
-
 
 class UserLayout extends React.PureComponent {
   handleSubmit = (e) => {
@@ -15,6 +13,7 @@ class UserLayout extends React.PureComponent {
     });
   }
   render() {
+    const FormItem = Form.Item;
     const { getFieldDecorator } = this.props.form;
     return (
       <Form onSubmit={this.handleSubmit} className="login-form">
