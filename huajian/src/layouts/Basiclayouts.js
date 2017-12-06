@@ -78,7 +78,7 @@ class BasicLayout extends React.PureComponent {
             </SubMenu>
             <SubMenu key="sub3" title={<span><Icon type="user" /><span>帐户</span></span>}>
               <Menu.Item key="9">
-                <Link to="/user/login">
+                <Link to="/user">
                   登录
                 </Link>
               </Menu.Item>
