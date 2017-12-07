@@ -1,9 +1,11 @@
-import { Layout, Menu, Breadcrumb, Icon, Card } from 'antd';
+import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import React from 'react';
 import { connect } from 'dva';
-import { Link } from 'dva/router';
+import { Switch, Link, Route } from 'dva/router';
 import { ContainerQuery } from 'react-container-query';
 import classnames from 'classnames';
+// import picture from './picture';
+import NotFound from '../routes/Exception/404';
 import styles from '../layouts/Basiclayouts.less';
 
 const { Header, Footer, Sider, Content } = Layout;
@@ -61,7 +63,11 @@ class BasicLayout extends React.PureComponent {
             style={{ height: '100%', borderRight: 0 }}
           >
             <SubMenu key="sub1" title={<span><Icon type="team" /><span>世界政府</span></span>}>
-              <Menu.Item key="1">海军</Menu.Item>
+              <Menu.Item key="1">
+                <Link to="/first">
+                  海军
+                </Link>
+              </Menu.Item>
               <Menu.Item key="2">
                 <Link to="/picture">
                   七武海
@@ -71,7 +77,11 @@ class BasicLayout extends React.PureComponent {
               <Menu.Item key="4">option4</Menu.Item>
             </SubMenu>
             <SubMenu key="sub2" title={<span><Icon type="laptop" /><span>四皇</span></span>}>
-              <Menu.Item key="5">黑胡子</Menu.Item>
+              <Menu.Item key="5">
+                <Link to="/a">
+                  黑胡子
+                </Link>
+              </Menu.Item>
               <Menu.Item key="6">红发</Menu.Item>
               <Menu.Item key="7">百兽凯多</Menu.Item>
               <Menu.Item key="8">bigmom</Menu.Item>
@@ -102,8 +112,7 @@ class BasicLayout extends React.PureComponent {
             <Breadcrumb.Item>App</Breadcrumb.Item>
           </Breadcrumb>
           <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 600 }}>
-            Content
-            <Card style={{ width: 240 }} bodyStyle={{ padding: 0 }}>
+            {/* <Card style={{ width: 240 }} bodyStyle={{ padding: 0 }}>
               <div className="custom-image">
                 <img alt="example" width="100%" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
               </div>
@@ -111,7 +120,13 @@ class BasicLayout extends React.PureComponent {
                 <h3>Europe Street beat</h3>
                 <p>www.instagram.com</p>
               </div>
-            </Card>
+            </Card> */}
+            <Switch>
+              {/* <Redirect exact from="/" to="/" /> */}
+              <Route path="/first" render={() => <div>A</div>} />
+              <Route path="/picture" render={() => <div>b</div>} />
+              <Route component={NotFound} />
+            </Switch>
           </Content>
           <Footer
             className={styles.Footer}

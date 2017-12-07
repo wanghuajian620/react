@@ -141,7 +141,7 @@ class Picture extends React.Component {
             }}
             animation={aAnimation}
           >
-            <img alt="" src={image} width="100%" height="100%" />
+            <img alt=""title=""src={image} width="100%" height="100%" />
           </TweenOne>
           <TweenOneGroup
             enter={[
