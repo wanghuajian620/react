@@ -1,7 +1,3 @@
-// import React from 'react';
-
-
-// export default () => <div>user list</div>;
 import React from 'react';
 
 // 采用antd的UI组件
