@@ -5,6 +5,7 @@ import { Switch, Link, Route } from 'dva/router';
 import { ContainerQuery } from 'react-container-query';
 import classnames from 'classnames';
 import NotFound from '../routes/Exception/404';
+import Users from '../components/Users/UserList';
 import styles from '../layouts/Basiclayouts.less';
 
 const { Header, Footer, Sider, Content } = Layout;
@@ -72,7 +73,11 @@ class BasicLayout extends React.PureComponent {
                   七武海
                 </Link>
               </Menu.Item>
-              <Menu.Item key="3">option3</Menu.Item>
+              <Menu.Item key="3">
+                <Link to="/third">
+                  option3
+                </Link>
+              </Menu.Item>
               <Menu.Item key="4">option4</Menu.Item>
             </SubMenu>
             <SubMenu key="sub2" title={<span><Icon type="laptop" /><span>四皇</span></span>}>
@@ -109,8 +114,9 @@ class BasicLayout extends React.PureComponent {
           <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 600 }}>
             <Switch>
               {/* <Redirect exact from="/" to="/" /> */}
-              <Route path="/first" render={() => <div>A</div>} />
-              <Route path="/second" render={() => <div>b</div>} />
+              <Route path="/first" render={() => <div>我是成为海贼王的男人</div>} />
+              <Route path="/second" render={() => <div>我是娜美</div>} />
+              <Route path="/third" component={Users} />
               <Route component={NotFound} />
             </Switch>
           </Content>
