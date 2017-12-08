@@ -4,7 +4,6 @@ import { connect } from 'dva';
 import { Switch, Link, Route } from 'dva/router';
 import { ContainerQuery } from 'react-container-query';
 import classnames from 'classnames';
-// import picture from './picture';
 import NotFound from '../routes/Exception/404';
 import styles from '../layouts/Basiclayouts.less';
 
@@ -69,7 +68,7 @@ class BasicLayout extends React.PureComponent {
                 </Link>
               </Menu.Item>
               <Menu.Item key="2">
-                <Link to="/picture">
+                <Link to="/second">
                   七武海
                 </Link>
               </Menu.Item>
@@ -87,11 +86,7 @@ class BasicLayout extends React.PureComponent {
               <Menu.Item key="8">bigmom</Menu.Item>
             </SubMenu>
             <SubMenu key="sub3" title={<span><Icon type="user" /><span>帐户</span></span>}>
-              <Menu.Item key="9">
-                <Link to="/user">
-                  登录
-                </Link>
-              </Menu.Item>
+              <Menu.Item key="9">登录</Menu.Item>
               <Menu.Item key="10">注册</Menu.Item>
               <Menu.Item key="11">注册结果</Menu.Item>
             </SubMenu>
@@ -112,19 +107,10 @@ class BasicLayout extends React.PureComponent {
             <Breadcrumb.Item>App</Breadcrumb.Item>
           </Breadcrumb>
           <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 600 }}>
-            {/* <Card style={{ width: 240 }} bodyStyle={{ padding: 0 }}>
-              <div className="custom-image">
-                <img alt="example" width="100%" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-              </div>
-              <div className="custom-card">
-                <h3>Europe Street beat</h3>
-                <p>www.instagram.com</p>
-              </div>
-            </Card> */}
             <Switch>
               {/* <Redirect exact from="/" to="/" /> */}
               <Route path="/first" render={() => <div>A</div>} />
-              <Route path="/picture" render={() => <div>b</div>} />
+              <Route path="/second" render={() => <div>b</div>} />
               <Route component={NotFound} />
             </Switch>
           </Content>
