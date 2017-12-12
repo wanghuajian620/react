@@ -30,8 +30,11 @@ class BasicLayout extends React.PureComponent {
           />
         </Header>
         <Layout>
-          <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 600 }}>Content</Content>
+          <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 600 }}>
+            Content
+          </Content>
           <Sider
+            width={400}
             breakpoint="xs"
             collapsedWidth="0" // 不显示图标，全部折叠进去
             trigger={null}
@@ -59,6 +62,9 @@ class BasicLayout extends React.PureComponent {
               </Menu.Item>
               <Menu.Item key="6">
                 <span>Stories</span>
+              </Menu.Item>
+              <Menu.Item key="7">
+                <span>Shop</span>
               </Menu.Item>
             </Menu>
           </Sider>

@@ -113,7 +113,6 @@ class BasicLayout extends React.PureComponent {
           </Breadcrumb>
           <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 600 }}>
             <Switch>
-              {/* <Redirect exact from="/" to="/" /> */}
               <Route path="/first" render={() => <div>我是成为海贼王的男人</div>} />
               <Route path="/second" render={() => <div>我是娜美</div>} />
               <Route path="/third" component={Users} />
