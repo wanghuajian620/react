@@ -30,8 +30,10 @@ class BasicLayout extends React.PureComponent {
           />
         </Header>
         <Layout>
-          <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 600 }}>
-            Content
+          <Content style={{ padding: 24, background: '#fff', minHeight: 600 }}>
+            <div>
+              <video src="https://d27shkkua6xyjc.cloudfront.net/videos/maaemo-film-2.mp4?mtime=20141113185431" autoPlay="autoplay" loop="loop">ssss</video>
+            </div>
           </Content>
           <Sider
             width={400}
