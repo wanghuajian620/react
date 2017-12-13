@@ -1,8 +1,30 @@
 import React from 'react';
 import { Layout, Menu, Icon } from 'antd';
+import { ContainerQuery } from 'react-container-query';
+import classnames from 'classnames';
 import styles from './BasicLayout.less';
 
 const { Header, Footer, Sider, Content } = Layout;
+const query = {
+  'screen-xs': {
+    maxWidth: 575,
+  },
+  'screen-sm': {
+    minWidth: 576,
+    maxWidth: 767,
+  },
+  'screen-md': {
+    minWidth: 768,
+    maxWidth: 991,
+  },
+  'screen-lg': {
+    minWidth: 992,
+    maxWidth: 1199,
+  },
+  'screen-xl': {
+    minWidth: 1200,
+  },
+};
 
 class BasicLayout extends React.PureComponent {
   state = {
@@ -30,7 +52,7 @@ class BasicLayout extends React.PureComponent {
           />
         </Header>
         <Layout>
-          <Content style={{ padding: 24, background: '#fff', minHeight: 600 }}>
+          <Content style={{ background: '#fff', minHeight: 600 }}>
             <div>
               <video src="https://d27shkkua6xyjc.cloudfront.net/videos/maaemo-film-2.mp4?mtime=20141113185431" autoPlay="autoplay" loop="loop">ssss</video>
             </div>
@@ -71,10 +93,23 @@ class BasicLayout extends React.PureComponent {
             </Menu>
           </Sider>
         </Layout>
-        <Footer>Footer</Footer>
+        <Footer
+          className={styles.Footer}
+        >
+          <div>
+            <h4>
+              <a href="http://github.com/wanghuajian620" Target="_blank">Github</a>
+              <p>The project By <Icon type="copyright" /> github.com/wanghuajian620.com</p>
+            </h4>
+          </div>
+        </Footer>
       </Layout>
     );
-    return (<div>{layout}</div>);
+    return (
+      <ContainerQuery query={query}>
+        {params => <div className={classnames(params)}>{layout}</div>}
+      </ContainerQuery>
+    );
   }
 }
 
