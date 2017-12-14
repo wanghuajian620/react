@@ -1,5 +1,6 @@
 import React from 'react';
 import { Layout, Menu, Icon } from 'antd';
+import { Link } from 'dva/router';
 import styles from '../layouts/Menu.less';
 
 
@@ -18,15 +19,15 @@ class Bar extends React.PureComponent {
     const layout = (
       <Layout>
         <Header
-          style={{ background: '#888', padding: 0, width: '100%' }}
+          style={{ background: '#888', padding: 0, width: '100%', height: '71px' }}
         >
           <Menu
             className={styles.header}
             mode="horizontal"
-            style={{ lineHeight: '84px', width: '100%' }}
+            style={{ width: '100%' }}
           >
             <Menu.Item key="1">
-              <span>Home</span>
+              <span>Book a table</span>
             </Menu.Item>
             <Menu.Item key="2">
               <span>Menu</span>
@@ -70,7 +71,9 @@ class Bar extends React.PureComponent {
                 <span>Menu</span>
               </Menu.Item>
               <Menu.Item key="3">
-                <span>About</span>
+                <Link to="/about">
+                  <span>About</span>
+                </Link>
               </Menu.Item>
               <Menu.Item key="4">
                 <span>Press</span>
