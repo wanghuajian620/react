@@ -76,7 +76,9 @@ class About extends React.PureComponent {
                 <span>About</span>
               </Menu.Item>
               <Menu.Item key="4">
-                <span>Press</span>
+                <Link to="press">
+                  <span>Press</span>
+                </Link>
               </Menu.Item>
               <Menu.Item key="5">
                 <span>Career</span>
