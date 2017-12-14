@@ -3,7 +3,6 @@ import { Layout, Menu, Icon } from 'antd';
 import { ContainerQuery } from 'react-container-query';
 import { Link } from 'dva/router';
 import classnames from 'classnames';
-// import Bar from '../components/Menu';
 import styles from './BasicLayout.less';
 
 const { Header, Footer, Sider, Content } = Layout;
@@ -41,7 +40,7 @@ class BasicLayout extends React.PureComponent {
     const layout = (
       <Layout>
         <Header
-          style={{ background: '#fff', padding: 0 }}
+          style={{ background: '#fff', padding: 0, lineHeight: '84px' }}
         >
           <span className={styles.logo}>
             <h1>Book a table</h1>
@@ -54,17 +53,14 @@ class BasicLayout extends React.PureComponent {
           />
         </Header>
         <Layout>
-          <Content style={{ background: '#fff', minHeight: 600 }}>
+          <Content style={{ background: '#fff', minHeight: 600, width: '100%' }}>
             <div>
               <video src="https://d27shkkua6xyjc.cloudfront.net/videos/maaemo-film-2.mp4?mtime=20141113185431" autoPlay="autoplay" loop="loop">ssss</video>
             </div>
-            {/* <Switch>
-              <Route path="/menu" component={Bar} />
-            </Switch> */}
           </Content>
           <Sider
             width={400}
-            breakpoint="xs"
+            // breakpoint="xs"
             collapsedWidth="0" // 不显示图标，全部折叠进去
             trigger={null}
             collapsible

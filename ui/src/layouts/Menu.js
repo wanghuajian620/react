@@ -18,35 +18,42 @@ class Bar extends React.PureComponent {
     const layout = (
       <Layout>
         <Header
-          style={{ background: '#fff', padding: 0 }}
+          style={{ background: '#888', padding: 0, width: '100%' }}
         >
-          <Menu>
+          <Menu
+            className={styles.header}
+            mode="horizontal"
+            style={{ lineHeight: '84px', width: '100%' }}
+          >
             <Menu.Item key="1">
               <span>Home</span>
             </Menu.Item>
             <Menu.Item key="2">
               <span>Menu</span>
             </Menu.Item>
+            <Menu.Item key="3">
+              <Icon
+                style={{ cursor: 'pointer', fontSize: 25 }}
+                className={styles.trigger}
+                type={this.state.collapsed ? 'left' : 'right'}
+                onClick={this.toggle}
+              />
+            </Menu.Item>
           </Menu>
-          <Icon
-            style={{ cursor: 'pointer', fontSize: 25 }}
-            className={styles.trigger}
-            type={this.state.collapsed ? 'left' : 'right'}
-            onClick={this.toggle}
-          />
+
         </Header>
         <Layout>
           <Content style={{ background: '#fff', minHeight: 600 }}>
             <div>
               <img
-                src="https://d27shkkua6xyjc.cloudfront.net/images/02.About/_1344x756_crop_center-center/About_02_2500px.jpg?mtime=20141112134904"
+                src="https://d27shkkua6xyjc.cloudfront.net/images/02.About/_1344x756_crop_center-center/About_01_2500px.jpg?mtime=20141112134851"
                 alt="图片"
               />
             </div>
           </Content>
           <Sider
             width={400}
-            breakpoint="xs"
+            // breakpoint="xs"
             collapsedWidth="0" // 不显示图标，全部折叠进去
             trigger={null}
             collapsible
