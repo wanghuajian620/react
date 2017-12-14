@@ -1,34 +1,11 @@
 import React from 'react';
 import { Layout, Menu, Icon } from 'antd';
-import { ContainerQuery } from 'react-container-query';
-import { Link } from 'dva/router';
-import classnames from 'classnames';
-// import Bar from '../components/Menu';
-import styles from './BasicLayout.less';
+import styles from '../layouts/Menu.less';
 
-const { Header, Footer, Sider, Content } = Layout;
-const query = {
-  'screen-xs': {
-    maxWidth: 575,
-  },
-  'screen-sm': {
-    minWidth: 576,
-    maxWidth: 767,
-  },
-  'screen-md': {
-    minWidth: 768,
-    maxWidth: 991,
-  },
-  'screen-lg': {
-    minWidth: 992,
-    maxWidth: 1199,
-  },
-  'screen-xl': {
-    minWidth: 1200,
-  },
-};
 
-class BasicLayout extends React.PureComponent {
+const { Header, Content, Sider, Footer } = Layout;
+
+class Bar extends React.PureComponent {
   state = {
     collapsed: false,
   }
@@ -43,9 +20,14 @@ class BasicLayout extends React.PureComponent {
         <Header
           style={{ background: '#fff', padding: 0 }}
         >
-          <span className={styles.logo}>
-            <h1>Book a table</h1>
-          </span>
+          <Menu>
+            <Menu.Item key="1">
+              <span>Home</span>
+            </Menu.Item>
+            <Menu.Item key="2">
+              <span>Menu</span>
+            </Menu.Item>
+          </Menu>
           <Icon
             style={{ cursor: 'pointer', fontSize: 25 }}
             className={styles.trigger}
@@ -56,11 +38,11 @@ class BasicLayout extends React.PureComponent {
         <Layout>
           <Content style={{ background: '#fff', minHeight: 600 }}>
             <div>
-              <video src="https://d27shkkua6xyjc.cloudfront.net/videos/maaemo-film-2.mp4?mtime=20141113185431" autoPlay="autoplay" loop="loop">ssss</video>
+              <img
+                src="https://d27shkkua6xyjc.cloudfront.net/images/02.About/_1344x756_crop_center-center/About_02_2500px.jpg?mtime=20141112134904"
+                alt="图片"
+              />
             </div>
-            {/* <Switch>
-              <Route path="/menu" component={Bar} />
-            </Switch> */}
           </Content>
           <Sider
             width={400}
@@ -75,26 +57,27 @@ class BasicLayout extends React.PureComponent {
               className={styles.menu}
             >
               <Menu.Item key="1">
-                <Link to="/menu">
-                  <span>Menu</span>
-                </Link>
+                <span>Home</span>
               </Menu.Item>
               <Menu.Item key="2">
-                <span>About</span>
+                <span>Menu</span>
               </Menu.Item>
               <Menu.Item key="3">
-                <span>Press</span>
+                <span>About</span>
               </Menu.Item>
               <Menu.Item key="4">
-                <span>Career</span>
+                <span>Press</span>
               </Menu.Item>
               <Menu.Item key="5">
-                <span>FAQ</span>
+                <span>Career</span>
               </Menu.Item>
               <Menu.Item key="6">
-                <span>Stories</span>
+                <span>FAQ</span>
               </Menu.Item>
               <Menu.Item key="7">
+                <span>Stories</span>
+              </Menu.Item>
+              <Menu.Item key="8">
                 <span>Shop</span>
               </Menu.Item>
             </Menu>
@@ -113,11 +96,8 @@ class BasicLayout extends React.PureComponent {
       </Layout>
     );
     return (
-      <ContainerQuery query={query}>
-        {params => <div className={classnames(params)}>{layout}</div>}
-      </ContainerQuery>
+      <div>{layout}</div>
     );
   }
 }
-
-export default(BasicLayout);
+export default (Bar);
