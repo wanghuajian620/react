@@ -6,7 +6,7 @@ import styles from '../layouts/Menu.less';
 
 const { Header, Content, Sider, Footer } = Layout;
 
-class Press extends React.PureComponent {
+class Faq extends React.PureComponent {
   state = {
     collapsed: false,
   }
@@ -47,7 +47,7 @@ class Press extends React.PureComponent {
           <Content style={{ background: '#fff', minHeight: 600 }}>
             <div>
               <img
-                src="https://d27shkkua6xyjc.cloudfront.net/images/03.Press/_1344x756_crop_center-center/Press_04_2500px.jpg?mtime=20141112143035"
+                src="https://d27shkkua6xyjc.cloudfront.net/images/03.Press/_1344x756_crop_center-center/Press_03_2500px.jpg?mtime=20141112142055"
                 alt="图片"
               />
             </div>
@@ -78,7 +78,9 @@ class Press extends React.PureComponent {
                 </Link>
               </Menu.Item>
               <Menu.Item key="4">
-                <span>Press</span>
+                <Link to="/press">
+                  <span>Press</span>
+                </Link>
               </Menu.Item>
               <Menu.Item key="5">
                 <Link to="/career">
@@ -86,9 +88,7 @@ class Press extends React.PureComponent {
                 </Link>
               </Menu.Item>
               <Menu.Item key="6">
-                <Link to="/faq">
-                  <span>FAQ</span>
-                </Link>
+                <span>FAQ</span>
               </Menu.Item>
               <Menu.Item key="7">
                 <span>Stories</span>
@@ -116,4 +116,4 @@ class Press extends React.PureComponent {
     );
   }
 }
-export default (Press);
+export default (Faq);

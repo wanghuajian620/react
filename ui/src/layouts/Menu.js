@@ -81,10 +81,14 @@ class Bar extends React.PureComponent {
                 </Link>
               </Menu.Item>
               <Menu.Item key="5">
-                <span>Career</span>
+                <Link to="/career">
+                  <span>Career</span>
+                </Link>
               </Menu.Item>
               <Menu.Item key="6">
-                <span>FAQ</span>
+                <Link to="/faq">
+                  <span>FAQ</span>
+                </Link>
               </Menu.Item>
               <Menu.Item key="7">
                 <span>Stories</span>
