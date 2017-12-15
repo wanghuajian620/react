@@ -55,7 +55,15 @@ class BasicLayout extends React.PureComponent {
         <Layout>
           <Content style={{ background: '#fff', minHeight: 600, width: '100%' }}>
             <div>
-              <video src="https://d27shkkua6xyjc.cloudfront.net/videos/maaemo-film-2.mp4?mtime=20141113185431" autoPlay="autoplay" loop="loop">ssss</video>
+              <video
+                className={styles.video}
+                src="https://d27shkkua6xyjc.cloudfront.net/videos/maaemo-film-2.mp4?mtime=20141113185431" autoPlay="autoplay" loop="loop"
+              >
+                ssss
+              </video>
+              <p className={styles.p}>
+                My Blog
+              </p>
             </div>
           </Content>
           <Sider
@@ -81,19 +89,29 @@ class BasicLayout extends React.PureComponent {
                 </Link>
               </Menu.Item>
               <Menu.Item key="3">
-                <span>Press</span>
+                <Link to="/press">
+                  <span>Press</span>
+                </Link>
               </Menu.Item>
               <Menu.Item key="4">
-                <span>Career</span>
+                <Link to="/career">
+                  <span>Career</span>
+                </Link>
               </Menu.Item>
               <Menu.Item key="5">
-                <span>FAQ</span>
+                <Link to="/faq">
+                  <span>FAQ</span>
+                </Link>
               </Menu.Item>
               <Menu.Item key="6">
-                <span>Stories</span>
+                <Link to="/story">
+                  <span>Stories</span>
+                </Link>
               </Menu.Item>
               <Menu.Item key="7">
-                <span>Shop</span>
+                <Link to="/shop">
+                  <span>Shop</span>
+                </Link>
               </Menu.Item>
             </Menu>
           </Sider>

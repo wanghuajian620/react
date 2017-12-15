@@ -6,6 +6,7 @@ import About from './layouts/About';
 import Press from './layouts/Press';
 import Career from './layouts/Career';
 import Faq from './routes/FAQ';
+import Story from './routes/Stories';
 
 function RouterConfig({ history }) {
   return (
@@ -17,6 +18,7 @@ function RouterConfig({ history }) {
         <Route path="/press" component={Press} />
         <Route path="/career" component={Career} />
         <Route path="/faq" component={Faq} />
+        <Route path="/story" component={Story} />
       </Switch>
     </Router>
   );

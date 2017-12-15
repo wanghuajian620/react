@@ -6,7 +6,7 @@ import styles from '../layouts/Menu.less';
 
 const { Header, Content, Sider, Footer } = Layout;
 
-class Faq extends React.PureComponent {
+class Story extends React.PureComponent {
   state = {
     collapsed: false,
   }
@@ -30,7 +30,7 @@ class Faq extends React.PureComponent {
               <span>Book a table</span>
             </Menu.Item>
             <Menu.Item key="2">
-              <span>Press</span>
+              <span>Stories</span>
             </Menu.Item>
             <Menu.Item key="3">
               <Icon
@@ -46,10 +46,10 @@ class Faq extends React.PureComponent {
         <Layout>
           <Content style={{ background: '#fff', minHeight: 600 }}>
             <div>
-              <img
-                src="https://d27shkkua6xyjc.cloudfront.net/images/03.Press/_1344x756_crop_center-center/Press_03_2500px.jpg?mtime=20141112142055"
-                alt="图片"
-              />
+              <p>
+              Experiences from the heart of
+                the restaurant and beyond
+              </p>
             </div>
           </Content>
           <Sider
@@ -91,12 +91,12 @@ class Faq extends React.PureComponent {
                 <span>FAQ</span>
               </Menu.Item>
               <Menu.Item key="7">
-                <Link to="/story">
-                  <span>Stories</span>
-                </Link>
+                <span>Stories</span>
               </Menu.Item>
               <Menu.Item key="8">
-                <span>Shop</span>
+                <Link to="/shop">
+                  <span>Shop</span>
+                </Link>
               </Menu.Item>
             </Menu>
           </Sider>
@@ -118,4 +118,4 @@ class Faq extends React.PureComponent {
     );
   }
 }
-export default (Faq);
+export default (Story);
