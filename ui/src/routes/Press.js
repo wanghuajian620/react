@@ -6,7 +6,7 @@ import styles from '../layouts/Menu.less';
 
 const { Header, Content, Sider, Footer } = Layout;
 
-class Bar extends React.PureComponent {
+class Press extends React.PureComponent {
   state = {
     collapsed: false,
   }
@@ -30,7 +30,7 @@ class Bar extends React.PureComponent {
               <span>Book a table</span>
             </Menu.Item>
             <Menu.Item key="2">
-              <span>Menu</span>
+              <span>Press</span>
             </Menu.Item>
             <Menu.Item key="3">
               <Icon
@@ -45,9 +45,10 @@ class Bar extends React.PureComponent {
         </Header>
         <Layout>
           <Content style={{ background: '#fff', minHeight: 600 }}>
-            <div>
+            <div className={styles.auto}>
               <img
-                src="https://d27shkkua6xyjc.cloudfront.net/images/02.About/_1344x756_crop_center-center/About_01_2500px.jpg?mtime=20141112134851"
+                className={styles.video}
+                src="https://d27shkkua6xyjc.cloudfront.net/images/03.Press/_1344x756_crop_center-center/Press_04_2500px.jpg?mtime=20141112143035"
                 alt="图片"
               />
             </div>
@@ -65,12 +66,12 @@ class Bar extends React.PureComponent {
               className={styles.menu}
             >
               <Menu.Item key="1">
-                <Link to="/home">
-                  <span>Home</span>
-                </Link>
+                <span>Home</span>
               </Menu.Item>
               <Menu.Item key="2">
-                <span>Menu</span>
+                <Link to="/menu">
+                  <span>Menu</span>
+                </Link>
               </Menu.Item>
               <Menu.Item key="3">
                 <Link to="/about">
@@ -78,9 +79,7 @@ class Bar extends React.PureComponent {
                 </Link>
               </Menu.Item>
               <Menu.Item key="4">
-                <Link to="/press">
-                  <span>Press</span>
-                </Link>
+                <span>Press</span>
               </Menu.Item>
               <Menu.Item key="5">
                 <Link to="/career">
@@ -98,7 +97,7 @@ class Bar extends React.PureComponent {
                 </Link>
               </Menu.Item>
               <Menu.Item key="8">
-                <Link to="shop">
+                <Link to="/shop">
                   <span>Shop</span>
                 </Link>
               </Menu.Item>
@@ -122,4 +121,4 @@ class Bar extends React.PureComponent {
     );
   }
 }
-export default (Bar);
+export default (Press);

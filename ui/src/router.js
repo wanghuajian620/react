@@ -1,10 +1,10 @@
 import React from 'react';
 import { Router, Route, Switch } from 'dva/router';
 import BasicLayout from './layouts/BasicLayout';
-import Bar from './layouts/Menu';
-import About from './layouts/About';
-import Press from './layouts/Press';
-import Career from './layouts/Career';
+import Bar from './routes/Menu';
+import About from './routes/About';
+import Press from './routes/Press';
+import Career from './routes/Career';
 import Faq from './routes/FAQ';
 import Story from './routes/Stories';
 import Shop from './routes/Shop';

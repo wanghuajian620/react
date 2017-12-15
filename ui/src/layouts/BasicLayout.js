@@ -54,9 +54,9 @@ class BasicLayout extends React.PureComponent {
         </Header>
         <Layout>
           <Content style={{ background: '#fff', minHeight: 600, width: '100%' }}>
-            <div>
+            <div className={styles.auto}>
               <video
-                className={styles.video}
+                className={styles.img}
                 src="https://d27shkkua6xyjc.cloudfront.net/videos/maaemo-film-2.mp4?mtime=20141113185431" autoPlay="autoplay" loop="loop"
               >
                 ssss
