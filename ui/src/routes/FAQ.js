@@ -96,7 +96,9 @@ class Faq extends React.PureComponent {
                 </Link>
               </Menu.Item>
               <Menu.Item key="8">
-                <span>Shop</span>
+                <Link to="/shop">
+                  <span>Shop</span>
+                </Link>
               </Menu.Item>
             </Menu>
           </Sider>

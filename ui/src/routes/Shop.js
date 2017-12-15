@@ -6,7 +6,7 @@ import styles from '../layouts/Menu.less';
 
 const { Header, Content, Sider, Footer } = Layout;
 
-class Story extends React.PureComponent {
+class Shop extends React.PureComponent {
   state = {
     collapsed: false,
   }
@@ -47,8 +47,8 @@ class Story extends React.PureComponent {
           <Content style={{ background: '#fff', minHeight: 600 }}>
             <div>
               <p>
-              Experiences from the heart of
-                the restaurant and beyond
+              Buy products from
+              our shop
               </p>
             </div>
           </Content>
@@ -93,7 +93,9 @@ class Story extends React.PureComponent {
                 </Link>
               </Menu.Item>
               <Menu.Item key="7">
-                <span>Stories</span>
+                <Link to="/story">
+                  <span>Stories</span>
+                </Link>
               </Menu.Item>
               <Menu.Item key="8">
                 <Link to="/shop">
@@ -120,4 +122,4 @@ class Story extends React.PureComponent {
     );
   }
 }
-export default (Story);
+export default (Shop);
