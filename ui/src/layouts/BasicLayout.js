@@ -66,8 +66,8 @@ class BasicLayout extends React.PureComponent {
                 My Blog
               </h1>
               <p
-                className={styles.frontpageword}
-                style={{ opacity: 1 }}
+                className={styles.frontword}
+                style={{ opacity: 1, margintop: 810 }}
               >
               At Maaemo, my focus is on a complete experience.
               In doing so, I want to highlight the relationship between the raw nature,
@@ -75,9 +75,19 @@ class BasicLayout extends React.PureComponent {
               Welcome to my universe.
               </p>
               <img
-                className={styles.frontpageartical}
+                className={styles.frontartical}
                 src=" https://d27shkkua6xyjc.cloudfront.net/images/01.Menu/_480xAUTO_crop_center-center_70/Menu_01_1200px.jpg?mtime=20141112152700"
                 alt="Woman holding dish with smoke"
+              />
+              <h2
+                className={styles.frontbottom}
+              >
+                Menu – A journey through the Norwegian landscape
+              </h2>
+              <img
+                className={styles.frontriver}
+                src=" https://d27shkkua6xyjc.cloudfront.net/images/00.Frontpage/_700xAUTO_crop_center-center_75/Frontpage_02_1500px.jpg?mtime=20141112172540"
+                alt="pic of river in Lom"
               />
             </div>
           </Content>
