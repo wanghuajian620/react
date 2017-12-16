@@ -54,16 +54,31 @@ class BasicLayout extends React.PureComponent {
         </Header>
         <Layout>
           <Content style={{ background: '#fff', minHeight: 600, width: '100%' }}>
-            <div className={styles.auto}>
+            <div className={styles.maincontent}>
               <video
-                className={styles.img}
+                className={styles.video}
+                style={{ width: 1440 }}
                 src="https://d27shkkua6xyjc.cloudfront.net/videos/maaemo-film-2.mp4?mtime=20141113185431" autoPlay="autoplay" loop="loop"
               >
                 ssss
               </video>
-              <p className={styles.p}>
+              <h1 className={styles.title}>
                 My Blog
+              </h1>
+              <p
+                className={styles.frontpageword}
+                style={{ opacity: 1 }}
+              >
+              At Maaemo, my focus is on a complete experience.
+              In doing so, I want to highlight the relationship between the raw nature,
+              produce and our cultural history.
+              Welcome to my universe.
               </p>
+              <img
+                className={styles.frontpageartical}
+                src=" https://d27shkkua6xyjc.cloudfront.net/images/01.Menu/_480xAUTO_crop_center-center_70/Menu_01_1200px.jpg?mtime=20141112152700"
+                alt="Woman holding dish with smoke"
+              />
             </div>
           </Content>
           <Sider
