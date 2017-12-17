@@ -38,8 +38,11 @@ class BasicLayout extends React.PureComponent {
   }
   render() {
     const layout = (
-      <Layout>
+      <Layout
+        className={styles.global}
+      >
         <Header
+          className={styles.pageheader}
           style={{ background: '#fff', padding: 0, height: '80px' }}
         >
           <span className={styles.header}>
@@ -54,7 +57,7 @@ class BasicLayout extends React.PureComponent {
         </Header>
         <Layout>
           <Content style={{ background: '#fff', minHeight: 600, width: '100%' }}>
-            <div className={styles.maincontent}>
+            <div>
               <video
                 className={styles.video}
                 style={{ width: 1440 }}
@@ -89,6 +92,16 @@ class BasicLayout extends React.PureComponent {
                 src=" https://d27shkkua6xyjc.cloudfront.net/images/00.Frontpage/_700xAUTO_crop_center-center_75/Frontpage_02_1500px.jpg?mtime=20141112172540"
                 alt="pic of river in Lom"
               />
+              <img
+                className={styles.frontblog}
+                src="https://d27shkkua6xyjc.cloudfront.net/images/05.Stories/04.Munchies-Urchins/_1440x920_crop_center-center/Urchin_03_2500px.jpg?mtime=20141112093703"
+                alt="My first blog"
+              />
+              <h2
+                className={styles.frontbook}
+              >
+              The first book from Maaemo is now available
+              </h2>
             </div>
           </Content>
           <Sider
