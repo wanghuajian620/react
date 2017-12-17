@@ -1,7 +1,7 @@
 import React from 'react';
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Menu, Icon, Row, Col } from 'antd';
 import { Link } from 'dva/router';
-import styles from '../layouts/Menu.less';
+import styles from '../layouts/Stories.less';
 
 
 const { Header, Content, Sider, Footer } = Layout;
@@ -46,10 +46,44 @@ class Story extends React.PureComponent {
         <Layout>
           <Content style={{ background: '#fff', minHeight: 600 }}>
             <div>
-              <p>
+              <h2 className={styles.title}>
               Experiences from the heart of
-                the restaurant and beyond
-              </p>
+              <br />
+              the restaurant and beyond
+              </h2>
+            </div>
+            <div>
+              <Row>
+                <Col span={12} className={styles.imgone}>
+                  <img className={styles.img} src="https://d27shkkua6xyjc.cloudfront.net/images/05.Stories/Christian-Houge/_1440x920_crop_center-center/Irwin-with-beacon-Apollo-15_2016.jpg?mtime=20170824175735" alt="" />
+                </Col>
+                <Col span={12} className={styles.new}>
+                  <h3 className={styles.word}>
+                  New artwork on the walls of the restaurant
+                  </h3>
+                  <span className={styles.read}>Read story</span>
+                </Col>
+              </Row>
+              <Row>
+                <Col span={12}>
+                  <img className={styles.img} src="https://maaemo.no/uploads/images/_1920x1080_crop_center-center/2014_06_30_tk_maaemo_mountains_alpa_1.jpg" alt="" />
+                </Col>
+                <Col span={12} className={styles.blog}>
+                  <h3 className={styles.word}>This is a blog</h3>
+                  <span className={styles.read}>Read story</span>
+                </Col>
+              </Row>
+              <Row>
+                <Col span={12} className={styles.imgone}>
+                  <img className={styles.img} src="https://maaemo.no/uploads/images/_1920x1080_crop_center-center/MAAEMO-JPG-4.jpg" alt="" />
+                </Col>
+                <Col span={12} className={styles.new}>
+                  <h3 className={styles.word}>
+                  Artwork by Christian Houge
+                  </h3>
+                  <span className={styles.read}>Read story</span>
+                </Col>
+              </Row>
             </div>
           </Content>
           <Sider
