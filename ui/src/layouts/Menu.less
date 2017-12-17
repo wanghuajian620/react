@@ -31,16 +31,45 @@
   padding: 0 16px;
   margin: 48px 0 24px 0;
   text-align: center;
-
-  .copyright {
-    color: @text-color-secondary;
-    font-size: @font-size-base;
+}
+.global {
+  position: relative;
+  z-index: 3;
+  background-color: #ffffff;
+  padding-top: 140px;
+  font-family: maaemo_regular,sans-serif;
+  font-size: 1.25em;
+  line-height: 1.4;
+  color: #000;
+}
+.text {
+  float: left;
+  width: 50%;
+  line-height: 2.5rem;
+  padding-left: 16px;
+  padding-bottom: 15%;
+  margin-bottom: 60px;
+  padding-right: 48px;
+  table {
+    width: 80%;
+    display: table;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: top;
+    text-align: right;
   }
 }
-.auto {
-  display: flex;
-  position: relative;
+.picture {
+  float: right;
+  width: 50%;
+  padding-left: 48px;
+  padding-right: 46px;
 }
-.img {
+.inpicture {
+  position: relative;
+  z-index: 2;
   width: 100%;
+  vertical-align: middle;
+  display: inline-block;
 }
