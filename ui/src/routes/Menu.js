@@ -1,10 +1,11 @@
 import React from 'react';
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Menu, Icon, Row, Col } from 'antd';
 import { Link } from 'dva/router';
 import styles from '../layouts/Menu.less';
 
 
 const { Header, Content, Sider, Footer } = Layout;
+const DemoBox = props => <p className={`height-${props.value}`}>{props.children}</p>;
 
 class Bar extends React.PureComponent {
   state = {
@@ -51,6 +52,11 @@ class Bar extends React.PureComponent {
                 src="https://d27shkkua6xyjc.cloudfront.net/images/02.About/_1344x756_crop_center-center/About_01_2500px.jpg?mtime=20141112134851"
                 alt="图片"
               />
+            </div>
+            <div>
+              <Row type="flex" justify="space-around" align="top">
+                <Col span={12}><DemoBox value={200}>col-4</DemoBox></Col>
+              </Row>
             </div>
           </Content>
           <Sider
