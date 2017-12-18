@@ -6,6 +6,7 @@ import classnames from 'classnames';
 import styles from './BasicLayout.less';
 
 const { Header, Footer, Sider, Content } = Layout;
+const window = window;// 这句话没用，window是全局的，写上反而不起作用，未消除eslint 报错。
 const query = {
   'screen-xs': {
     maxWidth: 575,
@@ -31,14 +32,25 @@ class BasicLayout extends React.PureComponent {
   state = {
     collapsed: false,
   }
+  componentDidMount() {
+    window.addEventListener('scroll', () => {
+      if (!this.state.collapsed) {
+        this.setState({
+          collapsed: true,
+        });
+      }
+    });
+  }
   toggle = () => {
     this.setState({
       collapsed: !this.state.collapsed,
     });
   }
+
   render() {
     const layout = (
       <Layout
+        // onScroll={this.closeSide}
         className={styles.global}
       >
         <Header
@@ -72,7 +84,7 @@ class BasicLayout extends React.PureComponent {
                 className={styles.frontword}
                 style={{ opacity: 1, margintop: 810 }}
               >
-              At Maaemo, my focus is on a complete experience.
+                At Maaemo, my focus is on a complete experience.
               In doing so, I want to highlight the relationship between the raw nature,
               produce and our cultural history.
               Welcome to my universe.
@@ -100,7 +112,7 @@ class BasicLayout extends React.PureComponent {
               <h2
                 className={styles.frontbook}
               >
-              The first book from Maaemo is now available
+                The first book from Maaemo is now available
               </h2>
             </div>
           </Content>
@@ -174,4 +186,4 @@ class BasicLayout extends React.PureComponent {
   }
 }
 
-export default(BasicLayout);
+export default (BasicLayout);
