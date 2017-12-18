@@ -29,7 +29,7 @@ const query = {
 
 class BasicLayout extends React.PureComponent {
   state = {
-    collapsed: false,
+    collapsed: true,
   }
   componentDidMount() {
     // eslint-disable-next-line no-undef
@@ -80,30 +80,29 @@ class BasicLayout extends React.PureComponent {
               <h1 className={styles.title}>
                 My Blog
               </h1>
-              <p
-                className={styles.frontword}
-                style={{ opacity: 1, margintop: 810 }}
-              >
+              <div>
+                <p className={styles.p}>
                 At Maaemo, my focus is on a complete experience.
-              In doing so, I want to highlight the relationship between the raw nature,
-              produce and our cultural history.
-              Welcome to my universe.
-              </p>
-              <img
-                className={styles.frontartical}
-                src=" https://d27shkkua6xyjc.cloudfront.net/images/01.Menu/_480xAUTO_crop_center-center_70/Menu_01_1200px.jpg?mtime=20141112152700"
-                alt="Woman holding dish with smoke"
-              />
-              <h2
-                className={styles.frontbottom}
-              >
-                Menu – A journey through the Norwegian landscape
-              </h2>
-              <img
-                className={styles.frontriver}
-                src=" https://d27shkkua6xyjc.cloudfront.net/images/00.Frontpage/_700xAUTO_crop_center-center_75/Frontpage_02_1500px.jpg?mtime=20141112172540"
-                alt="pic of river in Lom"
-              />
+                In doing so, I want to highlight the relationship between the raw nature,
+                produce and our cultural history. Welcome to my universe.
+                </p>
+                <div>
+                  <img
+                    className={styles.img}
+                    src="https://d27shkkua6xyjc.cloudfront.net/images/01.Menu/_1600x1600_fit_center-center/Menu_01_1200px.jpg?mtime=20141112152700"
+                    alt="girl have food"
+                  />
+                  <h2 className={styles.word}>Welcome to my virgo web blog</h2>
+                </div>
+                <div className={styles.alls}>
+                  <img
+                    className={styles.river}
+                    src="https://d27shkkua6xyjc.cloudfront.net/images/03.Press/_1200x600_crop_center-center/Press_01_2500px.jpg?mtime=20141112142030"
+                    alt="river"
+                  />
+                  <h2>WWANGHUAJIAN IS a  sunshineboy</h2>
+                </div>
+              </div>
               <img
                 className={styles.frontblog}
                 src="https://d27shkkua6xyjc.cloudfront.net/images/05.Stories/04.Munchies-Urchins/_1440x920_crop_center-center/Urchin_03_2500px.jpg?mtime=20141112093703"
