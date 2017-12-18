@@ -6,7 +6,6 @@ import classnames from 'classnames';
 import styles from './BasicLayout.less';
 
 const { Header, Footer, Sider, Content } = Layout;
-const window = window;// 这句话没用，window是全局的，写上反而不起作用，未消除eslint 报错。
 const query = {
   'screen-xs': {
     maxWidth: 575,
@@ -33,6 +32,7 @@ class BasicLayout extends React.PureComponent {
     collapsed: false,
   }
   componentDidMount() {
+    // eslint-disable-next-line no-undef
     window.addEventListener('scroll', () => {
       if (!this.state.collapsed) {
         this.setState({

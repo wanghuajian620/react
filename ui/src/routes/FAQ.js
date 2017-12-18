@@ -5,12 +5,12 @@ import styles from '../layouts/Menu.less';
 
 
 const { Header, Content, Sider, Footer } = Layout;
-const window = window;// 这句话没用，window是全局的，写上反而不起作用，未消除eslint 报错。
 class Faq extends React.PureComponent {
   state = {
     collapsed: false,
   }
   componentDidMount() {
+    // eslint-disable-next-line
     window.addEventListener('scroll', () => {
       if (!this.state.collapsed) {
         this.setState({
