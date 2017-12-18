@@ -54,9 +54,9 @@ class Bar extends React.PureComponent {
               />
             </div>
             <div className={styles.global}>
-              <Row type="flex" justify="space-around" align="top">
+              <Row type="flex" justify="center" align="top">
                 <Col span={12} className={styles.text}>
-                  <DemoBox value={200}>
+                  <DemoBox value={150}>
                     <p style={{ marginBottom: '1.25em', fontSize: '1em' }}>
                     At Maaemo, our focus is on a complete experience.
                     In doing so, we want to highlight the relationship between the raw produce,
@@ -90,7 +90,7 @@ class Bar extends React.PureComponent {
                   </DemoBox>
                 </Col>
                 <Col span={12} className={styles.picture}>
-                  <DemoBox value={200}>
+                  <DemoBox value={150}>
                     <img
                       className={styles.inpicture}
                       src="https://d27shkkua6xyjc.cloudfront.net/images/01.Menu/_1600x1600_fit_center-center/Menu_01_1200px.jpg?mtime=20141112152700" alt=""
@@ -98,6 +98,35 @@ class Bar extends React.PureComponent {
                   </DemoBox>
                 </Col>
               </Row>
+              <Row type="flex" justify="space-around" align="middle">
+                <Col span={12} className={styles.pictureleft}>
+                  <DemoBox value={150}>
+                    <img
+                      className={styles.inpicture}
+                      src="https://d27shkkua6xyjc.cloudfront.net/images/01.Menu/_1600x1600_fit_center-center/Menu_02_1200px.jpg?mtime=20141112152711" alt=""
+                    />
+                  </DemoBox>
+                </Col>
+                <Col span={12} className={styles.wordright}>
+                  <DemoBox value={75}>
+                    <blockquote>
+                      I want my cooking to reflect the rugged nature and climate of Norway.
+                      I want to create a progressive environment
+                      that has a emphasis on the outstanding produce of our region.
+                      <cite>
+                        Esben Holmboe Bang — Wang Huajian
+                      </cite>
+                    </blockquote>
+                  </DemoBox>
+                </Col>
+              </Row>
+            </div>
+            <div>
+              <img
+                className={styles.picturebottom}
+                src="https://d27shkkua6xyjc.cloudfront.net/images/01.Menu/_1600x1600_fit_center-center/Menu_03_2500px.jpg?mtime=20141112152721"
+                alt="fish"
+              />
             </div>
           </Content>
           <Sider
