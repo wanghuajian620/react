@@ -7,7 +7,7 @@ import styles from '../layouts/Stories.less';
 const { Header, Content, Sider, Footer } = Layout;
 class Story extends React.PureComponent {
   state = {
-    collapsed: false,
+    collapsed: true,
   }
   componentDidMount() {
     // eslint-disable-next-line
