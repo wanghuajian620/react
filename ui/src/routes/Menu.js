@@ -64,42 +64,45 @@ class Bar extends React.PureComponent {
             </div>
             <div className={styles.global}>
               <Row type="flex" justify="center" align="top">
-                <Col span={12} className={styles.text}>
-                  <DemoBox value={150}>
-                    <p style={{ marginBottom: '1.25em', fontSize: '1em' }}>
+                <Col span={12}>
+                  <DemoBox>
+                    <p className={styles.word}>
                     At Maaemo, our focus is on a complete experience.
                     In doing so, we want to highlight the relationship between the raw produce,
                     and the expression in the cuisine.
                     </p>
-                    <p style={{ marginBottom: '1.25em', fontSize: '1em' }}>
+                    <p className={styles.word}>
                     We have chosen to serve a distinct and considered set menu to all guests.
                     </p>
-                    <p style={{ marginBottom: '1.25em', fontSize: '1em' }}>
+                    <p className={styles.word}>
                     The drink menus have been carefully curated to add an extra dimension to
                     each of the courses.This way we can ensure our guests have a unique and
                     precise experience on every occasion
                     </p>
                     <table className={styles.table}>
-                      <tr>
-                        <td style={{ textAlign: 'left' }}>The Seasonal Menu</td>
+                      <tr className={styles.word}>
+                        <td>The Seasonal Menu</td>
                         <td style={{ marginright: 10 }}>kr</td>
                         <td>2 800</td>
                       </tr>
-                      <tr>
-                        <td style={{ textAlign: 'left' }}>Wine Pairings</td>
+                      <tr className={styles.word}>
+                        <td>Wine Pairings</td>
                         <td>kr</td>
                         <td>1 800</td>
                       </tr>
-                      <tr>
-                        <td style={{ textAlign: 'left' }}>Juice Pairings</td>
+                      <tr className={styles.word}>
+                        <td>Juice Pairings</td>
                         <td>kr</td>
                         <td>9 50</td>
                       </tr>
                     </table>
+                    <p className={styles.word}>
+                      To fully enjoy the experience, we ask that you set aside a whole evening.
+                    </p>
                   </DemoBox>
                 </Col>
                 <Col span={12} className={styles.picture}>
-                  <DemoBox value={150}>
+                  <DemoBox>
                     <img
                       className={styles.inpicture}
                       src="https://d27shkkua6xyjc.cloudfront.net/images/01.Menu/_1600x1600_fit_center-center/Menu_01_1200px.jpg?mtime=20141112152700" alt=""
@@ -117,8 +120,8 @@ class Bar extends React.PureComponent {
                   </DemoBox>
                 </Col>
                 <Col span={12} className={styles.wordright}>
-                  <DemoBox value={75}>
-                    <blockquote>
+                  <DemoBox>
+                    <blockquote className={styles.wordone}>
                       I want my cooking to reflect the rugged nature and climate of Norway.
                       I want to create a progressive environment
                       that has a emphasis on the outstanding produce of our region.

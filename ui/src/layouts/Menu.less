@@ -24,7 +24,6 @@
   justify-content: center;
   align-items: center;
   span {
-    display: flex;
     font-size: 38px;
   }
 }
@@ -41,25 +40,8 @@
   font-family: maaemo_regular,sans-serif;
   font-size: 1.25em;
   line-height: 1.4;
+  padding: 100px 40px 0 40px;
   color: #000;
-}
-.text {
-  float: left;
-  width: 50%;
-  line-height: 2.5rem;
-  padding-left: 16px;
-  padding-bottom: 15%;
-  margin-bottom: 60px;
-  padding-right: 48px;
-  table {
-    width: 80%;
-    display: table;
-    padding-right: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    vertical-align: top;
-    text-align: right;
-  }
 }
 .picture {
   float: right;
@@ -68,33 +50,52 @@
   padding-right: 46px;
 }
 .inpicture {
-  position: relative;
-  z-index: 2;
   width: 100%;
-  vertical-align: middle;
-  display: inline-block;
 }
 .pictureleft {
   float: left;
-  width: 50%;
-  padding-left: 48px;
-  padding-right: 46px;
+  padding: 10px 48px;
 }
 .wordright {
   float: right;
   text-align: center;
-  width: 50%;
-  padding-left: 48px;
   padding-right: 16px;
-  margin-bottom: 135px;
 }
 .picturebottom {
   width: 100%;
   height: 603px;
   vertical-align: middle;
-  // left: 0;
-  // top: 0;
-  // opacity: 1;
-  margin: 0 0 0 0;
-  padding: 0 0 0 0;
+  margin-top: 100px;
+}
+.table {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  tr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+.word {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 200;
+  padding-left: 30px;
+}
+
+.wordone {
+  font-size: 10px;
+  font-weight: 200;
+  line-height: 1.25em;
+  margin: 0 0 1.25em 0;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .wordone {
+    font-size: 28px;
+    font-weight: 200;
+    line-height: 1.25em;
+  }
 }
