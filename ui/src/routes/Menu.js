@@ -164,7 +164,7 @@ class Bar extends React.PureComponent {
               className={styles.menu}
             >
               <Menu.Item key="1">
-                <Link to="/home">
+                <Link to="/">
                   <span>Home</span>
                 </Link>
               </Menu.Item>

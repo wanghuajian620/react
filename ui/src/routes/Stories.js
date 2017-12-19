@@ -108,7 +108,9 @@ class Story extends React.PureComponent {
               className={styles.menu}
             >
               <Menu.Item key="1">
-                <span>Home</span>
+                <Link to="/">
+                  <span>Home</span>
+                </Link>
               </Menu.Item>
               <Menu.Item key="2">
                 <Link to="/menu">
