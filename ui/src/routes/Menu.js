@@ -61,6 +61,10 @@ class Bar extends React.PureComponent {
                 src="https://d27shkkua6xyjc.cloudfront.net/images/02.About/_1344x756_crop_center-center/About_01_2500px.jpg?mtime=20141112134851"
                 alt="图片"
               />
+              <h2 className={styles.onpicture}>
+                A journey through the
+                Norwegian landscape
+              </h2>
             </div>
             <div className={styles.global}>
               <Row type="flex" justify="center" align="top">
