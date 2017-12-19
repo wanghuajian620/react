@@ -50,7 +50,6 @@ class BasicLayout extends React.PureComponent {
   render() {
     const layout = (
       <Layout
-        // onScroll={this.closeSide}
         className={styles.global}
       >
         <Header
@@ -68,7 +67,7 @@ class BasicLayout extends React.PureComponent {
           />
         </Header>
         <Layout>
-          <Content style={{ background: '#fff', minHeight: 600, width: '100%' }}>
+          <Content>
             <div>
               <video
                 className={styles.video}
@@ -80,28 +79,33 @@ class BasicLayout extends React.PureComponent {
               <h1 className={styles.title}>
                 My Blog
               </h1>
-              <div>
+              <div className={styles.content}>
                 <p className={styles.p}>
                 At Maaemo, my focus is on a complete experience.
                 In doing so, I want to highlight the relationship between the raw nature,
                 produce and our cultural history. Welcome to my universe.
                 </p>
-                <div>
+                <artical className={styles.artical}>
                   <img
                     className={styles.img}
                     src="https://d27shkkua6xyjc.cloudfront.net/images/01.Menu/_1600x1600_fit_center-center/Menu_01_1200px.jpg?mtime=20141112152700"
                     alt="girl have food"
                   />
-                  <h2 className={styles.word}>Welcome to my virgo web blog</h2>
-                </div>
-                <div className={styles.alls}>
+                  <h2 className={styles.words}>
+                    Welcome to my virgo web blog,
+                    Best wishes to you!!!
+                  </h2>
+                </artical>
+                <artical className={styles.articalone}>
                   <img
-                    className={styles.river}
-                    src="https://d27shkkua6xyjc.cloudfront.net/images/03.Press/_1200x600_crop_center-center/Press_01_2500px.jpg?mtime=20141112142030"
+                    className={styles.imgone}
+                    src="https://d27shkkua6xyjc.cloudfront.net/images/02.About/_672x504_crop_center-center/About_02_2500px.jpg?mtime=20141112134904"
                     alt="river"
                   />
-                  <h2>WWANGHUAJIAN IS a  sunshineboy</h2>
-                </div>
+                  <h2 className={styles.word}>
+                    WWANGHUAJIAN IS a  sunshineboy
+                  </h2>
+                </artical>
               </div>
               <img
                 className={styles.frontblog}
@@ -109,7 +113,7 @@ class BasicLayout extends React.PureComponent {
                 alt="My first blog"
               />
               <h2
-                className={styles.frontbook}
+                className={styles.word}
               >
                 The first book from Maaemo is now available
               </h2>
@@ -117,7 +121,6 @@ class BasicLayout extends React.PureComponent {
           </Content>
           <Sider
             width={400}
-            // breakpoint="xs"
             collapsedWidth="0" // 不显示图标，全部折叠进去
             trigger={null}
             collapsible
