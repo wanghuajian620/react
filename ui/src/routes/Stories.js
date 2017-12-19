@@ -68,7 +68,7 @@ class Story extends React.PureComponent {
                 </Col>
                 <Col span={12} className={styles.new}>
                   <h3 className={styles.word}>
-                  New artwork on the walls of the restaurant
+                    New artwork on the walls of the restaurant
                   </h3>
                   <span className={styles.read}>Read story</span>
                 </Col>
