@@ -77,7 +77,7 @@ class BasicLayout extends React.PureComponent {
                 ssss
               </video>
               <h1 className={styles.title}>
-                My Blog
+                My first Dining room
               </h1>
               <div className={styles.content}>
                 <p className={styles.p}>
