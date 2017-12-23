@@ -33,7 +33,9 @@ class BasicLayout extends React.PureComponent {
             />
           </Content>
           <Footer className={styles.footer}>
-            Architects & Interior Designers based in Melbourne, Sydney and Perth
+            <div className={styles.text}>
+              Architects & Interior Designers based in Melbourne, Sydney and Perth
+            </div>
           </Footer>
         </Layout>
       </div>
