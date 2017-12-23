@@ -1,5 +1,6 @@
 import React from 'react';
 import { Layout } from 'antd';
+import { Link } from 'dva/router';
 import styles from './BasicLayout.less';
 
 const { Content, Footer } = Layout;
@@ -11,14 +12,17 @@ class BasicLayout extends React.PureComponent {
       <div className={styles.body}>
         <Layout className={styles.site}>
           <Content>
-            <img
-              className={styles.photo}
-              src="https://www.robmills.com.au/files/landing/_largeImage/rma_home_land_01.jpg"
-              alt=""
-            />
-            <h1 className={styles.h1}>
-              <span>React</span>
-            </h1>
+            <Link to="/react">
+              <img
+                className={styles.photo}
+                src="https://www.robmills.com.au/files/landing/_largeImage/rma_home_land_01.jpg"
+                alt=""
+              />
+              <h1 className={styles.h1}>
+                <span>React</span>
+              </h1>
+            </Link>
+
             <img
               className={styles.photo}
               src="https://www.robmills.com.au/files/landing/_largeImage/rma_home_architecture_01.jpg"
