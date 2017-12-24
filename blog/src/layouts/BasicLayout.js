@@ -1,9 +1,9 @@
 import React from 'react';
-import { Layout } from 'antd';
+import { Layout, Row, Col } from 'antd';
 import { Link } from 'dva/router';
 import styles from './BasicLayout.less';
 
-const { Content, Footer } = Layout;
+const { Content } = Layout;
 
 
 class BasicLayout extends React.PureComponent {
@@ -12,65 +12,57 @@ class BasicLayout extends React.PureComponent {
       <div className={styles.body}>
         <Layout className={styles.site}>
           <Content>
-            <Link to="/react">
-              <img
-                className={styles.photo}
-                src="https://www.robmills.com.au/files/landing/_largeImage/rma_home_land_01.jpg"
-                alt=""
-              />
-              <h1 className={styles.h1}>
-                <span>React</span>
-              </h1>
-            </Link>
-
-            <img
-              className={styles.photo}
-              src="https://www.robmills.com.au/files/landing/_largeImage/rma_home_architecture_01.jpg"
-              alt=""
-            />
-            <h1 className={styles.h2}>
-              <span>ReactNative</span>
-            </h1>
-            <img
-              className={styles.photo}
-              src="https://www.robmills.com.au/files/landing/_largeImage/rma_stuartstreet_06.jpg"
-              alt=""
-            />
-            <h1 className={styles.h3}>
-              <span>Angular</span>
-            </h1>
-            <img
-              className={styles.photo}
-              src="https://www.robmills.com.au/files/landing/_largeImage/Rob-Mills-Rural26839.jpg"
-              alt=""
-            />
-            <h1 className={styles.h4}>
-              <span>JavaScript</span>
-            </h1>
+            <Row>
+              <Col xs={24} sm={24} md={12} lg={6} xl={6} >
+                <Link to="/react" style={{ position: 'relative' }}>
+                  <img
+                    className={styles.photo}
+                    src="https://www.robmills.com.au/files/landing/_largeImage/rma_home_land_01.jpg"
+                    alt=""
+                  />
+                  <h1 className={styles.h1}>
+                    <span>React</span>
+                  </h1>
+                </Link>
+              </Col>
+              <Col xs={24} sm={24} md={12} lg={6} xl={6}>
+                <Link to="/reactnative" style={{ position: 'relative' }}>
+                  <img
+                    className={styles.photo}
+                    src="https://www.robmills.com.au/files/landing/_largeImage/rma_home_architecture_01.jpg"
+                    alt=""
+                  />
+                  <h1 className={styles.h2}>
+                    <span>ReactNative</span>
+                  </h1>
+                </Link>
+              </Col>
+              <Col xs={24} sm={24} md={12} lg={6} xl={6}>
+                <Link to="/angular" style={{ position: 'relative' }}>
+                  <img
+                    className={styles.photo}
+                    src="https://www.robmills.com.au/files/landing/_largeImage/rma_stuartstreet_06.jpg"
+                    alt=""
+                  />
+                  <h1 className={styles.h3}>
+                    <span>Angular</span>
+                  </h1>
+                </Link>
+              </Col>
+              <Col xs={24} sm={24} md={12} lg={6} xl={6}>
+                <Link to="/javascript" style={{ position: 'relative' }}>
+                  <img
+                    className={styles.photo}
+                    src="https://www.robmills.com.au/files/landing/_largeImage/Rob-Mills-Rural26839.jpg"
+                    alt=""
+                  />
+                  <h1 className={styles.h4}>
+                    <span>JavaScript</span>
+                  </h1>
+                </Link>
+              </Col>
+            </Row>
           </Content>
-          <Footer className={styles.footer}>
-            <div className={styles.foot}>
-              <h1 className={styles.text}>
-                Welcome to here that is my blog
-              </h1>
-              <div className={styles.icon}>
-                <a
-                  className={styles}
-                  href="http://github.com/wanghuajian620"
-                  target=""
-                >
-                  github
-                </a>
-                <a
-                  style={{ marginLeft: '50px' }}
-                  href="http://gmail.com"
-                  target=""
-                >
-                  gmail
-                </a>
-              </div>
-            </div>
-          </Footer>
         </Layout>
       </div>
     );

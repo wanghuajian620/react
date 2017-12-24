@@ -3,11 +3,10 @@ import { Layout, Menu, Card, Pagination, BackTop } from 'antd';
 import { Link } from 'react-router-dom';
 import styles from './React.less';
 
-
 const { Header, Content, Footer } = Layout;
 
 
-class ReaLayout extends React.Component {
+class Angular extends React.Component {
   state = {
     current: 3,
   }
@@ -35,13 +34,13 @@ class ReaLayout extends React.Component {
                 </Link>
               </Menu.Item>
               <Menu.Item key="2" className={styles.reactnative}>
-                <Link to="/reactnative">
-                  <span>ReactNative</span>
+                <Link to="/react">
+                  <span>React</span>
                 </Link>
               </Menu.Item>
               <Menu.Item key="3" className={styles.reactnative}>
-                <Link to="/angular">
-                  <span>Angular</span>
+                <Link to="/reactnative">
+                  <span>ReactNative</span>
                 </Link>
               </Menu.Item>
               <Menu.Item key="4" className={styles.reactnative}>
@@ -82,4 +81,4 @@ class ReaLayout extends React.Component {
     );
   }
 }
-export default ReaLayout;
+export default Angular;
