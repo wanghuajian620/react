@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Menu, Card, Pagination, BackTop } from 'antd';
+import { Layout, Menu, Card, Pagination, BackTop, Icon } from 'antd';
 import { Link } from 'react-router-dom';
 import styles from './React.less';
 
@@ -75,7 +75,31 @@ class JavaScipt extends React.Component {
               回到顶部
             </strong>
           </Content>
-          <Footer>sfsf</Footer>
+          <Footer>
+            <div className={styles.footer}>
+              <a
+                className={styles.bottom}
+                href="https://github.com/wanghuajian620" Target="_blank"
+              >
+                开源GitHub
+              </a>
+              <a
+                className={styles.bottom}
+                href="http://gmail.com/wanghuajian620" Target="_blank"
+              >
+              Gmail
+              </a>
+              <a
+                style={{ color: 'grey', marginBottom: '8px' }}
+                href="http://gmail.com/wanghuajian620" Target="_blank"
+              >
+              Blog个人
+              </a>
+              <div>
+                Copyright <Icon type="copyright" /> 2017 个人博客圣诞夜出品
+              </div>
+            </div>
+          </Footer>
         </Layout>
       </div>
     );
