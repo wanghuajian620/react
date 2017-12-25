@@ -22,7 +22,9 @@ class ReaLayout extends React.Component {
         <Layout>
           <Header className={styles.header}>
             <div className={styles.logo}>
-              <img src="http://www.logobook.com/wp-content/uploads/2017/03/MorseLife_logo.svg" alt="" />
+              <Link to="/">
+                <img src="http://www.logobook.com/wp-content/uploads/2017/03/MorseLife_logo.svg" alt="" />
+              </Link>
             </div>
             <Menu
               theme="light"
@@ -30,9 +32,7 @@ class ReaLayout extends React.Component {
               className={styles.menu}
             >
               <Menu.Item key="1" className={styles.reactnative}>
-                <Link to="/">
-                  <span>首页</span>
-                </Link>
+                <span>React</span>
               </Menu.Item>
               <Menu.Item key="2" className={styles.reactnative}>
                 <Link to="/reactnative">
