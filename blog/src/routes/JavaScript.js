@@ -52,7 +52,7 @@ class JavaScipt extends React.Component {
           </Header>
           <Content className={styles.content}>
             <Card title="Card title" className={styles.card}>
-              圣诞了，考研又进入倒计时了。
+              过年了，考研又进入倒计时了。
             </Card>
             <Card title="Card title" className={styles.card}>
               圣诞了，考研又进入倒计时了。
@@ -90,7 +90,6 @@ class JavaScipt extends React.Component {
               Gmail
               </a>
               <a
-                style={{ color: 'grey', marginBottom: '8px' }}
                 href="http://gmail.com/wanghuajian620" Target="_blank"
               >
               Blog个人

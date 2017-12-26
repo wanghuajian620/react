@@ -52,16 +52,16 @@ class Reactnative extends React.Component {
           </Header>
           <Content className={styles.content}>
             <Card title="Card title" className={styles.card}>
-              圣诞了，考研又进入倒计时了。
+              圣诞过去了，考研又进入倒计时了。
             </Card>
             <Card title="Card title" className={styles.card}>
-              圣诞了，考研又进入倒计时了。
+              圣诞过去了，考研又进入倒计时了。
             </Card>
             <Card title="Card title" className={styles.card}>
-              圣诞了，考研又进入倒计时了。
+              圣诞过去了，考研又进入倒计时了。
             </Card>
             <Card title="Card title" className={styles.card}>
-              圣诞了，考研又进入倒计时了。
+              圣诞过去了，考研又进入倒计时了。
             </Card>
             <Pagination
               current={this.state.current} onChange={this.onChange} total={50}
@@ -90,7 +90,6 @@ class Reactnative extends React.Component {
               Gmail
               </a>
               <a
-                style={{ color: 'grey', marginBottom: '8px' }}
                 href="http://gmail.com/wanghuajian620" Target="_blank"
               >
               Blog个人

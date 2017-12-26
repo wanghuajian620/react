@@ -91,7 +91,6 @@ class ReaLayout extends React.Component {
               Gmail
               </a>
               <a
-                style={{ color: 'grey', marginBottom: '8px' }}
                 href="http://gmail.com/wanghuajian620" Target="_blank"
               >
               Blog个人
