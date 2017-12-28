@@ -1,6 +1,7 @@
 import React from 'react';
 import { Layout, Menu, Card, Pagination, BackTop, Icon } from 'antd';
 import { Link } from 'react-router-dom';
+import { connect } from 'dva';
 import styles from './React.less';
 
 
@@ -11,12 +12,19 @@ class ReaLayout extends React.Component {
   state = {
     current: 3,
   }
+  componentDidMount() {
+    this.props.dispatch({
+      type: 'Reac/Fisrtessay',
+    });
+  }
   onChange = (page) => {
     this.setState({
       current: page,
     });
   }
   render() {
+    const { Reac } = this.props;
+    console.log(Reac.essay);
     return (
       <div>
         <Layout>
@@ -53,7 +61,7 @@ class ReaLayout extends React.Component {
           </Header>
           <Content className={styles.content}>
             <Card title="Card title" className={styles.card}>
-              圣诞了，考研又进入倒计时了。
+              data={Reac.essay}
             </Card>
             <Card title="Card title" className={styles.card}>
               圣诞了，考研又进入倒计时了。
@@ -105,4 +113,4 @@ class ReaLayout extends React.Component {
     );
   }
 }
-export default ReaLayout;
+export default connect(state => ({ Reac: state.Reac }))(ReaLayout);
