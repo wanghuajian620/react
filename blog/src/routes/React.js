@@ -19,8 +19,7 @@ class ReaLayout extends React.Component {
       current: page,
     });
   }
-  dianji = () => {
-    console.log('com');
+  userclick = () => {
     this.props.dispatch({
       type: 'Reac/Firstessay',
     });
@@ -28,7 +27,7 @@ class ReaLayout extends React.Component {
   render() {
     const { Reac } = this.props;
     const { essay } = Reac;
-    console.log(Reac);
+    console.log(Reac); // eslint-disable-line
     return (
       <div>
         <Layout>
@@ -70,7 +69,7 @@ class ReaLayout extends React.Component {
                   title={item.title}
                   key={item.key}
                   className={styles.card}
-                  onClick={this.dianji}
+                  onClick={this.userclick}
                 >
                   { essay }
                 </Card>

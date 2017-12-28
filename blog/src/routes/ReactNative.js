@@ -1,6 +1,7 @@
 import React from 'react';
 import { Layout, Menu, Card, Pagination, BackTop, Icon } from 'antd';
 import { Link } from 'react-router-dom';
+import { connect } from 'dva';
 import styles from './React.less';
 
 
@@ -17,7 +18,15 @@ class Reactnative extends React.Component {
       current: page,
     });
   }
+  userclick = () => {
+    this.props.dispatch({
+      type: 'Native/Secondessay',
+    });
+  }
   render() {
+    const { Native } = this.props;
+    const { essay } = Native;
+    console.log('...', essay);
     return (
       <div>
         <Layout>
@@ -59,8 +68,9 @@ class Reactnative extends React.Component {
                   title={item.title}
                   key={item.key}
                   className={styles.card}
+                  onClick={this.userclick}
                 >
-                  {item.essay}
+                  { essay }
                 </Card>
               ))
             }
@@ -105,4 +115,4 @@ class Reactnative extends React.Component {
     );
   }
 }
-export default Reactnative;
+export default connect(state => ({ Native: state.Native }))(Reactnative);
