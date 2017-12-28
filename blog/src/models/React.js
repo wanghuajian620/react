@@ -7,9 +7,9 @@ export default {
     essay: '',
   },
 
-
   effects: {
-    *Firstessay({ payload }, { put }) {
+    * Firstessay({ payload }, { put }) {
+      console.log('module');
       yield put({
         type: 'firstartical',
         payload: '你好，我是海贼王路飞',

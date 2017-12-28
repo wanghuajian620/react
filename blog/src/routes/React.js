@@ -13,19 +13,22 @@ class ReaLayout extends React.Component {
     current: 1,
     card: [{ title: '2b', essay: '', key: 'index[0]' }, { title: '2b', essay: 'bb', key: 'index[1]' }, { title: '2b', essay: 'bb', key: 'index[3]' }, { title: '2b', essay: 'bb', key: 'index[4]' }],
   }
-  componentDidMount() {
-    this.props.dispatch({
-      type: 'Reac/Fisrtessay',
-    });
-  }
+
   onChange = (page) => {
     this.setState({
       current: page,
     });
   }
+  dianji = () => {
+    console.log('com');
+    this.props.dispatch({
+      type: 'Reac/Firstessay',
+    });
+  }
   render() {
     const { Reac } = this.props;
-    console.log(Reac.essay);
+    const { essay } = Reac;
+    console.log(Reac);
     return (
       <div>
         <Layout>
@@ -67,8 +70,9 @@ class ReaLayout extends React.Component {
                   title={item.title}
                   key={item.key}
                   className={styles.card}
+                  onClick={this.dianji}
                 >
-                  {item.essay}
+                  { essay }
                 </Card>
               ))
             }
@@ -88,18 +92,18 @@ class ReaLayout extends React.Component {
             <div className={styles.footer}>
               <a
                 className={styles.bottom}
-                href="https://github.com/wanghuajian620" Target="_blank"
+                href="https://github.com/wanghuajian620"
               >
                 开源GitHub
               </a>
               <a
                 className={styles.bottom}
-                href="http://gmail.com/wanghuajian620" Target="_blank"
+                href="http://gmail.com/wanghuajian620"
               >
               Gmail
               </a>
               <a
-                href="http://gmail.com/wanghuajian620" Target="_blank"
+                href="http://gmail.com/wanghuajian620"
               >
               Blog个人
               </a>

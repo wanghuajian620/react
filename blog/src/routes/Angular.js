@@ -79,18 +79,18 @@ class Angular extends React.Component {
             <div className={styles.footer}>
               <a
                 className={styles.bottom}
-                href="https://github.com/wanghuajian620" Target="_blank"
+                href="https://github.com/wanghuajian620"
               >
                 开源GitHub
               </a>
               <a
                 className={styles.bottom}
-                href="http://gmail.com/wanghuajian620" Target="_blank"
+                href="http://gmail.com/wanghuajian620"
               >
               Gmail
               </a>
               <a
-                href="http://gmail.com/wanghuajian620" Target="_blank"
+                href="http://gmail.com/wanghuajian620"
               >
               Blog个人
               </a>
