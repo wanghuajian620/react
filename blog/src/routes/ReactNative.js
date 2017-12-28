@@ -3,12 +3,14 @@ import { Layout, Menu, Card, Pagination, BackTop, Icon } from 'antd';
 import { Link } from 'react-router-dom';
 import styles from './React.less';
 
+
 const { Header, Content, Footer } = Layout;
 
 
 class Reactnative extends React.Component {
   state = {
-    current: 3,
+    current: 1,
+    card: [{ title: '2b', essay: 'nihao', key: 'index[0]' }, { title: '2b', essay: 'nihao', key: 'index[1]' }, { title: '2b', essay: 'nihao', key: 'index[2]' }, { title: '2b', essay: 'nihao', key: 'index[3]' }],
   }
   onChange = (page) => {
     this.setState({
@@ -51,18 +53,17 @@ class Reactnative extends React.Component {
             </Menu>
           </Header>
           <Content className={styles.content}>
-            <Card title="Card title" className={styles.card}>
-              圣诞过去了，考研又进入倒计时了。
-            </Card>
-            <Card title="Card title" className={styles.card}>
-              圣诞过去了，考研又进入倒计时了。
-            </Card>
-            <Card title="Card title" className={styles.card}>
-              圣诞过去了，考研又进入倒计时了。
-            </Card>
-            <Card title="Card title" className={styles.card}>
-              圣诞过去了，考研又进入倒计时了。
-            </Card>
+            {
+              this.state.card.map(item => (
+                <Card
+                  title={item.title}
+                  key={item.key}
+                  className={styles.card}
+                >
+                  {item.essay}
+                </Card>
+              ))
+            }
             <Pagination
               current={this.state.current} onChange={this.onChange} total={50}
               className={styles.page}
@@ -79,18 +80,18 @@ class Reactnative extends React.Component {
             <div className={styles.footer}>
               <a
                 className={styles.bottom}
-                href="https://github.com/wanghuajian620" Target="_blank"
+                href="https://github.com/wanghuajian620"
               >
                 开源GitHub
               </a>
               <a
                 className={styles.bottom}
-                href="http://gmail.com/wanghuajian620" Target="_blank"
+                href="http://gmail.com/wanghuajian620"
               >
               Gmail
               </a>
               <a
-                href="http://gmail.com/wanghuajian620" Target="_blank"
+                href="http://gmail.com/wanghuajian620"
               >
               Blog个人
               </a>

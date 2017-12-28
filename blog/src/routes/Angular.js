@@ -8,7 +8,8 @@ const { Header, Content, Footer } = Layout;
 
 class Angular extends React.Component {
   state = {
-    current: 3,
+    current: 1,
+    card: [{ title: 'apple', essay: 'lala', key: 'index[0]' }, { title: 'apple', essay: 'lala', key: 'index[1]' }, { title: 'apple', essay: 'lala', key: 'index[2]' }, { title: 'apple', essay: 'lala', key: 'index[3]' }],
   }
   onChange = (page) => {
     this.setState({
@@ -51,18 +52,17 @@ class Angular extends React.Component {
             </Menu>
           </Header>
           <Content className={styles.content}>
-            <Card title="Card title" className={styles.card}>
-              快元旦了，考研又进入倒计时了。
-            </Card>
-            <Card title="Card title" className={styles.card}>
-              圣诞了，考研又进入倒计时了。
-            </Card>
-            <Card title="Card title" className={styles.card}>
-              圣诞了，考研又进入倒计时了。
-            </Card>
-            <Card title="Card title" className={styles.card}>
-              圣诞了，考研又进入倒计时了。
-            </Card>
+            {
+              this.state.card.map(item => (
+                <Card
+                  title={item.title}
+                  key={item.key}
+                  className={styles.card}
+                >
+                  {item.essay}
+                </Card>
+              ))
+            }
             <Pagination
               current={this.state.current} onChange={this.onChange} total={50}
               className={styles.page}
