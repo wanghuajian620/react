@@ -1,6 +1,7 @@
 import React from 'react';
 import { Layout, Menu, Card, Pagination, BackTop, Icon } from 'antd';
 import { Link } from 'react-router-dom';
+import { connect } from 'dva';
 import styles from './React.less';
 
 const { Header, Content, Footer } = Layout;
@@ -16,7 +17,14 @@ class Angular extends React.Component {
       current: page,
     });
   }
+  usrclick = () => {
+    this.props.dispatch({
+      type: 'Angula/thirdessay',
+    });
+  }
   render() {
+    const { Angula } = this.props;
+    const { essay } = Angula;
     return (
       <div>
         <Layout>
@@ -58,8 +66,9 @@ class Angular extends React.Component {
                   title={item.title}
                   key={item.key}
                   className={styles.card}
+                  onClick={this.usrclick}
                 >
-                  {item.essay}
+                  { essay }
                 </Card>
               ))
             }
@@ -104,4 +113,4 @@ class Angular extends React.Component {
     );
   }
 }
-export default Angular;
+export default connect(state => ({ Angula: state.Angula }))(Angular);
