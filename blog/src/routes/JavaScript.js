@@ -31,7 +31,7 @@ class JavaScipt extends React.Component {
           <Header className={styles.header}>
             <div className={styles.logo}>
               <Link to="/">
-                <img src="http://www.logobook.com/wp-content/uploads/2017/03/MorseLife_logo.svg" alt="" />
+                <img style={{ marginTop: '50px' }} src="http://www.logobook.com/wp-content/uploads/2017/03/MorseLife_logo.svg" alt="" />
               </Link>
             </div>
             <Menu
@@ -40,7 +40,7 @@ class JavaScipt extends React.Component {
               className={styles.menu}
             >
               <Menu.Item key="1" className={styles.reactnative}>
-                <span>JavaScipt</span>
+                <span>JavaScript</span>
               </Menu.Item>
               <Menu.Item key="2" className={styles.reactnative}>
                 <Link to="/react">

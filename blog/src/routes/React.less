@@ -1,23 +1,27 @@
 .logo {
-  float: left;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-top: 40px;
-  height: 40px;
-  width: 40px;
+  margin-left: 3.5vw;
+  margin-right: 3.5vw;
+  height: 150px;
+  width: 3vw;
 }
 .header {
   padding: 0;
   height: 150px;
   background-color: white;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 .menu {
   line-height: 150px;
+  width: 88vw;
   border-bottom: 1px solid white;
 }
 .reactnative {
-  padding: 0 60px;
-  font-size: 24px
+  width: 18vw;
+  font-size: 2vw;
+  display: flex;
+  justify-content: center;
 }
 .content {
   min-height: 90vh;
@@ -51,5 +55,12 @@
   display: inline-block;
   margin-right: 40px;
   margin-bottom: 8px;
+}
+
+
+@media screen and (max-width: 576px) {
+  .reactnative {
+    font-size: 100%
+  }
 }
 

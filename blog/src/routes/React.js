@@ -25,7 +25,7 @@ class ReaLayout extends React.Component {
     });
   }
   render() {
-    console.log(this.props);
+    console.log(this.props); // eslint-disable-line
     const { Reac } = this.props;
     const { essay } = Reac;
     console.log(Reac); // eslint-disable-line
@@ -35,7 +35,7 @@ class ReaLayout extends React.Component {
           <Header className={styles.header}>
             <div className={styles.logo}>
               <Link to="/">
-                <img src="http://www.logobook.com/wp-content/uploads/2017/03/MorseLife_logo.svg" alt="" />
+                <img style={{ marginTop: '50px' }} src="http://www.logobook.com/wp-content/uploads/2017/03/MorseLife_logo.svg" alt="" />
               </Link>
             </div>
             <Menu
@@ -58,7 +58,7 @@ class ReaLayout extends React.Component {
               </Menu.Item>
               <Menu.Item key="4" className={styles.reactnative}>
                 <Link to="/javascript">
-                  <span>JavaScipt</span>
+                  <span>JavaScript</span>
                 </Link>
               </Menu.Item>
             </Menu>
