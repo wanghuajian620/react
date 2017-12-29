@@ -25,6 +25,7 @@ class ReaLayout extends React.Component {
     });
   }
   render() {
+    console.log(this.props);
     const { Reac } = this.props;
     const { essay } = Reac;
     console.log(Reac); // eslint-disable-line

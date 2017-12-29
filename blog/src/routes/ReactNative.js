@@ -24,6 +24,7 @@ class Reactnative extends React.Component {
     });
   }
   render() {
+    console.log('fdfdfds', this.props);
     const { Native } = this.props;
     const { essay } = Native;
     console.log('...', essay);

@@ -8,7 +8,7 @@ const app = dva();
 // app.use({});
 
 // 3. Model
-app.model(require('./models/ReactNative'));
+app.model(require('./models/React'));
 
 // 4. Router
 app.router(require('./router'));
