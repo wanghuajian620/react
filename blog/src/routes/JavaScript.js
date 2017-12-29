@@ -1,6 +1,7 @@
 import React from 'react';
 import { Layout, Menu, Card, Pagination, BackTop, Icon } from 'antd';
 import { Link } from 'react-router-dom';
+import { connect } from 'dva';
 import styles from './React.less';
 
 const { Header, Content, Footer } = Layout;
@@ -16,7 +17,14 @@ class JavaScipt extends React.Component {
       current: page,
     });
   }
+  userclick = () => {
+    this.props.dispatch({
+      type: 'Java/fouressay',
+    });
+  }
   render() {
+    const { Java } = this.props;
+    const { essay } = Java;
     return (
       <div>
         <Layout>
@@ -58,8 +66,9 @@ class JavaScipt extends React.Component {
                   title={item.title}
                   key={item.key}
                   className={styles.card}
+                  onClick={this.userclick}
                 >
-                  {item.essay}
+                  { essay }
                 </Card>
               ))
             }
@@ -104,4 +113,4 @@ class JavaScipt extends React.Component {
     );
   }
 }
-export default JavaScipt;
+export default connect(state => ({ Java: state.Java }))(JavaScipt);

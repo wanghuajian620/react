@@ -8,7 +8,7 @@ const app = dva();
 // app.use({});
 
 // 3. Model
-app.model(require('./models/Angular'));
+app.model(require('./models/JavaScript'));
 
 // 4. Router
 app.router(require('./router'));
