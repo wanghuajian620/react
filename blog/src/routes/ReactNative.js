@@ -24,10 +24,10 @@ class Reactnative extends React.Component {
     });
   }
   render() {
-    console.log('fdfdfds', this.props);
+    console.log('fdfdfds', this.props);// eslint-disable-line
     const { Native } = this.props;
     const { essay } = Native;
-    console.log('...', essay);
+    console.log('...', essay);// eslint-disable-line
     return (
       <div>
         <Layout>
