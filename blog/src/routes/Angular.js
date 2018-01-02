@@ -2,9 +2,11 @@ import React from 'react';
 import { Layout, Menu, Card, Pagination, BackTop, Icon } from 'antd';
 import { Link } from 'react-router-dom';
 import { connect } from 'dva';
+import markdown from '../utils/markdown';
 import styles from './React.less';
 
 const { Header, Content, Footer } = Layout;
+const ReactMarkdown = require('react-markdown');
 
 
 class Angular extends React.Component {
@@ -23,8 +25,8 @@ class Angular extends React.Component {
     });
   }
   render() {
-    const { Angula } = this.props;
-    const { essay } = Angula;
+    // const { Angula } = this.props;
+    // const { essay } = Angula;
     return (
       <div>
         <Layout>
@@ -69,7 +71,7 @@ class Angular extends React.Component {
                     className={styles.card}
                     onClick={this.usrclick}
                   >
-                    { essay }
+                    <ReactMarkdown source={markdown} />
                   </Card>
                 </Link>
               ))
