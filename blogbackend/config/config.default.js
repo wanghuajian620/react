@@ -8,6 +8,11 @@ module.exports = appInfo => {
 
   // add your config here
   config.middleware = [];
+  config.security = {
+    csrf: {
+      ignoreJSON: true,
+    },
+  };
 
   return config;
 };
