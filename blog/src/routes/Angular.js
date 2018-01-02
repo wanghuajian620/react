@@ -62,14 +62,16 @@ class Angular extends React.Component {
           <Content className={styles.content}>
             {
               this.state.card.map(item => (
-                <Card
-                  title={item.title}
-                  key={item.key}
-                  className={styles.card}
-                  onClick={this.usrclick}
-                >
-                  { essay }
-                </Card>
+                <Link to="/essay">
+                  <Card
+                    title={item.title}
+                    key={item.key}
+                    className={styles.card}
+                    onClick={this.usrclick}
+                  >
+                    { essay }
+                  </Card>
+                </Link>
               ))
             }
             <Pagination
