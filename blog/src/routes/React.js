@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Menu, Card, Pagination, BackTop, Icon } from 'antd';
+import { Layout, Menu, Card, Pagination, BackTop, Icon, Tag } from 'antd';
 import { Link } from 'react-router-dom';
 import { connect } from 'dva';
 import styles from './React.less';
@@ -64,6 +64,7 @@ class ReaLayout extends React.Component {
             <Card title="Card title" className={styles.card}>
               <Icon type="calendar" className={styles.icon} />
               2017-01-03
+              <Tag color="#f50">react</Tag>
               { essay }
             </Card>
             <Card title="Card title" className={styles.card}>
