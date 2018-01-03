@@ -10,32 +10,29 @@ const { Header, Content, Footer } = Layout;
 
 class ReaLayout extends React.Component {
   state = {
-    current: 1,
-    card: [{ title: '2b', essay: '', key: 'index[0]' }, { title: '2b', essay: 'bb', key: 'index[1]' }, { title: '2b', essay: 'bb', key: 'index[3]' }, { title: '2b', essay: 'bb', key: 'index[4]' }],
+    current: 3,
   }
-
+  componentDidMount() {
+    this.props.dispatch({
+      type: 'Reac/Fisrtessay',
+    });
+  }
   onChange = (page) => {
     this.setState({
       current: page,
     });
   }
-  userclick = () => {
-    this.props.dispatch({
-      type: 'Reac/Firstessay',
-    });
-  }
   render() {
-    console.log(this.props); // eslint-disable-line
     const { Reac } = this.props;
+    console.log(Reac.essay);
     const { essay } = Reac;
-    console.log(Reac); // eslint-disable-line
     return (
       <div>
         <Layout>
           <Header className={styles.header}>
             <div className={styles.logo}>
               <Link to="/">
-                <img style={{ marginTop: '50px' }} src="http://www.logobook.com/wp-content/uploads/2017/03/MorseLife_logo.svg" alt="" />
+                <img src="http://www.logobook.com/wp-content/uploads/2017/03/MorseLife_logo.svg" alt="" />
               </Link>
             </div>
             <Menu
@@ -58,24 +55,32 @@ class ReaLayout extends React.Component {
               </Menu.Item>
               <Menu.Item key="4" className={styles.reactnative}>
                 <Link to="/javascript">
-                  <span>JavaScript</span>
+                  <span>JavaScipt</span>
                 </Link>
               </Menu.Item>
             </Menu>
           </Header>
           <Content className={styles.content}>
-            {
-              this.state.card.map(item => (
-                <Card
-                  title={item.title}
-                  key={item.key}
-                  className={styles.card}
-                  onClick={this.userclick}
-                >
-                  { essay }
-                </Card>
-              ))
-            }
+            <Card title="Card title" className={styles.card}>
+              <Icon type="calendar" className={styles.icon} />
+              2017-01-03
+              { essay }
+            </Card>
+            <Card title="Card title" className={styles.card}>
+              <Icon type="calendar" className={styles.icon} />
+              2017-01-03
+              <p>圣诞了，考研又进入倒计时了。</p>
+            </Card>
+            <Card title="Card title" className={styles.card}>
+              <Icon type="calendar" className={styles.icon} />
+              2017-01-03
+              <p>圣诞了，考研又进入倒计时了。</p>
+            </Card>
+            <Card title="Card title" className={styles.card}>
+              <Icon type="calendar" className={styles.icon} />
+              2017-01-03
+              <p>圣诞了，考研又进入倒计时了。</p>
+            </Card>
             <Pagination
               current={this.state.current} onChange={this.onChange} total={50}
               className={styles.page}
