@@ -10,7 +10,7 @@ const { Header, Content, Footer } = Layout;
 class JavaScipt extends React.Component {
   state = {
     current: 1,
-    card: [{ title: '4b', essay: 'nihao', key: 'index[0]' }, { title: '4b', essay: 'nihao', key: 'index[1]' }, { title: '4b', essay: 'nihao', key: 'index[2]' }, { title: '4b', essay: 'nihao', key: 'index[3]' }],
+    card: [{ title: '4b', date: '2017-01-03', essay: 'nihao', key: 'index[0]' }, { title: '4b', date: '2017-01-03', essay: 'nihao', key: 'index[1]' }, { title: '4b', date: '2017-01-03', essay: 'nihao', key: 'index[2]' }, { title: '4b', date: '2017-01-03', essay: 'nihao', key: 'index[3]' }],
   }
   onChange = (page) => {
     this.setState({
@@ -31,7 +31,7 @@ class JavaScipt extends React.Component {
           <Header className={styles.header}>
             <div className={styles.logo}>
               <Link to="/">
-                <img style={{ marginTop: '50px' }} src="http://www.logobook.com/wp-content/uploads/2017/03/MorseLife_logo.svg" alt="" />
+                <img style={{ marginTop: '30px' }} src="http://www.logobook.com/wp-content/uploads/2017/03/MorseLife_logo.svg" alt="" />
               </Link>
             </div>
             <Menu
@@ -68,7 +68,9 @@ class JavaScipt extends React.Component {
                   className={styles.card}
                   onClick={this.userclick}
                 >
-                  { essay }
+                  <Icon type="calendar" className={styles.icon} />
+                  {item.date}
+                  <p>{ essay }</p>
                 </Card>
               ))
             }

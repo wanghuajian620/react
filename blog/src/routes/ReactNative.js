@@ -34,7 +34,7 @@ class Reactnative extends React.Component {
           <Header className={styles.header}>
             <div className={styles.logo}>
               <Link to="/">
-                <img style={{ marginTop: '50px' }} src="http://www.logobook.com/wp-content/uploads/2017/03/MorseLife_logo.svg" alt="" />
+                <img style={{ marginTop: '30px' }} src="http://www.logobook.com/wp-content/uploads/2017/03/MorseLife_logo.svg" alt="" />
               </Link>
             </div>
             <Menu

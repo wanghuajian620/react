@@ -12,7 +12,7 @@ const ReactMarkdown = require('react-markdown');
 class Angular extends React.Component {
   state = {
     current: 1,
-    card: [{ title: 'apple', essay: 'lala', key: 'index[0]' }, { title: 'apple', essay: 'lala', key: 'index[1]' }, { title: 'apple', essay: 'lala', key: 'index[2]' }, { title: 'apple', essay: 'lala', key: 'index[3]' }],
+    card: [{ title: 'apple', date: '2017-01-03', essay: 'lala', key: 'index[0]' }, { title: 'apple', date: '2017-01-03', essay: 'lala', key: 'index[1]' }, { title: 'apple', date: '2017-01-03', essay: 'lala', key: 'index[2]' }, { title: 'apple', date: '2017-01-03', essay: 'lala', key: 'index[3]' }],
   }
   onChange = (page) => {
     this.setState({
@@ -33,7 +33,7 @@ class Angular extends React.Component {
           <Header className={styles.header}>
             <div className={styles.logo}>
               <Link to="/">
-                <img style={{ marginTop: '50px' }} src="http://www.logobook.com/wp-content/uploads/2017/03/MorseLife_logo.svg" alt="" />
+                <img style={{ marginTop: '30px' }} src="http://www.logobook.com/wp-content/uploads/2017/03/MorseLife_logo.svg" alt="" />
               </Link>
             </div>
             <Menu
@@ -71,6 +71,8 @@ class Angular extends React.Component {
                     className={styles.card}
                     onClick={this.usrclick}
                   >
+                    <Icon type="calendar" className={styles.icon} />
+                    {item.date}
                     <ReactMarkdown source={markdown} />
                   </Card>
                 </Link>
