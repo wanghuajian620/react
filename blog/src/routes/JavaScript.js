@@ -27,7 +27,7 @@ class JavaScipt extends React.Component {
     const { essay } = Java;
     return (
       <div>
-        <Layout>
+        <Layout className={styles.background}>
           <Header className={styles.header}>
             <div className={styles.logo}>
               <Link to="/">
