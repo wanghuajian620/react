@@ -12,7 +12,10 @@ const ReactMarkdown = require('react-markdown');
 class Angular extends React.Component {
   state = {
     current: 1,
-    card: [{ title: 'apple', date: '2017-01-03', essay: 'lala', key: 'index[0]' }, { title: 'apple', date: '2017-01-03', essay: 'lala', key: 'index[1]' }, { title: 'apple', date: '2017-01-03', essay: 'lala', key: 'index[2]' }, { title: 'apple', date: '2017-01-03', essay: 'lala', key: 'index[3]' }],
+    card: [{ title: 'apple', date: '2017-01-03', essay: 'lala', key: 'index[0]' },
+    { title: 'apple', date: '2017-01-03', essay: 'lala', key: 'index[1]' },
+    { title: 'apple', date: '2017-01-03', essay: 'lala', key: 'index[2]' },
+    { title: 'apple', date: '2017-01-03', essay: 'lala', key: 'index[3]' }],
   }
   onChange = (page) => {
     this.setState({
@@ -56,7 +59,7 @@ class Angular extends React.Component {
               </Menu.Item>
               <Menu.Item key="4" className={styles.reactnative}>
                 <Link to="/javascript">
-                  <span>JavaScript</span>
+                  <span>JS</span>
                 </Link>
               </Menu.Item>
             </Menu>

@@ -10,7 +10,10 @@ const { Header, Content, Footer } = Layout;
 class JavaScipt extends React.Component {
   state = {
     current: 1,
-    card: [{ title: '4b', date: '2017-01-03', essay: 'nihao', key: 'index[0]' }, { title: '4b', date: '2017-01-03', essay: 'nihao', key: 'index[1]' }, { title: '4b', date: '2017-01-03', essay: 'nihao', key: 'index[2]' }, { title: '4b', date: '2017-01-03', essay: 'nihao', key: 'index[3]' }],
+    card: [{ title: '4b', date: '2017-01-03', essay: 'nihao', key: 'index[0]' },
+    { title: '4b', date: '2017-01-03', essay: 'nihao', key: 'index[1]' },
+    { title: '4b', date: '2017-01-03', essay: 'nihao', key: 'index[2]' },
+    { title: '4b', date: '2017-01-03', essay: 'nihao', key: 'index[3]' }],
   }
   onChange = (page) => {
     this.setState({
@@ -40,7 +43,7 @@ class JavaScipt extends React.Component {
               className={styles.menu}
             >
               <Menu.Item key="1" className={styles.reactnative}>
-                <span>JavaScript</span>
+                <span>JS</span>
               </Menu.Item>
               <Menu.Item key="2" className={styles.reactnative}>
                 <Link to="/react">

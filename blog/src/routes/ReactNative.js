@@ -11,7 +11,10 @@ const { Header, Content, Footer } = Layout;
 class Reactnative extends React.Component {
   state = {
     current: 1,
-    card: [{ title: '2b', essay: 'nihao', key: 'index[0]' }, { title: '2b', essay: 'nihao', key: 'index[1]' }, { title: '2b', essay: 'nihao', key: 'index[2]' }, { title: '2b', essay: 'nihao', key: 'index[3]' }],
+    card: [{ title: '2b', date: '2017-01-03', essay: 'nihao', key: 'index[0]' },
+    { title: '2b', date: '2017-01-03', essay: 'nihao', key: 'index[1]' },
+    { title: '2b', date: '2017-01-03', essay: 'nihao', key: 'index[2]' },
+    { title: '2b', date: '2017-01-03', essay: 'nihao', key: 'index[3]' }],
   }
   onChange = (page) => {
     this.setState({
@@ -57,7 +60,7 @@ class Reactnative extends React.Component {
               </Menu.Item>
               <Menu.Item key="4" className={styles.reactnative}>
                 <Link to="/javascript">
-                  <span>JavaScript</span>
+                  <span>JS</span>
                 </Link>
               </Menu.Item>
             </Menu>
@@ -71,7 +74,9 @@ class Reactnative extends React.Component {
                   className={styles.card}
                   onClick={this.userclick}
                 >
-                  { essay }
+                  <Icon type="calendar" className={styles.icon} />
+                  {item.date}
+                  <p>{ essay }</p>
                 </Card>
               ))
             }

@@ -55,7 +55,7 @@ class ReaLayout extends React.Component {
               </Menu.Item>
               <Menu.Item key="4" className={styles.reactnative}>
                 <Link to="/javascript">
-                  <span>JavaScipt</span>
+                  <span>JS</span>
                 </Link>
               </Menu.Item>
             </Menu>
