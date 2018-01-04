@@ -1,5 +1,6 @@
 .header {
   display: flex;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   height: 20vh;
@@ -11,14 +12,14 @@
   margin-left: 2vw;
   margin-right: 2.5vw;
   margin-top: 3.5vw;
-  height: 150px;
+  height: 200px;
   width: 3vw;
   transition: 0.6s all;
   overflow: hidden;
   -webkit-transition: background-color 3s;
 }
 .logo:hover {
-  transform: scale(1.2);
+  transform: scale(1.5);
   // background-color: rgba(248, 62, 6, 0.767);
 }
 .background {
@@ -28,8 +29,6 @@
 .menu {
   flex-wrap: nowrap;
   margin-left: 110px;
-  display: inline-block;
-  flex-shrink: unset;
 }
 .reactnative {
   display: flex;
@@ -87,4 +86,16 @@
     font-size: 100%
   }
 }
+@media screen and (max-width: 576px) {
+  .logo {
+    height: 100px;
+    width: 60%;
+  }
+}
+// @media screen and (max-width: 299px) {
+//   .logo {
+//     height: 100px;
+//     width: 60%;
+//   }
+// }
 

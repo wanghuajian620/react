@@ -45,7 +45,6 @@ class ReaLayout extends React.Component {
               </Link>
             </div>
             <Menu
-              theme="light"
               mode="horizontal"
               className={styles.menu}
             >
