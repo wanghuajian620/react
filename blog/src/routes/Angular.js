@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Menu, Card, Pagination, BackTop, Icon } from 'antd';
+import { Layout, Menu, Card, Pagination, BackTop, Icon, Tag } from 'antd';
 import { Link } from 'react-router-dom';
 import { connect } from 'dva';
 import markdown from '../utils/markdown';
@@ -12,10 +12,10 @@ const ReactMarkdown = require('react-markdown');
 class Angular extends React.Component {
   state = {
     current: 1,
-    card: [{ title: 'apple', date: '2017-01-03', essay: 'lala', key: 'index[0]' },
-    { title: 'apple', date: '2017-01-03', essay: 'lala', key: 'index[1]' },
-    { title: 'apple', date: '2017-01-03', essay: 'lala', key: 'index[2]' },
-    { title: 'apple', date: '2017-01-03', essay: 'lala', key: 'index[3]' }],
+    card: [{ title: 'apple', date: '2017-01-03', tag: 'angular', essay: 'lala', key: 'index[0]' },
+    { title: 'apple', date: '2017-01-03', tag: 'css3', essay: 'lala', key: 'index[1]' },
+    { title: 'apple', date: '2017-01-03', tag: 'js', essay: 'lala', key: 'index[2]' },
+    { title: 'apple', date: '2017-01-03', tag: 'angular', essay: 'lala', key: 'index[3]' }],
   }
   onChange = (page) => {
     this.setState({
@@ -76,6 +76,7 @@ class Angular extends React.Component {
                   >
                     <Icon type="calendar" className={styles.icon} />
                     {item.date}
+                    <Tag color="#2db7f5" className={styles.tag}>{item.tag}</Tag>
                     <ReactMarkdown source={markdown} />
                   </Card>
                 </Link>

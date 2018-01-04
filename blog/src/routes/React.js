@@ -64,7 +64,7 @@ class ReaLayout extends React.Component {
             <Card title="Card title" className={styles.card}>
               <Icon type="calendar" className={styles.icon} />
               2017-01-03
-              <Tag color="#f50">react</Tag>
+              <Tag color="#f50" className={styles.tag}>react</Tag>
               { essay }
             </Card>
             <Card title="Card title" className={styles.card}>

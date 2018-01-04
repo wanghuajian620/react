@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Menu, Card, Pagination, BackTop, Icon } from 'antd';
+import { Layout, Menu, Card, Pagination, BackTop, Icon, Tag } from 'antd';
 import { Link } from 'react-router-dom';
 import { connect } from 'dva';
 import styles from './React.less';
@@ -10,10 +10,10 @@ const { Header, Content, Footer } = Layout;
 class JavaScipt extends React.Component {
   state = {
     current: 1,
-    card: [{ title: '4b', date: '2017-01-03', essay: 'nihao', key: 'index[0]' },
-    { title: '4b', date: '2017-01-03', essay: 'nihao', key: 'index[1]' },
-    { title: '4b', date: '2017-01-03', essay: 'nihao', key: 'index[2]' },
-    { title: '4b', date: '2017-01-03', essay: 'nihao', key: 'index[3]' }],
+    card: [{ title: '4b', date: '2017-01-03', tag: 'javascript', essay: 'nihao', key: 'index[0]' },
+    { title: '4b', date: '2017-01-03', tag: 'js', essay: 'nihao', key: 'index[1]' },
+    { title: '4b', date: '2017-01-03', tag: 'js', essay: 'nihao', key: 'index[2]' },
+    { title: '4b', date: '2017-01-03', tag: 'js', essay: 'nihao', key: 'index[3]' }],
   }
   onChange = (page) => {
     this.setState({
@@ -73,6 +73,7 @@ class JavaScipt extends React.Component {
                 >
                   <Icon type="calendar" className={styles.icon} />
                   {item.date}
+                  <Tag color="#87d068" className={styles.tag}>{item.tag}</Tag>
                   <p>{ essay }</p>
                 </Card>
               ))

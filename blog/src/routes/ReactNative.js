@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Menu, Card, Pagination, BackTop, Icon } from 'antd';
+import { Layout, Menu, Card, Pagination, BackTop, Icon, Tag } from 'antd';
 import { Link } from 'react-router-dom';
 import { connect } from 'dva';
 import styles from './React.less';
@@ -11,10 +11,10 @@ const { Header, Content, Footer } = Layout;
 class Reactnative extends React.Component {
   state = {
     current: 1,
-    card: [{ title: '2b', date: '2017-01-03', essay: 'nihao', key: 'index[0]' },
-    { title: '2b', date: '2017-01-03', essay: 'nihao', key: 'index[1]' },
-    { title: '2b', date: '2017-01-03', essay: 'nihao', key: 'index[2]' },
-    { title: '2b', date: '2017-01-03', essay: 'nihao', key: 'index[3]' }],
+    card: [{ title: 'ReactNative快速入门', date: '2017-01-03', tag: 'html', essay: 'nihao', key: 'index[0]' },
+    { title: '2b', date: '2017-01-03', tag: 'css', essay: 'nihao', key: 'index[1]' },
+    { title: '2b', date: '2017-01-03', tag: 'css3', essay: 'nihao', key: 'index[2]' },
+    { title: '2b', date: '2017-01-03', tag: 'reactnative', essay: 'nihao', key: 'index[3]' }],
   }
   onChange = (page) => {
     this.setState({
@@ -76,6 +76,7 @@ class Reactnative extends React.Component {
                 >
                   <Icon type="calendar" className={styles.icon} />
                   {item.date}
+                  <Tag color="#87d068" className={styles.tag}>{item.tag}</Tag>
                   <p>{ essay }</p>
                 </Card>
               ))
