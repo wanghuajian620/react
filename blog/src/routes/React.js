@@ -11,10 +11,14 @@ const { Header, Content, Footer } = Layout;
 class ReaLayout extends React.Component {
   state = {
     current: 3,
+    card: [{ title: 'apple', date: '2017-01-03', tag: 'angular', essay: 'lala', key: 'index[0]' },
+    { title: 'apple', date: '2017-01-03', tag: 'css3', essay: 'lala', key: 'index[1]' },
+    { title: 'apple', date: '2017-01-03', tag: 'js', essay: 'lala', key: 'index[2]' },
+    { title: 'apple', date: '2017-01-03', tag: 'angular', essay: 'lala', key: 'index[3]' }],
   }
   componentDidMount() {
     this.props.dispatch({
-      type: 'Reac/Fisrtessay',
+      type: 'Reac/Firstessay',
     });
   }
   onChange = (page) => {
@@ -22,6 +26,11 @@ class ReaLayout extends React.Component {
       current: page,
     });
   }
+  // usrclick = () => {
+  //   this.props.dispatch({
+  //     type: 'Reac/Firstessay',
+  //   });
+  // }
   render() {
     const { Reac } = this.props;
     console.log(Reac.essay);
@@ -61,27 +70,23 @@ class ReaLayout extends React.Component {
             </Menu>
           </Header>
           <Content className={styles.content}>
-            <Card title="Card title" className={styles.card}>
-              <Icon type="calendar" className={styles.icon} />
-              2017-01-03
-              <Tag color="#f50" className={styles.tag}>react</Tag>
-              { essay }
-            </Card>
-            <Card title="Card title" className={styles.card}>
-              <Icon type="calendar" className={styles.icon} />
-              2017-01-03
-              <p>圣诞了，考研又进入倒计时了。</p>
-            </Card>
-            <Card title="Card title" className={styles.card}>
-              <Icon type="calendar" className={styles.icon} />
-              2017-01-03
-              <p>圣诞了，考研又进入倒计时了。</p>
-            </Card>
-            <Card title="Card title" className={styles.card}>
-              <Icon type="calendar" className={styles.icon} />
-              2017-01-03
-              <p>圣诞了，考研又进入倒计时了。</p>
-            </Card>
+            {
+              this.state.card.map(item => (
+                <Link to="/essay">
+                  <Card
+                    title={item.title}
+                    key={item.key}
+                    className={styles.card}
+                    onClick={this.usrclick}
+                  >
+                    <Icon type="calendar" className={styles.icon} />
+                    {item.date}
+                    <Tag color="#2db7f5" className={styles.tag}>{item.tag}</Tag>
+                    <p>{essay}</p>
+                  </Card>
+                </Link>
+              ))
+            }
             <Pagination
               current={this.state.current} onChange={this.onChange} total={50}
               className={styles.page}
