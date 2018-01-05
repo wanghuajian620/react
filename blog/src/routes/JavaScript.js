@@ -40,6 +40,7 @@ class JavaScipt extends React.Component {
             {
               this.state.card.map(item => (
                 <Card
+                  data-aos="fade-up"
                   title={item.title}
                   key={item.key}
                   className={styles.card}
@@ -48,7 +49,9 @@ class JavaScipt extends React.Component {
                   <Icon type="calendar" className={styles.icon} />
                   {item.date}
                   <Tag color="#87d068" className={styles.tag}>{item.tag}</Tag>
-                  <p>{ essay }</p>
+                  <Link to="essay">
+                    <p>{ essay }</p>
+                  </Link>
                 </Card>
               ))
             }
@@ -56,13 +59,7 @@ class JavaScipt extends React.Component {
               current={this.state.current} onChange={this.onChange} total={50}
               className={styles.page}
             />
-            <BackTop />
-            <strong
-              className={styles.texthidden}
-              style={{ color: 'rgba(50, 50, 50, 0.6)' }}
-            >
-              回到顶部
-            </strong>
+            <BackTop visibilityHeight={200} />
           </Content>
           <Footer>
             <div className={styles.footer}>
@@ -70,7 +67,7 @@ class JavaScipt extends React.Component {
                 className={styles.bottom}
                 href="https://github.com/wanghuajian620"
               >
-                开源GitHub
+                GitHub
               </a>
               <a
                 className={styles.bottom}
@@ -81,7 +78,7 @@ class JavaScipt extends React.Component {
               <a
                 href="http://gmail.com/wanghuajian620"
               >
-              Blog个人
+              Blog
               </a>
               <div>
                 Copyright <Icon type="copyright" /> 2017 个人博客圣诞夜出品

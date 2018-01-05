@@ -11,8 +11,8 @@ const { Content, Footer } = Layout;
 class ReaLayout extends React.Component {
   state = {
     current: 3,
-    card: [{ title: 'apple', date: '2017-01-03', tag: 'angular', essay: 'lala', key: 'index[0]' },
-    { title: 'apple', date: '2017-01-03', tag: 'css3', essay: 'lala', key: 'index[1]' },
+    card: [{ title: 'React快速入门', date: '2017-01-03', tag: 'angular', essay: 'lala', key: 'index[0]' },
+    { title: 'React demo', date: '2017-01-03', tag: 'css3', essay: 'lala', key: 'index[1]' },
     { title: 'apple', date: '2017-01-03', tag: 'js', essay: 'lala', key: 'index[2]' },
     { title: 'apple', date: '2017-01-03', tag: 'angular', essay: 'lala', key: 'index[3]' }],
   }
@@ -46,33 +46,27 @@ class ReaLayout extends React.Component {
             </div>
             {
               this.state.card.map(item => (
-                <Link to="/essay">
-                  <Card
-                    data-aos="fade-up"
-                    title={item.title}
-                    key={item.key}
-                    className={styles.card}
-                    onClick={this.usrclick}
-                  >
-                    <Icon type="calendar" className={styles.icon} />
-                    {item.date}
-                    <Tag color="#2db7f5" className={styles.tag}>{item.tag}</Tag>
+                <Card
+                  data-aos="fade-up"
+                  title={item.title}
+                  key={item.key}
+                  className={styles.card}
+                  onClick={this.usrclick}
+                >
+                  <Icon type="calendar" className={styles.icon} />
+                  {item.date}
+                  <Tag color="#2db7f5" className={styles.tag}>{item.tag}</Tag>
+                  <Link to="/essay">
                     <p>{essay}</p>
-                  </Card>
-                </Link>
+                  </Link>
+                </Card>
               ))
             }
             <Pagination
               current={this.state.current} onChange={this.onChange} total={50}
               className={styles.page}
             />
-            <BackTop />
-            <strong
-              className={styles.texthidden}
-              style={{ color: 'rgba(50, 50, 50, 0.6)' }}
-            >
-              回到顶部
-            </strong>
+            <BackTop visibilityHeight={200} />
           </Content>
           <Footer>
             <div className={styles.footer}>
@@ -80,7 +74,7 @@ class ReaLayout extends React.Component {
                 className={styles.bottom}
                 href="https://github.com/wanghuajian620"
               >
-                开源GitHub
+                GitHub
               </a>
               <a
                 className={styles.bottom}
@@ -91,7 +85,7 @@ class ReaLayout extends React.Component {
               <a
                 href="http://gmail.com/wanghuajian620"
               >
-              Blog个人
+              Blog
               </a>
               <div>
                 Copyright <Icon type="copyright" /> 2017 个人博客圣诞夜出品
