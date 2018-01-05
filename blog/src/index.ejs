@@ -6,8 +6,18 @@
   <title>Dva Demo</title>
   <link rel="stylesheet" href="/index.css" />
   <link rel="stylesheet" href="./animate.css">
+  <link href="https://cdn.bootcss.com/aos/2.2.0/aos.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/aos/2.2.0/aos.js"></script>
 </head>
 <body>
   <div id="root"></div>
+  <script>
+    AOS.init({
+      offset: 200,
+      duration: 600,
+      easing: 'ease-in-sine',
+      delay: 100,
+    });
+  </script>
 </body>
 </html>
