@@ -1,11 +1,54 @@
+// .background {
+//   background-image: url(https://cdn.magdeleine.co/wp-content/uploads/2016/06/photo-1461722936851-13a79b294a5d-1400x934.jpeg);
+//   background-attachment: fixed;
+//   z-index: 0;
+// }
 .header {
-  background-color: #f4f5f8;
-  height: 10vh;
+  background-color: #ecedf0;
+  height: 15vh;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 6;
 }
-.content {
-  height: 80vh;
-  background-color: white;
+.text {
+  float: left;
+  width: 650px;
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 20px;
+  margin-top: 18px;
+}
+.menu {
+  float: right;
+  font-size: 14px;
+  line-height: 108px;
+  background-color: #ecedf0;
+}
+.card {
+  width: 60%;
+  height: 1500px;
+  margin: 0 auto;
+  margin-top: 18vh;
+  z-index: 1;
+}
+.backtop {
+  z-index: 9
+}
+.texthidden {
+  display: block;
+  overflow: hidden;
+  width: 0;
+  height: 0;  
 }
 .footer {
-  height: 10vh;
+  text-align: center;
+  a {
+    color: grey;
+  }
+}
+.bottom {
+  display: inline-block;
+  margin-right: 40px;
+  margin-bottom: 8px;
 }
