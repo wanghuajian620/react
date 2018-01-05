@@ -1,11 +1,11 @@
 import React from 'react';
-import { Layout, Menu, Card, Pagination, BackTop, Icon, Tag } from 'antd';
+import { Layout, Card, Pagination, BackTop, Icon, Tag } from 'antd';
 import { Link } from 'react-router-dom';
 import { connect } from 'dva';
 import styles from './React.less';
 
 
-const { Header, Content, Footer } = Layout;
+const { Content, Footer } = Layout;
 
 
 class Reactnative extends React.Component {
@@ -34,38 +34,12 @@ class Reactnative extends React.Component {
     return (
       <div>
         <Layout className={styles.background}>
-          <Header className={styles.header}>
+          <Content className={styles.content}>
             <div className={styles.logo}>
               <Link to="/">
-                <img style={{ marginTop: '30px' }} src="http://www.logobook.com/wp-content/uploads/2017/03/MorseLife_logo.svg" alt="" />
+                <img src="http://www.logobook.com/wp-content/uploads/2017/03/MorseLife_logo.svg" alt="" />
               </Link>
             </div>
-            <Menu
-              theme="light"
-              mode="horizontal"
-              className={styles.menu}
-            >
-              <Menu.Item key="1" className={styles.reactnative}>
-                <span>ReactNative</span>
-              </Menu.Item>
-              <Menu.Item key="2" className={styles.reactnative}>
-                <Link to="/react">
-                  <span>React</span>
-                </Link>
-              </Menu.Item>
-              <Menu.Item key="3" className={styles.reactnative}>
-                <Link to="/angular">
-                  <span>Angular</span>
-                </Link>
-              </Menu.Item>
-              <Menu.Item key="4" className={styles.reactnative}>
-                <Link to="/javascript">
-                  <span>JS</span>
-                </Link>
-              </Menu.Item>
-            </Menu>
-          </Header>
-          <Content className={styles.content}>
             {
               this.state.card.map(item => (
                 <Card
