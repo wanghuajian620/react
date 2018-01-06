@@ -13,6 +13,7 @@
 .background {
   background-image: url(https://cdn.magdeleine.co/wp-content/uploads/2016/06/photo-1461722936851-13a79b294a5d-1400x934.jpeg);
   background-attachment: fixed;
+  z-index: -1;
 }
 
 .content {
@@ -38,15 +39,12 @@
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
+  z-index: 2;
 }
-.texthidden {
-  display: block;
-  overflow: hidden;
-  width: 0;
-  height: 0;  
-}
+
 .footer {
   text-align: center;
+  z-index: 5;
   a {
     color: grey;
   }
@@ -55,6 +53,7 @@
   display: inline-block;
   margin-right: 40px;
   margin-bottom: 8px;
+  z-index: 5;
 }
 
 

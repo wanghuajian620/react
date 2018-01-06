@@ -8,7 +8,7 @@ class Doc extends React.Component {
   render() {
     return (
       <div>
-        <Layout>
+        <Layout id="canvas">
           <Header className={styles.header}>
             <h3 className={styles.text}>Christmas blog</h3>
             <Menu
