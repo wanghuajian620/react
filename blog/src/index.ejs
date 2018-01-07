@@ -38,7 +38,7 @@
           l: script_len, //长度，用于生成id用
           z: get_attribute(script, "zIndex", -1), //z-index
           o: get_attribute(script, "opacity", 0.5), //opacity
-          c: get_attribute(script, "color", "0,0,0"), //color
+          c: get_attribute(script, "color", "255,0,0"), //color
           n: get_attribute(script, "count", 99) //count
         };
       }
@@ -46,7 +46,7 @@
       function set_canvas_size() {
         var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
         canvas_width = the_canvas.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth, 
-        canvas_height = the_canvas.height = h - 120;
+        canvas_height = the_canvas.height = h - 80;
       }
     
       //绘制过程
