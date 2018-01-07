@@ -20,7 +20,7 @@ class Doc extends React.Component {
               <Menu.Item key="3">关于</Menu.Item>
             </Menu>
           </Header>
-          <Content className={styles.content}>
+          <Content className={styles.background}>
             <Card title="Card title" className={styles.card}>
               <p>Card content</p>
             </Card>
