@@ -1,8 +1,13 @@
 export default {
-  namespace: 'Native',
+  namespace: 'reactnative',
 
   state: {
-    essay: '',
+    // essay: '',
+    content: [
+      { title: 'ReactNative快速入门', date: '2017-01-03', tag: 'html', essay: 'nihao', key: 'index[0]' },
+      { title: '2b', date: '2017-01-03', tag: 'css', essay: 'nihao', key: 'index[1]' },
+      { title: '2b', date: '2017-01-03', tag: 'css3', essay: 'nihao', key: 'index[2]' },
+      { title: '2b', date: '2017-01-03', tag: 'reactnative', essay: 'nihao', key: 'index[3]' }],
   },
 
   effects: {

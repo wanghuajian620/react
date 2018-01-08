@@ -9,7 +9,7 @@ const { Content } = Layout;
 
 class Artical extends React.Component {
   render() {
-    const { card } = this.props;
+    const { card, react, reactnative, javascript } = this.props;
     return (
       <div>
         <Content className={styles.content}>
@@ -18,6 +18,9 @@ class Artical extends React.Component {
               <img src="http://www.logobook.com/wp-content/uploads/2017/03/MorseLife_logo.svg" alt="" />
             </Link>
             {console.log(card, 'mm')}
+            {console.log(react, 'qweqwe')}
+            {console.log(reactnative, 'bbbbbbbb')}
+            {console.log(javascript, 'vvvvvvvv')}
           </div>
           {
             card.content.map(item =>
@@ -49,5 +52,7 @@ class Artical extends React.Component {
 export default connect(state => ({
   card: state.angular,
   react: state.react,
+  reactnative: state.reactnative,
+  javascript: state.javascript,
 }))(Artical);
 

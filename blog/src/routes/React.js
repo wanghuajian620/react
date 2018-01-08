@@ -8,21 +8,21 @@ class ReaLayout extends React.Component {
   state = {
     current: 3,
   }
-  componentDidMount() {
-    this.props.dispatch({
-      type: 'react/firstessay',
-    });
-  }
+  // componentDidMount() {
+  //   this.props.dispatch({
+  //     type: 'react/firstessay',
+  //   });
+  // }
   onChange = (page) => {
     this.setState({
       current: page,
     });
   }
-  // usrclick = () => {
-  //   this.props.dispatch({
-  //     type: 'Reac/Firstessay',
-  //   });
-  // }
+  usrclick = () => {
+    this.props.dispatch({
+      type: 'react/firstessay',
+    });
+  }
   render() {
     return (
       <div>
