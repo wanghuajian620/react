@@ -1,8 +1,9 @@
 import React from 'react';
-import { Layout, Menu, Card, Icon, BackTop } from 'antd';
+import { Layout, Menu, Card, BackTop } from 'antd';
+import Footer from '../components/Footer';
 import styles from './Docs.less';
 
-const { Header, Content, Footer } = Layout;
+const { Header, Content } = Layout;
 
 class Doc extends React.Component {
   render() {
@@ -24,34 +25,9 @@ class Doc extends React.Component {
             <Card title="Card title" className={styles.card}>
               <p>Card content</p>
             </Card>
-            <div className={styles.backtop}>
-              <BackTop visibilityHeight={0} />
-            </div>
+            <BackTop visibilityHeight={0} />
           </Content>
-          <Footer>
-            <div className={styles.footer}>
-              <a
-                className={styles.bottom}
-                href="https://github.com/wanghuajian620"
-              >
-                GitHub
-              </a>
-              <a
-                className={styles.bottom}
-                href="http://gmail.com/wanghuajian620"
-              >
-              Gmail
-              </a>
-              <a
-                href="http://gmail.com/wanghuajian620"
-              >
-              Blog
-              </a>
-              <div>
-                Copyright <Icon type="copyright" /> 2017 个人博客圣诞夜出品
-              </div>
-            </div>
-          </Footer>
+          <Footer />
         </Layout>
       </div>
     );
