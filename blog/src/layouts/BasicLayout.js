@@ -5,7 +5,6 @@ import styles from './BasicLayout.less';
 
 const { Content } = Layout;
 
-
 class BasicLayout extends React.PureComponent {
   render() {
     return (
@@ -68,4 +67,5 @@ class BasicLayout extends React.PureComponent {
     );
   }
 }
+
 export default BasicLayout;

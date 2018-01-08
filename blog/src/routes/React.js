@@ -97,4 +97,5 @@ class ReaLayout extends React.Component {
     );
   }
 }
+
 export default connect(state => ({ Reac: state.Reac }))(ReaLayout);

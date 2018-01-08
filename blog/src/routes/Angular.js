@@ -92,4 +92,5 @@ class Angular extends React.Component {
     );
   }
 }
+
 export default connect(state => ({ Angula: state.Angula }))(Angular);

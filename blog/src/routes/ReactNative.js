@@ -93,4 +93,5 @@ class Reactnative extends React.Component {
     );
   }
 }
+
 export default connect(state => ({ Native: state.Native }))(Reactnative);
