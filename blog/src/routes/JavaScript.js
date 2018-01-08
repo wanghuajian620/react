@@ -1,5 +1,6 @@
 import React from 'react';
 import { Layout, Pagination } from 'antd';
+import { connect } from 'dva';
 import Artical from '../components/Artical';
 import Footer from '../components/Footer';
 import styles from './React.less';
@@ -34,4 +35,4 @@ class JavaScipt extends React.Component {
   }
 }
 
-export default JavaScipt;
+export default connect(state => ({ javascript: state.javascript }))(JavaScipt);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Layout, Pagination } from 'antd';
+import { connect } from 'dva';
 import Artical from '../components/Artical';
 import Footer from '../components/Footer';
 import styles from './React.less';
@@ -34,4 +35,4 @@ class Angular extends React.Component {
   }
 }
 
-export default Angular;
+export default connect(state => ({ card: state.angular }))(Angular);

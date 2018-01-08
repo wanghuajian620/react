@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout, Icon, Card, BackTop, Tag } from 'antd';
 import { Link } from 'react-router-dom';
-import { connect } from 'dva';
+// import { connect } from 'dva';
 
 import styles from './index.less';
 
@@ -49,10 +49,11 @@ class Artical extends React.Component {
   }
 }
 
-export default connect(state => ({
-  card: state.angular,
-  react: state.react,
-  reactnative: state.reactnative,
-  javascript: state.javascript,
-}))(Artical);
+// export default connect(state => ({
+//   card: state.angular,
+//   react: state.react,
+//   reactnative: state.reactnative,
+//   javascript: state.javascript,
+// }))(Artical);
+export default Artical;
 
