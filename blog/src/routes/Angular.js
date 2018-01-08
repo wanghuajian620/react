@@ -2,10 +2,11 @@ import React from 'react';
 import { Layout, Card, Pagination, BackTop, Icon, Tag } from 'antd';
 import { Link } from 'react-router-dom';
 import { connect } from 'dva';
+import Footer from '../components/Footer';
 // import markdown from '../utils/markdown';
 import styles from './React.less';
 
-const { Content, Footer } = Layout;
+const { Content } = Layout;
 // const ReactMarkdown = require('react-markdown');
 
 
@@ -63,30 +64,7 @@ class Angular extends React.Component {
             />
             <BackTop visibilityHeight={200} />
           </Content>
-          <Footer>
-            <div className={styles.footer}>
-              <a
-                className={styles.bottom}
-                href="https://github.com/wanghuajian620"
-              >
-                GitHub
-              </a>
-              <a
-                className={styles.bottom}
-                href="http://gmail.com/wanghuajian620"
-              >
-              Gmail
-              </a>
-              <a
-                href="http://gmail.com/wanghuajian620"
-              >
-              Blog
-              </a>
-              <div>
-                Copyright <Icon type="copyright" /> 2017 个人博客圣诞夜出品
-              </div>
-            </div>
-          </Footer>
+          <Footer />
         </Layout>
       </div>
     );
