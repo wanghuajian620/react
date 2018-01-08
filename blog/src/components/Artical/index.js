@@ -48,5 +48,6 @@ class Artical extends React.Component {
 
 export default connect(state => ({
   card: state.angular,
+  react: state.react,
 }))(Artical);
 
