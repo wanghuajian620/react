@@ -1,3 +1,6 @@
+/**
+ *Copyright and author - wanghuajian
+ */
 import dva from 'dva';
 import './index.css';
 
