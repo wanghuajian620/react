@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import styles from './Docs.less';
 
 const { Header, Content } = Layout;
+const ReactMarkdown = require('react-markdown');
 
 class Doc extends React.Component {
   render() {
