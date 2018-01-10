@@ -1,5 +1,6 @@
 import React from 'react';
 import { Layout, Menu, Icon } from 'antd';
+import Article from '../components/Article';
 import Footer from '../components/Footer';
 
 import styles from './BasicLayout.less';
@@ -26,18 +27,7 @@ class BasicLayout extends React.Component {
       collapsed: !this.state.collapsed,
     });
   }
-  rootSubmenuKeys = ['sub1', 'sub2', 'sub4'];
   render() {
-    // const { currentUser } = this.props;
-
-    // const menu = (
-    //   <Menu className={styles.menu} selectedKeys={[]} onClick={this.onMenuClick}>
-    //     <Menu.Item disabled><Icon type="user" />个人中心</Menu.Item>
-    //     <Menu.Item disabled><Icon type="setting" />设置</Menu.Item>
-    //     <Menu.Divider />
-    //     <Menu.Item key="logout"><Icon type="logout" />退出登录</Menu.Item>
-    //   </Menu>
-    // );
     return (
       <div>
         <Layout>
@@ -59,14 +49,18 @@ class BasicLayout extends React.Component {
               onOpenChange={this.onOpenChange}
               style={{ margin: '16px 0', width: '100%' }}
             >
-              <SubMenu key="sub1" title={<span><Icon type="edit" /><span>写文章</span></span>}>
+              <SubMenu title={<span><Icon type="edit" /><span>写文章</span></span>}>
                 <Menu.Item key="1">Option 1</Menu.Item>
               </SubMenu>
-              <SubMenu key="sub2" title={<span><Icon type="appstore" /><span>文章管理</span></span>}>
-                <Menu.Item key="5">Option 5</Menu.Item>
+              <SubMenu title={<span><Icon type="appstore" /><span>文章管理</span></span>}>
+                <Menu.Item key="5">改文章</Menu.Item>
+                <Menu.Item key="6">删文章</Menu.Item>
               </SubMenu>
-              <SubMenu key="sub4" title={<span><Icon type="tag" /><span>标签管理</span></span>}>
-                <Menu.Item key="9">Option 9</Menu.Item>
+              <SubMenu title={<span><Icon type="tag" /><span>标签管理</span></span>}>
+                <Menu.Item key="7">Option 9</Menu.Item>
+              </SubMenu>
+              <SubMenu title={<span><Icon type="tag" /><span>评论管理</span></span>}>
+                <Menu.Item key="8">Opti</Menu.Item>
               </SubMenu>
             </Menu>
           </Sider>
@@ -77,19 +71,9 @@ class BasicLayout extends React.Component {
                 type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
                 onClick={this.toggle}
               />
-              {/* <div>
-                {currentUser.name ? (
-                  <Dropdown overlay={menu}>
-                    <span className={`${styles.action} ${styles.account}`}>
-                      <Avatar size="small" className={styles.avatar} src={currentUser.avatar} />
-                      {currentUser.name}
-                    </span>
-                  </Dropdown>
-                ) : <Spin size="small" style={{ marginLeft: 8 }} />}
-              </div> */}
             </Header>
             <Content className={styles.content}>
-              neirong
+              <Article />
             </Content>
             <Footer />
           </Layout>
