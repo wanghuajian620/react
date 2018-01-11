@@ -13,6 +13,7 @@
     "animate.css": "^3.5.2",
     "antd": "^3.1.1",
     "aos": "^2.2.0",
+    "axios": "^0.17.1",
     "babel-plugin-import": "^1.6.3",
     "babel-runtime": "^6.9.2",
     "dva": "^2.1.0",
@@ -21,7 +22,9 @@
     "react-dom": "^15.4.0",
     "react-markdown": "^3.1.4",
     "semantic-ui-css": "^2.2.12",
-    "semantic-ui-react": "^0.77.1"
+    "semantic-ui-react": "^0.77.1",
+    "http-status-codes": "^1.1.6",
+    "qs": "^6.2.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
