@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Pagination } from 'antd';
+import { Layout, Pagination, BackTop } from 'antd';
 import { connect } from 'dva';
 import { Link } from 'dva/router';
 import Artical from '../components/Artical';
@@ -43,6 +43,7 @@ class Angular extends React.Component {
               />)
             }
           </Content>
+          <BackTop visibilityHeight={200} />
           <Pagination
             current={this.state.current} onChange={this.onChange} total={50}
             className={styles.page}
