@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout, Pagination, BackTop } from 'antd';
 import { connect } from 'dva';
-import { Link } from 'dva/router';
+import Logo from '../components/Logo';
 import Artical from '../components/Artical';
 import Footer from '../components/Footer';
 import styles from './React.less';
@@ -28,11 +28,7 @@ class JavaScipt extends React.Component {
       <div>
         <Layout className={styles.background}>
           <Content className={styles.content}>
-            <div className={styles.logo}>
-              <Link to="/">
-                <img src="http://www.logobook.com/wp-content/uploads/2017/03/MorseLife_logo.svg" alt="" />
-              </Link>
-            </div>
+            <Logo />
             {
               javascript.content.map(item => <Artical
                 title={item.title}

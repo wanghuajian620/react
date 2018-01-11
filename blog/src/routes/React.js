@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout, Pagination, BackTop } from 'antd';
-import { Link } from 'dva/router';
 import { connect } from 'dva';
+import Logo from '../components/Logo';
 import Artical from '../components/Artical';
 import Footer from '../components/Footer';
 import styles from './React.less';
@@ -34,11 +34,7 @@ class ReaLayout extends React.Component {
       <div>
         <Layout className={styles.background}>
           <Content className={styles.content}>
-            <div className={styles.logo}>
-              <Link to="/">
-                <img src="http://www.logobook.com/wp-content/uploads/2017/03/MorseLife_logo.svg" alt="" />
-              </Link>
-            </div>
+            <Logo />
             {
               react.content.map(item => <Artical
                 title={item.title}
