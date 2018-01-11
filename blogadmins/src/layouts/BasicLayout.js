@@ -49,15 +49,13 @@ class BasicLayout extends React.Component {
               onOpenChange={this.onOpenChange}
               style={{ margin: '16px 0', width: '100%' }}
             >
-              <SubMenu title={<span><Icon type="edit" /><span>写文章</span></span>}>
-                <Menu.Item key="1">Option 1</Menu.Item>
-              </SubMenu>
               <SubMenu title={<span><Icon type="appstore" /><span>文章管理</span></span>}>
-                <Menu.Item key="5">改文章</Menu.Item>
-                <Menu.Item key="6">删文章</Menu.Item>
+                <Menu.Item key="1">写文章</Menu.Item>
+                <Menu.Item key="2">改文章</Menu.Item>
+                <Menu.Item key="3">删文章</Menu.Item>
               </SubMenu>
               <SubMenu title={<span><Icon type="tag" /><span>标签管理</span></span>}>
-                <Menu.Item key="7">Option 9</Menu.Item>
+                <Menu.Item key="7">标签</Menu.Item>
               </SubMenu>
               <SubMenu title={<span><Icon type="tag" /><span>评论管理</span></span>}>
                 <Menu.Item key="8">Opti</Menu.Item>

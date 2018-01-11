@@ -33,7 +33,7 @@ class Article extends React.Component {
   render() {
     return (
       <div>
-        <textarea id="editor">s</textarea>
+        <textarea id="editor">ni hao</textarea>
       </div>
     );
   }

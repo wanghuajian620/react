@@ -1,30 +1,60 @@
-import fetch from 'dva/fetch';
 
-function parseJSON(response) {
-  return response.json();
-}
+import axios from 'axios';
+import qs from 'qs';
+import HttpStatus from 'http-status-codes';
 
-function checkStatus(response) {
-  if (response.status >= 200 && response.status < 300) {
-    return response;
+axios.defaults.baseURL = '';
+axios.defaults.timeout = 10000;
+
+const fetch = (options) => {
+  const {
+    method,
+    data,
+    url,
+  } = options;
+
+  switch (method.toLowerCase()) {
+    case 'get':
+      return axios.get(`${url}${data ? `?${qs.stringify(data)}` : ''}`);
+    case 'delete':
+      return axios.delete(url, { data });
+    case 'head':
+      return axios.head(url, data);
+    case 'post':
+      return axios.post(url, data);
+    case 'put':
+      return axios.put(url, data);
+    case 'patch':
+      return axios.patch(url, data);
+    default:
+      return axios(options);
   }
+};
 
-  const error = new Error(response.statusText);
-  error.response = response;
-  throw error;
+export default function request(options) {
+  return fetch(options).then((response) => {
+    // console.log('options: ', options, 'response: ', response);
+    if (response.status === HttpStatus.OK) {
+      return response.data;
+    }
+    throw { response }; // eslint-disable-line
+  }).catch((error) => {
+    const { response } = error;
+    console.log('request error: ', error); // eslint-disable-line
+    let message, // eslint-disable-line
+      status;
+    if (response) {
+      status = response.status;
+      const { data, statusText } = response;
+      message = data.message || statusText || HttpStatus.getStatusText(status);
+    } else {
+      status = 600;
+      message = 'Network Error';
+    }
+    throw { status, message }; // eslint-disable-line
+  });
 }
 
-/**
- * Requests a URL, returning a promise.
- *
- * @param  {string} url       The URL we want to request
- * @param  {object} [options] The options we want to pass to "fetch"
- * @return {object}           An object containing either "data" or "err"
- */
-export default function request(url, options) {
-  return fetch(url, options)
-    .then(checkStatus)
-    .then(parseJSON)
-    .then(data => ({ data }))
-    .catch(err => ({ err }));
-}
+export const setToken = function (authToken) { // eslint-disable-line
+  axios.defaults.headers.common.Authorization = `Bearer ${authToken}`;
+};
