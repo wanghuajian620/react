@@ -13,11 +13,6 @@ class ReaLayout extends React.Component {
     current: 3,
 
   }
-  // componentDidMount() {
-  //   this.props.dispatch({
-  //     type: 'react/firstessay',
-  //   });
-  // }
   onChange = (page) => {
     this.setState({
       current: page,
