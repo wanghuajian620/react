@@ -1,8 +1,12 @@
 import React from 'react';
 import { Layout, Pagination } from 'antd';
+import { connect } from 'dva';
+import { Link } from 'dva/router';
 import Artical from '../components/Artical';
 import Footer from '../components/Footer';
 import styles from './React.less';
+
+const { Content } = Layout;
 
 class JavaScipt extends React.Component {
   state = {
@@ -15,13 +19,30 @@ class JavaScipt extends React.Component {
   }
   userclick = () => {
     this.props.dispatch({
-      type: 'Java/fouressay',
+      type: 'javascript/fouressay',
     });
   }
   render() {
+    const { javascript } = this.props;
     return (
       <div>
         <Layout className={styles.background}>
+          <Content className={styles.content}>
+            <div className={styles.logo}>
+              <Link to="/">
+                <img src="http://www.logobook.com/wp-content/uploads/2017/03/MorseLife_logo.svg" alt="" />
+              </Link>
+            </div>
+            {
+              javascript.content.map(item => <Artical
+                title={item.title}
+                key={item.key}
+                date={item.date}
+                tag={item.tag}
+                essay={item.essay}
+              />)
+            }
+          </Content>
           <Artical />
           <Pagination
             current={this.state.current} onChange={this.onChange} total={50}
@@ -34,4 +55,6 @@ class JavaScipt extends React.Component {
   }
 }
 
-export default JavaScipt;
+export default connect(state => ({
+  javascript: state.javascript,
+}))(JavaScipt);
