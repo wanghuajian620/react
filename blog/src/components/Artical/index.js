@@ -8,33 +8,36 @@ import styles from './index.less';
 class Artical extends React.PureComponent {
   static defaultProps = {
     title: '',
-    key: '',
     date: '',
     tag: '',
     essay: '',
   }
   static propTypes = {
     title: PropTypes.string,
-    key: PropTypes.string,
     date: PropTypes.string,
     tag: PropTypes.string,
     essay: PropTypes.string,
   }
+  handleSubmit = () => {
+    console.log('123'); // eslint-disable-line
+  }
   render() {
-    const { title, key, date, tag, essay } = this.props;
+    const { title, date, tag, essay } = this.props;
     return (
       <div>
         <Card
           data-aos="fade-up"
           title={title}
-          key={key}
           className={styles.card}
           onClick={this.userclick}
         >
           <Icon type="calendar" className={styles.icon} />
           {date}
           <Tag color="#2db7f5" className={styles.tag}>{tag}</Tag>
-          <Link to="essay">
+          <Link
+            to="/react/react-essay"
+            onClick={this.handleSubmit}
+          >
             <p>{essay}</p>
           </Link>
         </Card>

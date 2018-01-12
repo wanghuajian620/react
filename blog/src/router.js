@@ -5,7 +5,6 @@ import ReaLayout from './routes/React';
 import Reactnative from './routes/ReactNative';
 import Angular from './routes/Angular';
 import JavaScript from './routes/JavaScript';
-import Docs from './routes/Docs';
 
 function RouterConfig({ history }) {
   return (
@@ -16,7 +15,6 @@ function RouterConfig({ history }) {
         <Route path="/reactnative" component={Reactnative} />
         <Route path="/angular" component={Angular} />
         <Route path="/javascript" component={JavaScript} />
-        <Route path="/essay" component={Docs} />
       </Switch>
     </Router>
   );
