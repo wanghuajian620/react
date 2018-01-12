@@ -3,8 +3,7 @@ import { Icon } from 'antd';
 
 import styles from './index.less';
 
-function Footer(props) {
-  console.log(props, 'xxxx'); // eslint-disable-line
+function Footer() {
   return (
     <div className={styles.footer}>
       <a

@@ -2,7 +2,6 @@ export default {
   namespace: 'reactnative',
 
   state: {
-    // essay: '',
     content: [
       { title: 'ReactNative快速入门', date: '2017-01-03', tag: 'html', essay: 'nihao', key: 'index[0]' },
       { title: '2b', date: '2017-01-03', tag: 'css', essay: 'nihao', key: 'index[1]' },

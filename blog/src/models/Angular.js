@@ -2,7 +2,6 @@ export default {
   namespace: 'angular',
 
   state: {
-    // essay: [],
     content: [
       { title: 'Angular快速入门', date: '2017-01-03', tag: 'angular', essay: 'lala', key: 'index[0]' },
       { title: 'Angular官方demo', date: '2017-01-03', tag: 'css3', essay: 'lala', key: 'index[1]' },

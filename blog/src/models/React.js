@@ -1,9 +1,11 @@
+/*
+2018-01-12 Wang huajian
+*/
 
 export default {
   namespace: 'react',
 
   state: {
-    // essay: [],
     content: [
       { title: 'React快速入门', date: '2017-01-03', tag: 'angular', essay: 'lala', key: 'index[0]' },
       { title: 'React demo', date: '2017-01-03', tag: 'css3', essay: 'lala', key: 'index[1]' },
@@ -14,14 +16,14 @@ export default {
   effects: {
     * firstessay({ payload }, { put }) {
       yield put({
-        type: 'firstartical',
+        type: 'hello',
         payload: '你好，我是海贼王路飞',
       });
     },
   },
 
   reducers: {
-    firstartical(state, { payload }) {
+    hello(state, { payload }) {
       return {
         ...state,
         essay: payload,

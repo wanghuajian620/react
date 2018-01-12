@@ -6,8 +6,7 @@ import React from 'react';
 import { Link } from 'dva/router';
 import styles from './index.less';
 
-function Logo(props) {
-  console.log(props); // eslint-disable-line
+function Logo() {
   return (
     <div className={styles.logo}>
       <Link to="/">

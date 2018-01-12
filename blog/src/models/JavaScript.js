@@ -2,7 +2,6 @@ export default {
   namespace: 'javascript',
 
   state: {
-    // essay: [],
     content: [
       { title: 'javascript厉害', date: '2017-01-03', tag: 'javascript', essay: 'nihao', key: 'index[0]' },
       { title: '4b', date: '2017-01-03', tag: 'js', essay: 'nihao', key: 'index[1]' },
