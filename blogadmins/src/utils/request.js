@@ -3,7 +3,7 @@ import axios from 'axios';
 import qs from 'qs';
 import HttpStatus from 'http-status-codes';
 
-axios.defaults.baseURL = '';
+axios.defaults.baseURL = 'http://192.168.0.105';
 axios.defaults.timeout = 10000;
 
 const fetch = (options) => {
