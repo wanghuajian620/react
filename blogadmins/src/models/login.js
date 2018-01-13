@@ -1,6 +1,6 @@
-// /*
-// 2018-01-12 Wang huajian
-// */
+/**
+* 2018-01-12 Wang huajian
+*/
 import { routerRedux } from 'dva/router';
 import { AdminLogin } from '../services/login';
 
@@ -19,16 +19,14 @@ export default {
   },
 
   effects: {
-    *logins(object, { call, put }) {
-      const params = {
+    * logins(object, { call, put }) {
+      const params = { // 这里的params 是我们输入的name和pass，目的是把他传给AdminLogin函数。
         name: object.payload.userName,
         pass: object.payload.password,
       };
-      const result = yield call(AdminLogin, params);
+      const result = yield call(AdminLogin, params); // result是request中的return response.data
       if (result.status === 0) {
-        console.log(object);
         if (object.payload.remember) {
-          console.log(1111);
           localStorage.setItem('logined', 'true'); // eslint-disable-line
         }
         yield put(routerRedux.push('/main'));
@@ -36,7 +34,6 @@ export default {
     },
 
     * checkLogin(_, { put }) {
-      console.log('check');
       if (localStorage.getItem('logined')) { // eslint-disable-line
         yield put(routerRedux.push('/main'));
       }

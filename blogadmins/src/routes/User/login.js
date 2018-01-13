@@ -10,25 +10,12 @@ const FormItem = Form.Item;
 
 
 class LoginPage extends React.Component {
-  handlePassword = (e) => {
-    this.props.dispatch({
-      type: 'login/writePassword',
-      payload: e,
-    });
-  }
-  handleUsername = (e) => {
-    this.props.dispatch({
-      type: 'login/writeUsername',
-      payload: e,
-    });
-  }
   handleSubmit = () => {
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        // console.log('Received values of form: ', values);
         this.props.dispatch({
           type: 'login/logins',
-          payload: values,
+          payload: values, // dispatch 后面跟的是object即model里的object
         });
       }
     });
@@ -36,6 +23,7 @@ class LoginPage extends React.Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
+    console.log(this.props, 'aaa');
     return (
       <div className={styles.background}>
         <Form onSubmit={this.handleSubmit} className={styles.loginform}>
