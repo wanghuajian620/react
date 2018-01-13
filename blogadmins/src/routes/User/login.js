@@ -1,3 +1,6 @@
+/**
+ * 2018-01-13 Wang huajian
+ */
 import React from 'react';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import { connect } from 'dva';
@@ -19,30 +22,51 @@ class LoginPage extends React.Component {
       payload: e,
     });
   }
+  handleSubmit = () => {
+    this.props.form.validateFields((err, values) => {
+      if (!err) {
+        // console.log('Received values of form: ', values);
+        this.props.dispatch({
+          type: 'login/logins',
+          payload: values,
+        });
+      }
+    });
+  }
+
   render() {
-    const { login } = this.props;
-    console.log(login, 'login');
+    const { getFieldDecorator } = this.props.form;
     return (
       <div className={styles.background}>
         <Form onSubmit={this.handleSubmit} className={styles.loginform}>
           <FormItem>
-            <Input
-              prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-              placeholder="Username"
-              value={login.username}
-              onChange={this.handleUsername}
-            />
+            {getFieldDecorator('userName', {
+              rules: [{ required: true, message: 'Please input your username!' }],
+            })(
+              <Input
+                prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                placeholder="Username"
+              />,
+            )}
           </FormItem>
           <FormItem>
-            <Input
-              prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
-              type="password" placeholder="Password"
-              value={login.password}
-              onChange={this.handlePassword}
-            />
+            {getFieldDecorator('password', {
+              rules: [{ required: true, message: 'Please input your Password!' }],
+            })(
+              <Input
+                prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                type="password"
+                placeholder="Password"
+              />,
+            )}
           </FormItem>
           <FormItem>
-            <Checkbox>Remember me</Checkbox>
+            {getFieldDecorator('remember', {
+              valuePropName: 'checked',
+              initialValue: true,
+            })(
+              <Checkbox>Remember me</Checkbox>,
+            )}
             <Button type="primary" htmlType="submit" className={styles.loginformbutton}>
               Log in
             </Button>
@@ -55,4 +79,4 @@ class LoginPage extends React.Component {
 
 export default connect(state => ({
   login: state.login,
-}))(LoginPage);
+}))(Form.create()(LoginPage));

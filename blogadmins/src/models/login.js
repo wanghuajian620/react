@@ -1,38 +1,46 @@
 // /*
 // 2018-01-12 Wang huajian
 // */
-// import { routerRedux } from 'dva/router';
-// import { AdminLogin } from '../services/login';
+import { routerRedux } from 'dva/router';
+import { AdminLogin } from '../services/login';
 
 export default {
   namespace: 'login',
 
   state: {
-    username: '',
-    password: '',
+  },
+
+  subscriptions: {
+    setup({ dispatch }) {
+      dispatch({
+        type: 'checkLogin',
+      });
+    },
   },
 
   effects: {
-    *writeUsername(_, { put }) {
-      yield put({
-        type: 'inputName',
-        payload: _.value,
-      });
+    *logins(object, { call, put }) {
+      const params = {
+        name: object.payload.userName,
+        pass: object.payload.password,
+      };
+      const result = yield call(AdminLogin, params);
+      if (result.status === 0) {
+        console.log(object);
+        if (object.payload.remember) {
+          console.log(1111);
+          localStorage.setItem('logined', 'true'); // eslint-disable-line
+        }
+        yield put(routerRedux.push('/main'));
+      }
     },
-    *writePassword(payload, { put }) {
-      console.log(payload, 'sss');
-      yield put({
-        type: 'inputPassword',
-        payload: payload.value,
-      });
+
+    * checkLogin(_, { put }) {
+      console.log('check');
+      if (localStorage.getItem('logined')) { // eslint-disable-line
+        yield put(routerRedux.push('/main'));
+      }
     },
-    // *logins(_, { call, put, select }) {
-    //   const login = yield select(state => state.login);
-    //   const result = yield call(AdminLogin, login);
-    //   if (result.status === '') {
-    //     yield put(routerRedux.push('/main'));
-    //   }
-    // },
   },
 
   reducers: {
@@ -49,51 +57,4 @@ export default {
       };
     },
   },
-
-
-// import { routerRedux } from 'dva/router';
-// import { message } from 'antd';
-// import { AdminLogin } from '../services/login';
-
-// export default {
-//   namespace: 'login',
-
-//   state: {
-//     username: '',
-//     passward: '',
-//   },
-
-//   effects: {
-//     *adminLogin({ payload }, { call, put, select }) {
-//       const login = yield select(state => state.login);
-//       console.log('login+++++', login);
-//       const result = yield call(AdminLogin, login);
-//       console.log('result....', result.status);
-//       if (result.status === 'success') {
-//         yield put(routerRedux.push('/main'));
-//       } else if (result.status === 'not found user') {
-//         message.error('用户名不存在！');
-//       } else {
-//         message.error('密码错误！');
-//       }
-//     },
-
-//   },
-
-//   reducers: {
-//     writeUsername(state, { payload }) {
-//       return {
-//         ...state,
-//         username: payload.target.value,
-//       };
-//     },
-
-//     writePassward(state, { payload }) {
-//       return {
-//         ...state,
-//         passward: payload.target.value,
-//       };
-//     },
-//   },
-// };
 };
