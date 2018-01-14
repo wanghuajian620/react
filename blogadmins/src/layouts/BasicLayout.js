@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Menu, Icon, Input, Button } from 'antd';
 import Article from '../components/Article';
 import Footer from '../components/Footer';
 
@@ -71,7 +71,9 @@ class BasicLayout extends React.Component {
               />
             </Header>
             <Content className={styles.content}>
+              <Input placeholder="Please input your bref" className={styles.input} />
               <Article />
+              <Button type="primary">Publish</Button>
             </Content>
             <Footer />
           </Layout>
