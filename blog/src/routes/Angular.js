@@ -38,12 +38,12 @@ class Angular extends React.Component {
                 essay={item.essay}
               />)
             }
+            <Pagination
+              current={this.state.current} onChange={this.onChange} total={50}
+              className={styles.page}
+            />
           </Content>
           <BackTop visibilityHeight={200} />
-          <Pagination
-            current={this.state.current} onChange={this.onChange} total={50}
-            className={styles.page}
-          />
           <Footer />
         </Layout>
       </div>

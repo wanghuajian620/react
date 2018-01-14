@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Pagination, BackTop } from 'antd';
+import { Layout, BackTop, Pagination } from 'antd';
 import { connect } from 'dva';
 import { Switch, Route } from 'react-router-dom';
 import Logo from '../components/Logo';
@@ -19,7 +19,7 @@ class ReaLayout extends React.Component {
       current: page,
     });
   }
-  usrclick = () => {
+  userclick = () => {
     this.props.dispatch({
       type: 'react/firstessay',
     });
@@ -30,13 +30,13 @@ class ReaLayout extends React.Component {
       <div>
         <Layout className={styles.background}>
           <Content className={styles.content}>
-            <Logo />
             <Switch>
               <Route
                 exact
                 path="/react"
                 render={() => (
                   <div>
+                    <Logo />
                     {
                       react.content.map(item => <Artical
                         title={item.title}
@@ -46,6 +46,10 @@ class ReaLayout extends React.Component {
                         essay={item.essay}
                       />)
                     }
+                    <Pagination
+                      current={this.state.current} onChange={this.onChange} total={50}
+                      className={styles.page}
+                    />
                   </div>
                 )}
               />
@@ -56,10 +60,6 @@ class ReaLayout extends React.Component {
             </Switch>
           </Content>
           <BackTop visibilityHeight={200} />
-          <Pagination
-            current={this.state.current} onChange={this.onChange} total={50}
-            className={styles.page}
-          />
           <Footer />
         </Layout>
       </div>
