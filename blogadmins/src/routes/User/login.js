@@ -23,7 +23,7 @@ class LoginPage extends React.Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
-    console.log(this.props, 'aaa');
+    // console.log(this.props, 'aaa');
     return (
       <div className={styles.background}>
         <Form onSubmit={this.handleSubmit} className={styles.loginform}>

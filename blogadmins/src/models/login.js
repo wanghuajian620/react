@@ -11,11 +11,11 @@ export default {
   },
 
   subscriptions: {
-    setup({ dispatch }) {
-      dispatch({
-        type: 'checkLogin',
-      });
-    },
+    // setup({ dispatch }) {
+    //   dispatch({
+    //     type: 'checkLogin',
+    //   });
+    // },
   },
 
   effects: {

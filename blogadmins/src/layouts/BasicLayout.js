@@ -1,6 +1,7 @@
 import React from 'react';
-import { Layout, Menu, Icon, Input, Button } from 'antd';
-import Article from '../components/Article';
+import { Layout, Menu, Icon } from 'antd';
+import { Route, Switch } from 'dva/router';
+import Write from '../routes/Write';
 import Footer from '../components/Footer';
 
 import styles from './BasicLayout.less';
@@ -71,9 +72,9 @@ class BasicLayout extends React.Component {
               />
             </Header>
             <Content className={styles.content}>
-              <Input placeholder="Please input your bref" className={styles.input} />
-              <Article />
-              <Button type="primary">Publish</Button>
+              <Switch>
+                <Route path="/main" component={Write} />
+              </Switch>
             </Content>
             <Footer />
           </Layout>
