@@ -18,9 +18,6 @@ class Artical extends React.PureComponent {
     tag: PropTypes.string,
     essay: PropTypes.string,
   }
-  handleSubmit = () => {
-    console.log('123'); // eslint-disable-line
-  }
   render() {
     const { title, date, tag, essay } = this.props;
     return (
@@ -36,7 +33,6 @@ class Artical extends React.PureComponent {
           <Tag color="#2db7f5" className={styles.tag}>{tag}</Tag>
           <Link
             to="/react/react-essay"
-            onClick={this.handleSubmit}
           >
             <p>{essay}</p>
           </Link>
