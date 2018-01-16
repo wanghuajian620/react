@@ -1,7 +1,8 @@
 import React from 'react';
 import { Layout, Menu, Icon } from 'antd';
-import { Route, Switch } from 'dva/router';
+import { Route, Switch, Link } from 'dva/router';
 import Write from '../routes/Write';
+import Manager from '../routes/Manager';
 import Footer from '../components/Footer';
 
 import styles from './BasicLayout.less';
@@ -51,15 +52,23 @@ class BasicLayout extends React.Component {
               style={{ margin: '16px 0', width: '100%' }}
             >
               <SubMenu title={<span><Icon type="appstore" /><span>文章管理</span></span>}>
-                <Menu.Item key="1">写文章</Menu.Item>
-                <Menu.Item key="2">改文章</Menu.Item>
+                <Menu.Item key="1">
+                  <Link to="/main/editor">
+                    写文章
+                  </Link>
+                </Menu.Item>
+                <Menu.Item key="2">
+                  <Link to="/main/correct">
+                    改文章
+                  </Link>
+                </Menu.Item>
                 <Menu.Item key="3">删文章</Menu.Item>
               </SubMenu>
               <SubMenu title={<span><Icon type="tag" /><span>标签管理</span></span>}>
                 <Menu.Item key="7">标签</Menu.Item>
               </SubMenu>
               <SubMenu title={<span><Icon type="tag" /><span>评论管理</span></span>}>
-                <Menu.Item key="8">Opti</Menu.Item>
+                <Menu.Item key="8">删除评论</Menu.Item>
               </SubMenu>
             </Menu>
           </Sider>
@@ -73,7 +82,8 @@ class BasicLayout extends React.Component {
             </Header>
             <Content className={styles.content}>
               <Switch>
-                <Route path="/main" component={Write} />
+                <Route path="/main/editor" component={Write} />
+                <Route path="/main/correct" component={Manager} />
               </Switch>
             </Content>
             <Footer />

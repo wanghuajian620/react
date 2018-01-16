@@ -29,13 +29,13 @@ export default {
         if (object.payload.remember) {
           localStorage.setItem('logined', 'true'); // eslint-disable-line
         }
-        yield put(routerRedux.push('/main'));
+        yield put(routerRedux.push('/main/editor'));
       }
     },
 
     * checkLogin(_, { put }) {
       if (localStorage.getItem('logined')) { // eslint-disable-line
-        yield put(routerRedux.push('/main'));
+        yield put(routerRedux.push('/main/editor'));
       }
     },
   },
