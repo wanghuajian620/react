@@ -7,25 +7,28 @@ import { ManagerEssay } from '../services/manager';
 export default {
   namespace: 'manager',
 
-  state: {},
+  state: {
+    essay: [],
+  },
 
   effects: {
-    * manageressay({ payload }, { call }) {
-      const params = {
-        title: payload.writetitle,
-        article: payload.writearticle,
-      };
-      const result = yield call(ManagerEssay, params);
+    * manageressay({ payload }, { call, put }) {
+      const result = yield call(ManagerEssay);
+      console.log(result, 'xxxxx');
       if (result.status === 0) {
-        // yield put(routerRedux.push('/main'));
+        yield put({
+          type: 'manageressay',
+          payload: result,
+        });
       }
     },
   },
 
   reducers: {
-    manageressay(state) {
+    manageressay(state, action) {
       return {
         ...state,
+        essay: action.payload,
       };
     },
   },

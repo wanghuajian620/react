@@ -3,22 +3,31 @@
  */
 
 import React from 'react';
-import { Card } from 'antd';
-import styles from './index.less';
+import { connect } from 'dva';
+import Correct from '../../components/Correct';
 
 class Manager extends React.Component {
+  componentWillMount() {
+    this.props.dispatch({
+      type: 'manager/manageressay',
+    });
+  }
   render() {
+    const { essay } = this.props;
+    console.log(essay, 'mmmmm');
     return (
       <div>
-        <Card title="标题" className={styles.card}>
-          简介、文章
-        </Card>
-        <Card title="标题" className={styles.card}>
-          简介、文章
-        </Card>
+        {/* {
+          essay.map(item => <Correct
+            title={item.title}
+            article={item.article}
+            key={item.key}
+          />)
+        } */}
+        <Correct />
       </div>
     );
   }
 }
 
-export default Manager;
+export default connect(state => ({ manager: state.manager }))(Manager);
