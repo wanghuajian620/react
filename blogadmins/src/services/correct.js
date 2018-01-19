@@ -4,7 +4,7 @@
 
 import request from '../utils/request';
 
-export async function ManagerEssay(params) {
+export async function CorrectEssay(params) {
   return request({
     url: '/blog/update',
     method: 'post',

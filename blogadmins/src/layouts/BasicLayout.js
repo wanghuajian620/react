@@ -2,6 +2,7 @@ import React from 'react';
 import { Layout, Menu, Icon } from 'antd';
 import { Route, Switch, Link } from 'dva/router';
 import Write from '../routes/Write';
+import Delet from '../routes/Delet';
 import Footer from '../components/Footer';
 
 import styles from './BasicLayout.less';
@@ -53,10 +54,14 @@ class BasicLayout extends React.Component {
               <SubMenu title={<span><Icon type="appstore" /><span>文章管理</span></span>}>
                 <Menu.Item key="1">
                   <Link to="/main/editor">
-                    写文章
+                    写/改文章
                   </Link>
                 </Menu.Item>
-                <Menu.Item key="2">删文章</Menu.Item>
+                <Menu.Item key="2">
+                  <Link to="/main/delet">
+                    删文章
+                  </Link>
+                </Menu.Item>
                 <Menu.Item key="3">标签</Menu.Item>
               </SubMenu>
             </Menu>
@@ -72,6 +77,7 @@ class BasicLayout extends React.Component {
             <Content className={styles.content}>
               <Switch>
                 <Route path="/main/editor" component={Write} />
+                <Route path="/main/delet" component={Delet} />
               </Switch>
             </Content>
             <Footer />
