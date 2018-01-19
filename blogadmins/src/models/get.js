@@ -1,11 +1,7 @@
-/**
- * 2018-01-16 Wang huajian
- */
-
-import { ManagerEssay } from '../services/manager';
+import { GetEssay } from '../services/get';
 
 export default {
-  namespace: 'manager',
+  namespace: 'get',
 
   state: {
     essay: [],
@@ -13,11 +9,15 @@ export default {
 
   effects: {
     * manageressay({ payload }, { call, put }) {
-      const result = yield call(ManagerEssay);
+      const params = {
+        title: '',
+        classes: 'react',
+      };
+      const result = yield call(GetEssay, params);
       console.log(result, 'xxxxx');
       if (result.status === 0) {
         yield put({
-          type: 'manageressay',
+          type: 'getessay',
           payload: result,
         });
       }
@@ -25,7 +25,7 @@ export default {
   },
 
   reducers: {
-    manageressay(state, action) {
+    getessay(state, action) {
       return {
         ...state,
         essay: action.payload,
