@@ -1,10 +1,11 @@
 import React from 'react';
 import { Layout, Card } from 'antd';
+
 import styles from './index.less';
 
 const { Content } = Layout;
 
-class Articledetail extends React.Component {
+export default class Articledetail extends React.Component {
   componentWillMount() {
     console.log('321'); // eslint-disable-line
   }
@@ -22,5 +23,3 @@ class Articledetail extends React.Component {
     );
   }
 }
-
-export default Articledetail;

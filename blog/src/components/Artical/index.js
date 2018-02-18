@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import styles from './index.less';
 
-class Artical extends React.PureComponent {
+export default class Artical extends React.PureComponent {
   static defaultProps = {
     title: '',
     date: '',
@@ -28,9 +28,17 @@ class Artical extends React.PureComponent {
           className={styles.card}
           onClick={this.userclick}
         >
-          <Icon type="calendar" className={styles.icon} />
+          <Icon
+            type="calendar"
+            className={styles.icon}
+          />
           {date}
-          <Tag color="#2db7f5" className={styles.tag}>{tag}</Tag>
+          <Tag
+            color="#2db7f5"
+            className={styles.tag}
+          >
+            {tag}
+          </Tag>
           <Link
             to="/react/react-essay"
           >
@@ -40,7 +48,4 @@ class Artical extends React.PureComponent {
       </div>
     );
   }
-
 }
-
-export default Artical;
