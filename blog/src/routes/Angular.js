@@ -2,10 +2,12 @@ import React from 'react';
 import { Layout, Pagination, BackTop } from 'antd';
 import { connect } from 'dva';
 import { Switch, Route } from 'react-router-dom';
+
 import Logo from '../components/Logo';
 import Artical from '../components/Artical';
 import Articledetail from '../components/Articledetail';
 import Footer from '../components/Footer';
+
 import styles from './React.less';
 
 const { Content } = Layout;
@@ -47,7 +49,9 @@ class Angular extends React.Component {
                       />)
                     }
                     <Pagination
-                      current={this.state.current} onChange={this.onChange} total={50}
+                      current={this.state.current}
+                      onChange={this.onChange}
+                      total={50}
                       className={styles.page}
                     />
                   </div>

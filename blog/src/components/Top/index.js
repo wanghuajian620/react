@@ -9,7 +9,7 @@ import styles from './index.less';
 
 const { Header } = Layout;
 
-function Top() {
+export default function Top() {
   return (
     <Header className={styles.header}>
       <h3 className={styles.text}>Christmas blog</h3>
@@ -28,6 +28,3 @@ function Top() {
     </Header>
   );
 }
-
-export default Top;
-

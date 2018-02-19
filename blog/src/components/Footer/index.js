@@ -3,7 +3,7 @@ import { Icon } from 'antd';
 
 import styles from './index.less';
 
-function Footer() {
+export default function Footer() {
   return (
     <div className={styles.footer}>
       <a
@@ -29,5 +29,3 @@ function Footer() {
     </div>
   );
 }
-
-export default Footer;
