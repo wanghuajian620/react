@@ -1,16 +1,16 @@
 /**
  * Revision History:
- *     Initial: 2018/04/21          Wang Huajian
+ *     Initial: 2018/04/25          Wang Huajian
  */
 
 import React from 'react';
 import { Layout, Menu, Icon } from 'antd';
 
-import styles from '../routes/home.css';
+import styles from '../layouts/BasicLayout.css';
 
 const { Header, Footer, Content } = Layout;
 
-class HomePage extends React.Component {
+class BasicLayout extends React.Component {
   state = {
     current: 'home',
   }
@@ -50,4 +50,4 @@ class HomePage extends React.Component {
   }
 }
 
-export default HomePage;
+export default BasicLayout;

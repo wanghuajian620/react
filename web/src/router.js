@@ -1,12 +1,12 @@
 import React from 'react';
 import { Router, Route, Switch } from 'dva/router';
-import HomePage from './routes/homePage';
+import BasicLayout from './layouts/BasicLayout';
 
 function RouterConfig({ history }) {
   return (
     <Router history={history}>
       <Switch>
-        <Route path="/" exact component={HomePage} />
+        <Route path="/" exact component={BasicLayout} />
       </Switch>
     </Router>
   );
