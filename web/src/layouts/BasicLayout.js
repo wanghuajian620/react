@@ -5,6 +5,11 @@
 
 import React from 'react';
 import { Layout, Menu, Icon } from 'antd';
+import { Switch, Link, Route } from 'dva/router';
+
+import Home from '../routes/Home';
+import Download from '../routes/Download';
+import Me from '../routes/Me';
 
 import styles from '../layouts/BasicLayout.css';
 
@@ -32,17 +37,29 @@ class BasicLayout extends React.Component {
             className={styles.menu}
           >
               <Menu.Item key="home">
-              <Icon type="home" />首页
+                <Link to="/home">
+                  <Icon type="home" />首页
+                </Link>
               </Menu.Item>
               <Menu.Item key="download">
-                <Icon type="cloud-download" />下载文件
+                <Link to="download">
+                  <Icon type="cloud-download" />下载文件
+                </Link>
               </Menu.Item>
               <Menu.Item key="user">
-                <Icon type="user" />我的
+                <Link to="me">
+                  <Icon type="user" />我的
+                </Link>
               </Menu.Item>
             </Menu>
           </Header>
-          <Content className={styles.content}>内容</Content>
+          <Content className={styles.content}>
+            <Switch>
+              <Route path="/home" component={Home} />
+              <Route path="/download" component={Download} />
+              <Route path="/me" component={Me} />
+            </Switch>
+          </Content>
           <Footer className={styles.footer}>底部</Footer>
         </Layout>
       </div>
