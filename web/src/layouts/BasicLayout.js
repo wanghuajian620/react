@@ -16,53 +16,43 @@ import styles from '../layouts/BasicLayout.css';
 const { Header, Footer, Content } = Layout;
 
 class BasicLayout extends React.Component {
-  state = {
-    current: 'home',
-  }
-  handleClick = (e) => {
-    console.log('click ', e);
-    this.setState({
-      current: e.key,
-    });
-  }
   render() {
-    return (
-      <div>
-        <Layout>
-          <Header className={styles.header}>
-            <Menu
-            onClick={this.handleClick}
-            selectedKeys={[this.state.current]}
+    const layout = (
+      <Layout>
+        <Header className={styles.header}>
+          <Menu
             mode="horizontal"
             className={styles.menu}
           >
-              <Menu.Item key="home">
-                <Link to="/home">
-                  <Icon type="home" />首页
-                </Link>
-              </Menu.Item>
-              <Menu.Item key="download">
-                <Link to="download">
-                  <Icon type="cloud-download" />下载文件
-                </Link>
-              </Menu.Item>
-              <Menu.Item key="user">
-                <Link to="me">
-                  <Icon type="user" />我的
-                </Link>
-              </Menu.Item>
-            </Menu>
-          </Header>
-          <Content className={styles.content}>
-            <Switch>
-              <Route path="/home" component={Home} />
-              <Route path="/download" component={Download} />
-              <Route path="/me" component={Me} />
-            </Switch>
-          </Content>
-          <Footer className={styles.footer}>底部</Footer>
-        </Layout>
-      </div>
+            <Menu.Item key="home">
+              <Link to="/home">
+                <Icon type="home" />首页
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="download">
+              <Link to="download">
+                <Icon type="cloud-download" />下载文件
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="user">
+              <Link to="me">
+                <Icon type="user" />我的
+              </Link>
+            </Menu.Item>
+          </Menu>
+        </Header>
+        <Content className={styles.content}>
+          <Switch>
+            <Route path="/home" component={Home} />
+            <Route path="/download" component={Download} />
+            <Route path="/me" component={Me} />
+          </Switch>
+        </Content>
+        <Footer className={styles.footer}>底部</Footer>
+      </Layout>
+    )
+    return (
+      <div>{layout}</div>
     );
   }
 }

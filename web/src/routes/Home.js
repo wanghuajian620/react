@@ -4,12 +4,13 @@
  */
 
 import React from 'react';
+import Avatar from '../components/Avatar';
 
 class Home extends React.Component {
   render() {
     return (
       <div>
-        首页。我是首页gamma。
+        <Avatar />
       </div>
     );
   }
