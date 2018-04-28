@@ -8,7 +8,7 @@ import request from '../utils/request';
 export async function UserDownload(params) {
   return request({
     url: '',
-    method: '',
+    method: 'POST',
     data: params,
   });
 }

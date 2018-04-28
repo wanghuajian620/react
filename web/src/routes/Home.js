@@ -11,8 +11,12 @@ import styles from '../routes/home.css';
 
 class Home extends React.Component {
   handlerSubmit = () => {
+    const params = {
+      address: document.getElementById('address').value
+    }
     this.props.dispatch({
-      type: 'download/link'
+      type: 'download/getUrl',
+      payload: params
     })
   }
   render() {
@@ -40,10 +44,11 @@ class Home extends React.Component {
             addonAfter={selectAfter}
             defaultValue="mysite"
             className={styles.input}
+            id="address"
           />
         </div>
         <div className={styles.button}>
-          <Button type="primary" icon="download" size="large">Download</Button>
+          <Button onClick={this.handlerSubmit} type="primary" icon="download" size="large">Download</Button>
         </div>
       </div>
     );

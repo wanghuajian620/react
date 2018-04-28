@@ -7,7 +7,7 @@ import axios from 'axios';
 import qs from 'qs';
 import HttpStatus from 'http-status-codes';
 
-axios.defaults.baseURL = 'http://192.168.0.109:8080';
+axios.defaults.baseURL = 'http://45.76.169.195:17717';
 axios.defaults.timeout = 10000;
 axios.defaults.withCredentials = true; // 解决的是session的问题，不写一直报401未登录
 

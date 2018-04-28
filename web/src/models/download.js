@@ -4,13 +4,14 @@
  */
 
 import { UserDownload } from '../services/download';
-import { link } from 'fs';
 
 export default {
 
   namespace: 'download',
 
-  state: {},
+  state: {
+    address: ''
+  },
 
   subscriptions: {
     setup({ dispatch, history }) {  // eslint-disable-line
@@ -18,16 +19,28 @@ export default {
   },
 
   effects: {
-    * link(object, { call, put }) {
-      const params = {
-
-      };
-      const result = yield call(UserDownload, params);  
+    *getUrl(payload, { call, put }) {
+      yield put({
+        type: 'changLoading',
+        payload: true,
+      });
+      const result = yield call(UserDownload, payload);
+      if(result !== '') {
+        yield put({
+          type: 'saveNotices',
+          payload: result,
+        });
+      }
     }
   },
 
   reducers: {
-    
+    saveNotices(state, { payload }) {
+      return {
+        ...state,
+        address: payload
+      };
+    },
   },
 
 };
