@@ -6,8 +6,8 @@
 import React from 'react';
 import { Input, Select, Button } from 'antd';
 
-import Avatar from '../components/Avatar';
-import styles from '../routes/home.css';
+import Avatar from '../../components/Avatar';
+import styles from '../../routes/Download/home.css';
 
 class Home extends React.Component {
   handlerSubmit = () => {
@@ -48,7 +48,7 @@ class Home extends React.Component {
           />
         </div>
         <div className={styles.button}>
-          <Button onClick={this.handlerSubmit} type="primary" icon="download" size="large">Download</Button>
+          <Button onClick={this.handlerSubmit.bind(this)} type="primary" icon="download" size="large">Download</Button>
         </div>
       </div>
     );

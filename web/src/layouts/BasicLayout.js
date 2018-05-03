@@ -1,15 +1,14 @@
 /**
  * Revision History:
- *     Initial: 2018/04/25          Wang Huajian
+ *     Initial: 2018/04/25         Wang Huajian
  */
 
 import React from 'react';
 import { Layout, Menu, Icon } from 'antd';
 import { Switch, Link, Route } from 'dva/router';
 
-import Home from '../routes/Home';
-import Download from '../routes/Download';
-import Me from '../routes/Me';
+import Home from '../routes/Download/Home';
+import Me from '../routes/My/Me';
 
 import styles from '../layouts/BasicLayout.css';
 
@@ -29,11 +28,6 @@ class BasicLayout extends React.Component {
                 <Icon type="home" />首页
               </Link>
             </Menu.Item>
-            <Menu.Item key="download">
-              <Link to="download">
-                <Icon type="cloud-download" />下载文件
-              </Link>
-            </Menu.Item>
             <Menu.Item key="user">
               <Link to="me">
                 <Icon type="user" />我的
@@ -44,7 +38,6 @@ class BasicLayout extends React.Component {
         <Content className={styles.content}>
           <Switch>
             <Route path="/home" component={Home} />
-            <Route path="/download" component={Download} />
             <Route path="/me" component={Me} />
           </Switch>
         </Content>
