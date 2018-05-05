@@ -10,7 +10,7 @@ export default {
   namespace: 'download',
 
   state: {
-    address: ''
+    address: [],
   },
 
   subscriptions: {
@@ -19,12 +19,12 @@ export default {
   },
 
   effects: {
-    *getUrl(payload, { call, put }) {
-      yield put({
-        type: 'changLoading',
-        payload: true,
-      });
-      const result = yield call(UserDownload, payload);
+    * getUrl(payload, { call, put }) {
+      const params = {
+        url: payload
+      };
+      console.log(params, 'ggggg');
+      const result = yield call(UserDownload, params);
       if(result !== '') {
         yield put({
           type: 'saveNotices',
@@ -38,7 +38,7 @@ export default {
     saveNotices(state, { payload }) {
       return {
         ...state,
-        address: payload
+        address: payload.urls.url
       };
     },
   },

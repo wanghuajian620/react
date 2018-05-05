@@ -7,7 +7,7 @@ import request from '../utils/request';
 
 export async function UserDownload(params) {
   return request({
-    url: '',
+    url: '/v1/download/vid',
     method: 'POST',
     data: params,
   });

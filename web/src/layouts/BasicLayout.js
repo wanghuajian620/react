@@ -41,7 +41,9 @@ class BasicLayout extends React.Component {
             <Route path="/me" component={Me} />
           </Switch>
         </Content>
-        <Footer className={styles.footer}>底部</Footer>
+        <Footer className={styles.footer}>
+          Copyright <Icon type="copyright" /> 2018 个人毕业设计
+        </Footer>
       </Layout>
     )
     return (

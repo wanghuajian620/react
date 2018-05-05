@@ -5,6 +5,7 @@
 
 import React from 'react';
 import { Input, Select, Button } from 'antd';
+import { connect } from 'dva';
 
 import Avatar from '../../components/Avatar';
 import styles from '../../routes/Download/home.css';
@@ -55,4 +56,6 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default connect(state => ({
+  download: state.download,
+}))(Home);

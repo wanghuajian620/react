@@ -21,34 +21,14 @@ export default {
         name: object.payload.userName,
         pass: object.payload.password,
       };
+      console.log(params, 'ggggg');
       const result = yield call(AdminLogin, params); // result是request中的return response.data
+      console.log(result, 'mmmm');
       if (result.errcode === 0) {
-        if (object.payload.remember) {
-          localStorage.setItem('logined', 'true'); // eslint-disable-line
-        }
-        yield put(routerRedux.push('/home'));
-      }
-    },
-
-    * checkLogin(_, { put }) {
-      if (localStorage.getItem('logined')) { // eslint-disable-line
         yield put(routerRedux.push('/home'));
       }
     },
   },
 
   reducers: {
-    inputName(state, action) {
-      return {
-        ...state,
-        username: action.payload,
-      };
-    },
-    inputPassword(state, action) {
-      return {
-        ...state,
-        password: action.payload,
-      };
-    },
-  },
-};
+}};
