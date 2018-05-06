@@ -10,9 +10,7 @@ export default {
   namespace: 'download',
 
   state: {
-    urls: [{
-      
-    }],
+    urls: [],
   },
 
   subscriptions: {

@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Input, Button } from 'antd';
+import { Input, Button, Card } from 'antd';
 import { connect } from 'dva';
 
 import Avatar from '../../components/Avatar';
@@ -21,6 +21,7 @@ class Home extends React.Component {
     })
   }
   render() {
+    const { download } = this.props;
     return (
       <div>
         <Avatar />
@@ -38,6 +39,13 @@ class Home extends React.Component {
             className={styles.button}
           >立即下载
           </Button>
+        </div>
+        <div className={styles.flexcard}>
+          <Card title="转换地址详情" className={styles.card}>
+            <p>url: {download.urls.url}</p>
+            <p>size: {download.urls.size}</p>
+            <p>ext: {download.urls.ext}</p>
+          </Card>
         </div>
       </div>
     );
