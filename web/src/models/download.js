@@ -10,7 +10,9 @@ export default {
   namespace: 'download',
 
   state: {
-    address: [],
+    urls: [{
+      
+    }],
   },
 
   subscriptions: {
@@ -38,7 +40,7 @@ export default {
     saveNotices(state, { payload }) {
       return {
         ...state,
-        address: payload.urls.url
+        urls: payload
       };
     },
   },

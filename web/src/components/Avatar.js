@@ -14,7 +14,7 @@ const Avatar = (props) => {
         alt=""
         className={styles.image}
       />
-      <h3 className={styles.username}>mingzi</h3>
+      <h3 className={styles.username}>yusank</h3>
     </div>
   );
 };

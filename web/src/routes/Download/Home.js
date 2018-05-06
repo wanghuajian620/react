@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Input, Select, Button } from 'antd';
+import { Input, Button } from 'antd';
 import { connect } from 'dva';
 
 import Avatar from '../../components/Avatar';
@@ -21,35 +21,23 @@ class Home extends React.Component {
     })
   }
   render() {
-    const Option = Select.Option;
-    const selectBefore = (
-      <Select defaultValue="Http://" style={{ width: 90 }}>
-        <Option value="Http://">Http://</Option>
-        <Option value="Https://">Https://</Option>
-      </Select>
-    );
-    const selectAfter = (
-      <Select defaultValue=".com" style={{ width: 80 }}>
-        <Option value=".com">.com</Option>
-        <Option value=".jp">.jp</Option>
-        <Option value=".cn">.cn</Option>
-        <Option value=".org">.org</Option>
-      </Select>
-    );
     return (
       <div>
         <Avatar />
-        <div className={styles.select}>
+        <div className={styles.flex}>
           <Input
-            addonBefore={selectBefore}
-            addonAfter={selectAfter}
-            defaultValue="mysite"
-            className={styles.input}
+            size="large"
+            placeholder="Please write your site"
             id="address"
+            className={styles.input}
           />
-        </div>
-        <div className={styles.button}>
-          <Button onClick={this.handlerSubmit.bind(this)} type="primary" icon="download" size="large">Download</Button>
+          <Button
+            onClick={this.handlerSubmit.bind(this)}
+            type="primary"
+            size="large"
+            className={styles.button}
+          >立即下载
+          </Button>
         </div>
       </div>
     );
