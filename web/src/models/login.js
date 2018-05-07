@@ -21,9 +21,7 @@ export default {
         name: object.payload.userName,
         pass: object.payload.password,
       };
-      console.log(params, 'ggggg');
       const result = yield call(AdminLogin, params); // result是request中的return response.data
-      console.log(result, 'mmmm');
       if (result.errcode === 0) {
         yield put(routerRedux.push('/home'));
       }

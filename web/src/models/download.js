@@ -23,8 +23,9 @@ export default {
       const params = {
         url: payload
       };
-      console.log(params, 'ggggg');
+      console.log(params, 'bbbbbbb');
       const result = yield call(UserDownload, params);
+      console.log(result, 'vvvvvv');
       if(result !== '') {
         yield put({
           type: 'saveNotices',
@@ -42,5 +43,4 @@ export default {
       };
     },
   },
-
 };

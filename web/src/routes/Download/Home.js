@@ -37,7 +37,7 @@ class Home extends React.Component {
             type="primary"
             size="large"
             className={styles.button}
-          >立即下载
+          >立即请求地址
           </Button>
         </div>
         <div className={styles.flexcard}>
