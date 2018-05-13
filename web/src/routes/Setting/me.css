@@ -1,0 +1,37 @@
+/**
+ * Revision History:
+ *     Initial: 2018/04/25         Wang Huajian
+ */
+
+.background {
+  background-color: #efefef;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+}
+
+.input {
+  width: 600px
+}
+
+.fleximage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 300px;
+}
+
+.image {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+.username {
+  color: #000000;
+  margin-top: 10px;
+}

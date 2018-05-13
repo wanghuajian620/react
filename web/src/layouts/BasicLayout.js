@@ -8,6 +8,7 @@ import { Layout, Menu, Icon } from 'antd';
 import { Switch, Link, Route } from 'dva/router';
 
 import Home from '../routes/Download/Home';
+import Me from '../routes/Setting/Me';
 
 import styles from '../layouts/BasicLayout.css';
 
@@ -27,11 +28,17 @@ class BasicLayout extends React.Component {
                 <Icon type="home" />首页
               </Link>
             </Menu.Item>
+            <Menu.Item key="user">
+              <Link to="/user">
+                <Icon type="user" />我的
+              </Link>
+            </Menu.Item>
           </Menu>
         </Header>
         <Content className={styles.content}>
           <Switch>
             <Route path="/home" component={Home} />
+            <Route path="/user" component={Me} />
           </Switch>
         </Content>
         <Footer className={styles.footer}>
