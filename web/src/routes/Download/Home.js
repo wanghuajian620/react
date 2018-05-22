@@ -7,7 +7,8 @@ import React from 'react';
 import { Input, Button, Card } from 'antd';
 import { connect } from 'dva';
 
-import Avatar from '../../components/Avatar';
+// import Avatar from '../../components/Avatar';
+import Swiper from '../../components/Swiper';
 import styles from '../../routes/Download/home.css';
 
 class Home extends React.Component {
@@ -24,7 +25,8 @@ class Home extends React.Component {
     const { download } = this.props;
     return (
       <div>
-        <Avatar />
+        {/* <Avatar /> */}
+        <Swiper />
         <div className={styles.flex}>
           <Input
             size="large"

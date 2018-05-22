@@ -13,6 +13,8 @@
     "dva": "^2.2.3",
     "http-status-codes": "^1.1.6",
     "qs": "^6.2.0",
+    "rc-banner-anim": "^1.0.1",
+    "rc-tween-one": "^1.7.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
