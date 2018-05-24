@@ -8,6 +8,8 @@ import { Layout, Menu, Icon } from 'antd';
 import { Switch, Link, Route } from 'dva/router';
 
 import Home from '../routes/Download/Home';
+import Record from '../routes/Record/Record';
+import Reserve from '../routes/Reservation/Reserve';
 import Me from '../routes/Setting/Me';
 
 import styles from '../layouts/BasicLayout.css';
@@ -28,6 +30,16 @@ class BasicLayout extends React.Component {
                 <Icon type="home" />首页
               </Link>
             </Menu.Item>
+            <Menu.Item key="form">
+              <Link to="/form">
+                <Icon type="form" />我的记录
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="star">
+              <Link to="/star">
+                <Icon type="star-o" />预定
+              </Link>
+            </Menu.Item>
             <Menu.Item key="user">
               <Link to="/user">
                 <Icon type="user" />我的
@@ -38,6 +50,8 @@ class BasicLayout extends React.Component {
         <Content className={styles.content}>
           <Switch>
             <Route path="/home" component={Home} />
+            <Route path="/form" component={Record} />
+            <Route path="/star" component={Reserve} />
             <Route path="/user" component={Me} />
           </Switch>
         </Content>
