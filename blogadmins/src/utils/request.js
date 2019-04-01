@@ -5,7 +5,7 @@ import HttpStatus from 'http-status-codes';
 
 axios.defaults.baseURL = 'http://192.168.0.109:8080';
 axios.defaults.timeout = 10000;
-axios.defaults.withCredentials = true; // 解决的是session的问题，不写一直报401未登录
+axios.defaults.withCredentials = true; // 解决的是跨域的问题
 
 const fetch = (options) => {
   const {
